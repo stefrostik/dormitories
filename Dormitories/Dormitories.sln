@@ -3,7 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "DAL", "DAL\DAL.xproj", "{790EFE23-D414-49C8-95D0-8BE150077D3F}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "BL", "BL\BL.xproj", "{356D8AAC-1388-492C-A442-6353932AE168}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{790EFE23-D414-49C8-95D0-8BE150077D3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{790EFE23-D414-49C8-95D0-8BE150077D3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{790EFE23-D414-49C8-95D0-8BE150077D3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{790EFE23-D414-49C8-95D0-8BE150077D3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{356D8AAC-1388-492C-A442-6353932AE168}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{356D8AAC-1388-492C-A442-6353932AE168}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{356D8AAC-1388-492C-A442-6353932AE168}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{356D8AAC-1388-492C-A442-6353932AE168}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
