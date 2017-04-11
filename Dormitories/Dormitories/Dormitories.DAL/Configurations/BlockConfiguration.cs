@@ -10,18 +10,13 @@ using Dormitories.DAL.Models;
 
 namespace Dormitories.DAL.Mappings
 {
-    public  class DormitoryConfiguration: EntityTypeConfiguration<Dormitory>
+    public  class BlockConfiguration : EntityTypeConfiguration<Block>
     {
-        public DormitoryConfiguration()
+        public BlockConfiguration()
         {
             //todo: ivestigate EF fluent api, EntityTypeConfiguration methods
-            ToTable("dbo.Dormitories");
-
-            HasKey(x => x.Id);
-
-            Property(x => x.Number).IsRequired();
-            Property(x => x.Description).IsRequired();
-            Property(x => x.Addres).IsRequired();
+            ToTable("dbo.Blocks");
+            HasKey(x => x.Id);       
         }
     }
 }

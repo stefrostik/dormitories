@@ -9,7 +9,7 @@ namespace Dormitories.DAL.Models
     public class Room
     {
         public int Id { get; set; }
-        public int Total_places { get; set; }
+        public int TotalPlaces { get; set; }
         public int Faculty_id { get; set; }
         public int Block_id { get; set; }
     }
