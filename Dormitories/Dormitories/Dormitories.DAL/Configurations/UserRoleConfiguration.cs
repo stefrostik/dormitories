@@ -19,7 +19,9 @@ namespace Dormitories.DAL.Mappings
 
             HasKey(x => x.Id);
 
-            Property(x => x.name).IsRequired(); 
+            Property(x => x.name).IsRequired();
+            HasMany(x => x.Users)
+                .WithRequired(x => x.UserRole);
         }
     }
 }
