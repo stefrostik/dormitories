@@ -14,7 +14,7 @@ namespace Dormitories.BL
         {
             using (var ctx = new DormitoriesContext())
             {
-                var drm1 = new Dormitory() {Id = 6, Num = 8};
+                var drm1 = new Dormitory() {Id = 6, Number = 8};
                 ctx.Dormitories.Add(drm1);
                 ctx.SaveChanges();
             }

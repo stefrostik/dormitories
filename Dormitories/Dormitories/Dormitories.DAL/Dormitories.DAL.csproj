@@ -49,11 +49,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configurations\AdministratorConfiguration.cs" />
+    <Compile Include="Configurations\BlockConfiguration.cs" />
+    <Compile Include="Configurations\FloorConfiguration.cs" />
+    <Compile Include="Configurations\RoomConfiguration.cs" />
+    <Compile Include="Configurations\StudentCategoryConfiguration.cs" />
+    <Compile Include="Configurations\StudentConfiguration.cs" />
+    <Compile Include="Configurations\UserConfiguration.cs" />
+    <Compile Include="Configurations\UserRoleConfiguration.cs" />
     <Compile Include="DormitoriesContext.cs" />
     <Compile Include="Configurations\DormitoryConfiguration.cs" />
     <Compile Include="GenericRepository.cs" />
     <Compile Include="IGenericRepository.cs" />
+    <Compile Include="Models\Administrator.cs" />
+    <Compile Include="Models\Block.cs" />
     <Compile Include="Models\Dormitory.cs" />
+    <Compile Include="Models\Floor.cs" />
+    <Compile Include="Models\Room.cs" />
+    <Compile Include="Models\Student.cs" />
+    <Compile Include="Models\StudentCategory.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\UserRole.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
