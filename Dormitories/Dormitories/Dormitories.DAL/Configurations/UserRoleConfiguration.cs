@@ -12,16 +12,17 @@ namespace Dormitories.DAL.Mappings
 {
     public  class UserRoleConfiguration : EntityTypeConfiguration<UserRole>
     {
+        
         public UserRoleConfiguration()
         {
+
             //todo: ivestigate EF fluent api, EntityTypeConfiguration methods
             ToTable("dbo.UsersRoles");
 
             HasKey(x => x.Id);
 
             Property(x => x.name).IsRequired();
-            HasMany(x => x.Users)
-                .WithRequired(x => x.UserRole);
+            
         }
     }
 }
