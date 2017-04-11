@@ -29,7 +29,15 @@ namespace Dormitories.DAL
         {
             //base.OnModelCreating(modelBuilder);
             modelBuilder.Configurations.Add(new DormitoryConfiguration());
-            
+            modelBuilder.Configurations.Add(new AdminstratorConfiguration());
+            modelBuilder.Configurations.Add(new BlockConfiguration());
+            modelBuilder.Configurations.Add(new FloorConfiguration());
+            modelBuilder.Configurations.Add(new RoomConfiguration());
+            modelBuilder.Configurations.Add(new StudentCategoryConfiguration());
+            modelBuilder.Configurations.Add(new StudentConfiguration());
+            modelBuilder.Configurations.Add(new UserConfiguration());
+            modelBuilder.Configurations.Add(new UserRoleConfiguration());
+
             //todo:add all configurations
         }
     }
