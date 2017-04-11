@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace Dormitories.DAL.Models
 {
-    public class Dormitory
+    public class Floor
     {
         public int Id { get; set; }
-        public string Description { get; set; }
-        public string Addres { get; set; }
-        public int Number { get; set; }
-        public int Comendant_id { get; set; }
+        public int number { get; set; }
+        public int Dormitory_id { get; set; }
+        
     }
 }
