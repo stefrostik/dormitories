@@ -20,5 +20,15 @@ namespace Dormitories.BL
             }
 
         }
+        public void Test2()
+        {
+            using (var ctx = new DormitoriesContext())
+            {
+                var user1 = new User() { Id = 1, Login = "log123", Password = "Aa123456" };
+                ctx.Users.Add(user1);
+                ctx.SaveChanges();
+            }
+
+        }
     }
 }
