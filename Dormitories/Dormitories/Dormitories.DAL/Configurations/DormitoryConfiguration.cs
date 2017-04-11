@@ -19,7 +19,7 @@ namespace Dormitories.DAL.Mappings
 
             HasKey(x => x.Id);
 
-            Property(x => x.Num).IsRequired();        
+            Property(x => x.Number).IsRequired();        
         }
     }
 }
