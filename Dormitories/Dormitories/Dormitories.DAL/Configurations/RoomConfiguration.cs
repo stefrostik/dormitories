@@ -19,7 +19,9 @@ namespace Dormitories.DAL.Mappings
 
             HasKey(x => x.Id);
 
-            Property(x => x.TotalPlaces).IsRequired();        
+            Property(x => x.TotalPlaces).IsRequired(); 
+            
+                       
         }
     }
 }

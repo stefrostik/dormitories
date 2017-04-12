@@ -16,7 +16,11 @@ namespace Dormitories.DAL.Mappings
         {
             //todo: ivestigate EF fluent api, EntityTypeConfiguration methods
             ToTable("dbo.Blocks");
-            HasKey(x => x.Id);       
+            HasKey(x => x.Id);
+
+            HasMany(x => x.Rooms)
+                .WithRequired(x => x.Block)
+                .HasForeignKey(x => x.BlockId);
         }
     }
 }

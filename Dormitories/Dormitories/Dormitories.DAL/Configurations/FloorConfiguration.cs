@@ -20,9 +20,12 @@ namespace Dormitories.DAL.Mappings
             HasKey(x => x.Id);
 
             Property(x => x.number).IsRequired();
-                
             
-                   
+            HasMany(x => x.Blocks)
+                .WithRequired(x => x.Floor)
+                .HasForeignKey(x => x.FloorId);
+
+
         }
     }
 }
