@@ -9,7 +9,7 @@ namespace Dormitories.DAL.Models
     public class Administrator
     {
         public int Id { get; set; }
-        public int Dormitory_id { get; set; }
-        public int Faculty_id { get; set; }
+        public int DormitoryId { get; set; }
+        public int FacultyId { get; set; }
     }
 }

@@ -11,9 +11,9 @@ namespace Dormitories.DAL.Models
         public int Id { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
-        public int Role_id { get; set; }
-        public int Student_id { get; set; }
-        public int Administrator_id { get; set; }
+        public int RoleId { get; set; }
+        public int StudentId { get; set; }
+        public int AdministratorId { get; set; }
         public virtual UserRole UserRole { get; set; }
 
     }

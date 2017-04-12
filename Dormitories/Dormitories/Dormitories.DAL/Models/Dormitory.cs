@@ -8,10 +8,16 @@ namespace Dormitories.DAL.Models
 {
     public class Dormitory
     {
+        public Dormitory()
+        {
+            Floors = new HashSet<Floor>();
+        }
         public int Id { get; set; }
         public string Description { get; set; }
         public string Addres { get; set; }
         public int Number { get; set; }
-        public int Comendant_id { get; set; }
+        public int ComendantId { get; set; }
+        public virtual ICollection<Floor> Floors { get; set; }
+
     }
 }

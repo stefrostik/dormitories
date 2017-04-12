@@ -9,6 +9,6 @@ namespace Dormitories.DAL.Models
     public class Block
     {
         public int Id { get; set; }
-        public int Floor_id { get; set; }
+        public int FloorId { get; set; }
     }
 }

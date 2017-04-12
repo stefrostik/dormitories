@@ -30,5 +30,27 @@ namespace Dormitories.BL
             }
 
         }
+        public void Test3()
+        {
+            using (var ctx = new DormitoriesContext())
+            {
+                var floor1 = new Floor() { Id = 2, number = 10 };
+                var drm1 = new Dormitory() { Id = 6, Number = 8, Addres = "Ukraine", Description = "descpription" };
+                drm1.Floors = new List<Floor>();
+                drm1.Floors.Add(floor1);
+                ctx.Dormitories.Add(drm1);
+                ctx.SaveChanges();
+            }
+        }
+        public void Test4()
+        {
+            using (var ctx = new DormitoriesContext())
+            {
+                var floor1 = new Floor() { Id = 2, number = 10 };
+                
+                ctx.Floors.Add(floor1);
+                ctx.SaveChanges();
+            }
+        }
     }
 }

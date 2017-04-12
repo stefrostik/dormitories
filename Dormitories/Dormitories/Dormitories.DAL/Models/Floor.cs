@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +10,8 @@ namespace Dormitories.DAL.Models
     {
         public int Id { get; set; }
         public int number { get; set; }
-        public int Dormitory_id { get; set; }
+        public int DormitoryId { get; set; }
+        public virtual Dormitory Dormitory { get; set; }
         
     }
 }

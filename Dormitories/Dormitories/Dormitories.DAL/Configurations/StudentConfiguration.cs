@@ -19,9 +19,9 @@ namespace Dormitories.DAL.Mappings
 
             HasKey(x => x.Id);
 
-            Property(x => x.Is_assigned).IsRequired();
-            Property(x => x.Is_registered).IsRequired();
-            Property(x => x.Study_year).IsRequired();    
+            Property(x => x.IsAssigned).IsRequired();
+            Property(x => x.IsRegistered).IsRequired();
+            Property(x => x.StudyYear).IsRequired();    
         }
     }
 }

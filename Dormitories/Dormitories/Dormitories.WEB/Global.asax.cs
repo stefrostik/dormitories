@@ -16,8 +16,9 @@ namespace Dormitories.WEB
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
             var serv = new Service();
-            serv.Test();
-            serv.Test2();
+            //serv.Test();
+            //serv.Test2();
+            serv.Test4();
         }
     }
 }

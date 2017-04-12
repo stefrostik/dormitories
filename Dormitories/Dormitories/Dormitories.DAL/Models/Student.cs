@@ -9,13 +9,13 @@ namespace Dormitories.DAL.Models
     public class Student
     {
         public int Id { get; set; }
-        public int Faculty_id { get; set; }
-        public int Group_id { get; set; }
-        public bool Is_assigned { get; set; }
-        public int Room_id { get; set; }
-        public int Study_year { get; set; }
-        public int Category_id { get; set; }
-        public bool Is_registered { get; set; }
+        public int FacultyId { get; set; }
+        public int GroupId { get; set; }
+        public bool IsAssigned { get; set; }
+        public int RoomId { get; set; }
+        public int StudyYear { get; set; }
+        public int CategoryId { get; set; }
+        public bool IsRegistered { get; set; }
 
     }
 }
