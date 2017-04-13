@@ -22,7 +22,6 @@ namespace Dormitories.DAL
         public virtual DbSet<Student> Students { get; set; }
         public virtual DbSet<StudentCategory> StudentCategories { get; set; }
         public virtual DbSet<User> Users { get; set; }
-        public virtual DbSet<UserRole> UserRoles { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -38,7 +37,6 @@ namespace Dormitories.DAL
             modelBuilder.Configurations.Add(new RoomConfiguration());
             modelBuilder.Configurations.Add(new StudentCategoryConfiguration());
             modelBuilder.Configurations.Add(new StudentConfiguration());
-            modelBuilder.Configurations.Add(new UserRoleConfiguration());
 
             //todo:add all configurations
         }

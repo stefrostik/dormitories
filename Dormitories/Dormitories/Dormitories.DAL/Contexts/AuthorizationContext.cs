@@ -32,7 +32,6 @@ namespace Dormitories.DAL
             modelBuilder.Configurations.Add(new RoomConfiguration());
             modelBuilder.Configurations.Add(new StudentCategoryConfiguration());
             modelBuilder.Configurations.Add(new StudentConfiguration());
-            modelBuilder.Configurations.Add(new UserRoleConfiguration());
             ConfigureIdentityTables(modelBuilder);
         }
 

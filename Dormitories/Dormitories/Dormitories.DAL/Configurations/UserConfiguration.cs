@@ -17,6 +17,30 @@ namespace Dormitories.DAL.Mappings
             //todo: ivestigate EF fluent api, EntityTypeConfiguration methods
             ToTable("dbo.Users");
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             HasKey(x => x.Id);
 
             Property(x => x.Login).IsRequired();
