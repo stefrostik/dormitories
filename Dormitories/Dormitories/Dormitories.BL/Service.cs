@@ -24,9 +24,9 @@ namespace Dormitories.BL
         {
             using (var ctx = new DormitoriesContext())
             {
-                var user1 = new User() { Id = 1, Login = "log123", Password = "Aa123456" };
-                ctx.Users.Add(user1);
-                ctx.SaveChanges();
+                //var user1 = new User() { Id = 1, Login = "log123", Password = "Aa123456" };
+                //ctx.Users.Add(user1);
+                //ctx.SaveChanges();
             }
 
         }
@@ -34,21 +34,43 @@ namespace Dormitories.BL
         {
             using (var ctx = new DormitoriesContext())
             {
-                var floor1 = new Floor() { Id = 2, number = 10 };
-                var drm1 = new Dormitory() { Id = 6, Number = 8, Addres = "Ukraine", Description = "descpription" };
-                drm1.Floors = new List<Floor>();
-                drm1.Floors.Add(floor1);
-                ctx.Dormitories.Add(drm1);
-                ctx.SaveChanges();
+                //var floor1 = new Floor() { Id = 2, number = 10 };
+                //var drm1 = new Dormitory() { Id = 6, Number = 8, Addres = "Ukraine", Description = "descpription" };
+                //drm1.Floors = new List<Floor>();
+                //drm1.Floors.Add(floor1);
+                //ctx.Dormitories.Add(drm1);
+                //ctx.SaveChanges();
             }
         }
         public void Test4()
         {
-            using (var ctx = new DormitoriesContext())
+            //using (var ctx = new DormitoriesContext())
+            //{
+            //    var floor1 = new Floor() { Id = 2, number = 10 };
+
+            //    ctx.Floors.Add(floor1);
+            //    ctx.SaveChanges();
+            //}
+            using (var ctx = new AuthorizationContext())
             {
-                var floor1 = new Floor() { Id = 2, number = 10 };
+                Administrator admin = new Administrator()
+                {
+                    Login = "log1",
+                    Password = "pass1"
+                };
+                Student student = new Student()
+                {
+                    Login = "log1",
+                    Password = "pass1",
+                    IsAssigned = true,
+                    IsRegistered = true,
+                    StudyYear = 2000
+                };
                 
-                ctx.Floors.Add(floor1);
+                
+               
+                ctx.Users.Add(admin);
+                ctx.Users.Add(student);
                 ctx.SaveChanges();
             }
         }

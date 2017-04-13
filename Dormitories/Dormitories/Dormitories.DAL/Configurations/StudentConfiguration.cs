@@ -15,13 +15,19 @@ namespace Dormitories.DAL.Mappings
         public StudentConfiguration()
         {
             //todo: ivestigate EF fluent api, EntityTypeConfiguration methods
-            ToTable("dbo.Students");
+            //ToTable("dbo.Students");
 
-            HasKey(x => x.Id);
+            //HasKey(x => x.Id);
 
-            Property(x => x.IsAssigned).IsRequired();
-            Property(x => x.IsRegistered).IsRequired();
-            Property(x => x.StudyYear).IsRequired();    
+            //Property(x => x.IsAssigned).IsRequired();
+            //Property(x => x.IsRegistered).IsRequired();
+            //Property(x => x.StudyYear).IsRequired(); 
+
+            Map(m =>
+            {
+                m.ToTable("Students");
+            });
+
         }
     }
 }

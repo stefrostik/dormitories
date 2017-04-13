@@ -18,9 +18,9 @@ namespace Dormitories.DAL.Mappings
             ToTable("dbo.Blocks");
             HasKey(x => x.Id);
 
-            HasMany(x => x.Rooms)
-                .WithRequired(x => x.Block)
-                .HasForeignKey(x => x.BlockId);
+            //HasMany(x => x.Rooms)
+            //    .WithRequired(x => x.Block)
+            //    .HasForeignKey(x => x.BlockId);
         }
     }
 }

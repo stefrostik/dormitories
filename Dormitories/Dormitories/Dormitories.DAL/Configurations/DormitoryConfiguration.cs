@@ -23,13 +23,13 @@ namespace Dormitories.DAL.Mappings
             Property(x => x.Description).IsRequired();
             Property(x => x.Addres).IsRequired();
 
-            HasMany(x => x.Floors)
-                .WithRequired(x => x.Dormitory)
-                .HasForeignKey(x => x.DormitoryId);
+            //HasMany(x => x.Floors)
+            //    .WithRequired(x => x.Dormitory)
+            //    .HasForeignKey(x => x.DormitoryId);
 
-            HasMany(x => x.Administrators)
-                .WithRequired(x => x.Dormitory)
-                .HasForeignKey(x => x.DormitoryId);
+            //HasMany(x => x.Administrators)
+            //    .WithRequired(x => x.Dormitory)
+            //    .HasForeignKey(x => x.DormitoryId);
 
         }
     }

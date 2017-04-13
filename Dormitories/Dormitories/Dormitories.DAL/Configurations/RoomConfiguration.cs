@@ -21,9 +21,9 @@ namespace Dormitories.DAL.Mappings
 
             Property(x => x.TotalPlaces).IsRequired();
 
-            HasMany(x => x.Students)
-                .WithRequired(x => x.Room)
-                .HasForeignKey(x => x.RoomId);
+            //HasMany(x => x.Students)
+            //    .WithRequired(x => x.Room)
+            //    .HasForeignKey(x => x.RoomId);
 
         }
     }

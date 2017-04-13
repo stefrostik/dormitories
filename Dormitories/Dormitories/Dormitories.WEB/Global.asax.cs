@@ -18,7 +18,7 @@ namespace Dormitories.WEB
             var serv = new Service();
             //serv.Test();
             //serv.Test2();
-            serv.Test3();
+            serv.Test4();
         }
     }
 }

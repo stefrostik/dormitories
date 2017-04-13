@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Dormitories.DAL.Models
 {
-    public class Administrator : User
+    public class Faculty
     {
-        public int DormitoryId { get; set; }
-        //public virtual Dormitory Dormitory { get; set; }
+        public int Id { get; set; }
+        public int Name { get; set; }
     }
 }

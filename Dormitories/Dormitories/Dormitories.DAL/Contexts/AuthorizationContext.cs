@@ -15,14 +15,24 @@ namespace Dormitories.DAL
     public class AuthorizationContext : IdentityDbContext<User, CustomRole, long, CustomUserLogin, CustomUserRole, CustomUserClaim>
     {
         public AuthorizationContext()
-            : base("name=DormitoriesContext")
+            : base("name=Dormitories")
         {
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            modelBuilder.Configurations.Add(new FacultyConfiguration());
+            modelBuilder.Configurations.Add(new GroupConfiguration());
             modelBuilder.Configurations.Add(new UserConfiguration());
+            modelBuilder.Configurations.Add(new DormitoryConfiguration());
+            modelBuilder.Configurations.Add(new AdminstratorConfiguration());
+            modelBuilder.Configurations.Add(new BlockConfiguration());
+            modelBuilder.Configurations.Add(new FloorConfiguration());
+            modelBuilder.Configurations.Add(new RoomConfiguration());
+            modelBuilder.Configurations.Add(new StudentCategoryConfiguration());
+            modelBuilder.Configurations.Add(new StudentConfiguration());
+            modelBuilder.Configurations.Add(new UserRoleConfiguration());
             ConfigureIdentityTables(modelBuilder);
         }
 
@@ -32,6 +42,7 @@ namespace Dormitories.DAL
             modelBuilder.Entity<CustomUserRole>().ToTable("UserRoles");
             modelBuilder.Entity<CustomUserLogin>().ToTable("UserLogins");
             modelBuilder.Entity<CustomUserClaim>().ToTable("UserClaims");
+
         }
     }
 }

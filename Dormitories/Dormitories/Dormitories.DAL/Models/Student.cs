@@ -6,18 +6,17 @@ using System.Threading.Tasks;
 
 namespace Dormitories.DAL.Models
 {
-    public class Student
+    public class Student : User
     {
-        public int Id { get; set; }
-        public int FacultyId { get; set; }
+
         public int GroupId { get; set; }
         public bool IsAssigned { get; set; }
         public int RoomId { get; set; }
         public int StudyYear { get; set; }
         public int CategoryId { get; set; }
         public bool IsRegistered { get; set; }
-        public virtual StudentCategory StudentCategory { get; set; }
-        public virtual Room Room { get; set; }
+        //public virtual StudentCategory StudentCategory { get; set; }
+        //public virtual Room Room { get; set; }
 
     }
 }

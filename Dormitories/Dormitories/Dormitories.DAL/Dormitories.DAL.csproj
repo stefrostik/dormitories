@@ -43,7 +43,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -67,8 +67,8 @@
     <Compile Include="Configurations\StudentConfiguration.cs" />
     <Compile Include="Configurations\UserConfiguration.cs" />
     <Compile Include="Configurations\UserRoleConfiguration.cs" />
-    <Compile Include="Context\AuthorizationContext.cs" />
-    <Compile Include="Context\DormitoriesContext.cs" />
+    <Compile Include="Contexts\AuthorizationContext.cs" />
+    <Compile Include="Contexts\DormitoriesContext.cs" />
     <Compile Include="Configurations\DormitoryConfiguration.cs" />
     <Compile Include="GenericRepository.cs" />
     <Compile Include="Identity\CustomRole.cs" />

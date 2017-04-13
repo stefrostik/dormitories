@@ -8,14 +8,12 @@ using Dormitories.DAL.Identity;
 
 namespace Dormitories.DAL.Models
 {
-    public class User : IdentityUser<long, CustomUserLogin, CustomUserRole, CustomUserClaim>
+    public abstract class User : IdentityUser<long, CustomUserLogin, CustomUserRole, CustomUserClaim>
     {
-        public int Id { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
         public int RoleId { get; set; }
-        public int StudentId { get; set; }
-        public int AdministratorId { get; set; }
+        public int FacultyId { get; set; }
 
 
     }
