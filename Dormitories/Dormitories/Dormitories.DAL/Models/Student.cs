@@ -16,6 +16,8 @@ namespace Dormitories.DAL.Models
         public int StudyYear { get; set; }
         public int CategoryId { get; set; }
         public bool IsRegistered { get; set; }
+        public virtual StudentCategory StudentCategory { get; set; }
+        public virtual Room Room { get; set; }
 
     }
 }

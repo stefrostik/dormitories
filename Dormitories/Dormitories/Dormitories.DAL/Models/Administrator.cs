@@ -11,5 +11,6 @@ namespace Dormitories.DAL.Models
         public int Id { get; set; }
         public int DormitoryId { get; set; }
         public int FacultyId { get; set; }
+        public virtual Dormitory Dormitory { get; set; }
     }
 }

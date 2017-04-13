@@ -21,7 +21,7 @@ namespace Dormitories.DAL.Mappings
 
             Property(x => x.Login).IsRequired();
             Property(x => x.Password).IsRequired();
-            
+
             
         }
     }

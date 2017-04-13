@@ -8,10 +8,10 @@ namespace Dormitories.DAL.Models
 {
     public class UserRole
     {
+        
         public int Id { get; set; }
         public string Name { get; set; }
-        //public virtual User User { get; set; }
-        
-        
+
+
     }
 }
