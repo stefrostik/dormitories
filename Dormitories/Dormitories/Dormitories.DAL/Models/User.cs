@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNet.Identity.EntityFramework;
+using Dormitories.DAL.Identity;
 
 namespace Dormitories.DAL.Models
 {
-    public class User
+    public class User : IdentityUser<long, CustomUserLogin, CustomUserRole, CustomUserClaim>
     {
         public int Id { get; set; }
         public string Login { get; set; }
