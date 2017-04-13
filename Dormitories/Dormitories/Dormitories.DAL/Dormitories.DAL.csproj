@@ -67,8 +67,8 @@
     <Compile Include="Configurations\StudentConfiguration.cs" />
     <Compile Include="Configurations\UserConfiguration.cs" />
     <Compile Include="Configurations\UserRoleConfiguration.cs" />
-    <Compile Include="AuthorizationContext.cs" />
-    <Compile Include="DormitoriesContext.cs" />
+    <Compile Include="Context\AuthorizationContext.cs" />
+    <Compile Include="Context\DormitoriesContext.cs" />
     <Compile Include="Configurations\DormitoryConfiguration.cs" />
     <Compile Include="GenericRepository.cs" />
     <Compile Include="Identity\CustomRole.cs" />
