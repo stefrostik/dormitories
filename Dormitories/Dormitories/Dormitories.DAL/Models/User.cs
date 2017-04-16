@@ -14,7 +14,6 @@ namespace Dormitories.DAL.Models
         public string Password { get; set; }
         public int RoleId { get; set; }
         public int FacultyId { get; set; }
-
-
+        public virtual Faculty Faculty { get; set; }
     }
 }
