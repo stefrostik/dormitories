@@ -25,6 +25,7 @@ namespace Dormitories.DAL.Mappings
             //    .WithRequired(x => x.Room)
             //    .HasForeignKey(x => x.RoomId);
 
+
         }
     }
 }
