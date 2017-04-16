@@ -16,7 +16,7 @@ namespace Dormitories.DAL.Models
         public int TotalPlaces { get; set; }
         public int FacultyId { get; set; }
         public int BlockId { get; set; }
-        //public virtual Block Block { get; set; }
+        public virtual Block Block { get; set; }
         //public virtual ICollection<Student> Students { get; set; }
     }
 }
