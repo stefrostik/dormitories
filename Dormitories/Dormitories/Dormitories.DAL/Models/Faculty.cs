@@ -8,7 +8,12 @@ namespace Dormitories.DAL.Models
 {
     public class Faculty
     {
+        public Faculty()
+        {
+            Rooms = new HashSet<Room>();
+        }
         public int Id { get; set; }
         public int Name { get; set; }
+        public virtual ICollection<Room> Rooms { get; set; }
     }
 }
