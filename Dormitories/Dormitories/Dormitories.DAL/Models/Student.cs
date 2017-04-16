@@ -17,7 +17,7 @@ namespace Dormitories.DAL.Models
         public bool IsRegistered { get; set; }
         public virtual Group Group{ get; set; }
         //public virtual StudentCategory StudentCategory { get; set; }
-        //public virtual Room Room { get; set; }
+        public virtual Room Room { get; set; }
 
     }
 }
