@@ -22,7 +22,7 @@ namespace Dormitories.DAL.Mappings
             Property(x => x.Name).IsRequired();
 
             HasMany(x => x.Students)
-                .WithRequired(y => y.Group)
+                .WithOptional(y => y.Group)
                 .HasForeignKey(x => x.GroupId);
 
         }

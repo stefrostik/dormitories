@@ -28,7 +28,7 @@ namespace Dormitories.DAL.Mappings
                 .HasForeignKey(x => x.DormitoryId);
 
             HasMany(x => x.Administrators)
-                .WithRequired(x => x.Dormitory)
+                .WithOptional(x => x.Dormitory)
                 .HasForeignKey(x => x.DormitoryId);
 
         }

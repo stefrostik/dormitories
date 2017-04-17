@@ -26,7 +26,7 @@ namespace Dormitories.DAL.Mappings
                 .HasForeignKey(x => x.FacultyId);
 
             HasMany(x => x.Users)
-                .WithRequired(y => y.Faculty)
+                .WithOptional(y => y.Faculty)
                 .HasForeignKey(x => x.FacultyId);
 
         }
