@@ -1,4 +1,5 @@
 ﻿using Dormitories.DAL;
+using Dormitories.DAL.Contexts;
 
 namespace Dormitories.BL.Interfaces
 {

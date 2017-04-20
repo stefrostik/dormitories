@@ -22,11 +22,6 @@ namespace Dormitories.WEB.Controllers
                 this.authService = new BL.Identity.AuthenticationService();
             }
 
-            private IAuthenticationManager Authentication
-            {
-                get { return Request.GetOwinContext().Authentication; }
-            }
-
             [AllowAnonymous]
             public async Task<IHttpActionResult> Register(UserRegisterDTO userModel)
             {
@@ -40,7 +35,8 @@ namespace Dormitories.WEB.Controllers
                     Name = "valeraJopta",
                     Email = "valeraJopta@gmail.com",
                     Password = "valeraJopta123456",
-                    ConfirmPassword = "valeraJopta123456"
+                    ConfirmPassword = "valeraJopta123456",
+                    RoleName = "Student"
                 };
 
                 IdentityResult result = await authService.RegisterUser(usr);
