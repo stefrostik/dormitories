@@ -2,8 +2,8 @@
 
 @Component({
     selector: 'my-app',
-    template: `<h1>Добро пожаловать {{name}}!</h1>
-                <label>Введите имя:</label>
+    template: `<h1>Hi {{name}}!</h1>
+                <label>Enter name:</label>
                 <input [(ngModel)]="name" placeholder="name">`
 })
 export class AppComponent {

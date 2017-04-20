@@ -158,6 +158,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\components\dorimitories\displayDormitories.component.html" />
     <Content Include="Index.html" />
     <Content Include="systemjs.config.js" />
     <Content Include="Web.config" />
@@ -166,6 +167,7 @@
     <Compile Include="App_Start\StartapAuth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DormitoriesController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\DormitoriesOAuthProvider.cs" />
@@ -199,6 +201,8 @@
   <ItemGroup>
     <TypeScriptCompile Include="app\app.component.ts" />
     <TypeScriptCompile Include="app\app.module.ts" />
+    <TypeScriptCompile Include="app\components\dorimitories\displayDormitories.component.ts" />
+    <TypeScriptCompile Include="app\components\dorimitories\dormitory.model.ts" />
     <TypeScriptCompile Include="app\main.ts" />
   </ItemGroup>
   <ItemGroup>
