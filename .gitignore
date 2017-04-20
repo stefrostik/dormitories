@@ -1,4 +1,4 @@
-﻿################################################################################
+################################################################################
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
@@ -14,3 +14,4 @@
 /Dormitories/Dormitories/Dormitories.DAL/obj/Debug
 /Dormitories/Dormitories/Dormitories.BL/bin/Debug
 /Dormitories/Dormitories/Dormitories.BL/obj/Debug
+Dormitories/Dormitories/Dormitories.WEB/node_modules/
