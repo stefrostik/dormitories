@@ -2,6 +2,7 @@
 using Dormitories.DAL.Configurations;
 using Dormitories.DAL.Mappings;
 using Dormitories.DAL.Models;
+using Dormitories.DAL.Identity;
 
 namespace Dormitories.DAL.Contexts
 {
@@ -28,7 +29,13 @@ namespace Dormitories.DAL.Contexts
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            //base.OnModelCreating(modelBuilder);
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Configurations.Add(new CustomRoleConfigurations());
+            modelBuilder.Configurations.Add(new CustomUserClaimsConfigurations());
+            modelBuilder.Configurations.Add(new CustomUserLoginsConfigurations());
+            modelBuilder.Configurations.Add(new CustomUserRolesConfigurations());
+
             modelBuilder.Configurations.Add(new FacultyConfiguration());
             modelBuilder.Configurations.Add(new GroupConfiguration());
             modelBuilder.Configurations.Add(new UserConfiguration());
@@ -39,8 +46,6 @@ namespace Dormitories.DAL.Contexts
             modelBuilder.Configurations.Add(new RoomConfiguration());
             modelBuilder.Configurations.Add(new StudentCategoryConfiguration());
             modelBuilder.Configurations.Add(new StudentConfiguration());
-
-            //todo:add all configurations
         }
     }
 }

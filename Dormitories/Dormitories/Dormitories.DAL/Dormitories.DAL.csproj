@@ -61,6 +61,10 @@
   <ItemGroup>
     <Compile Include="Configurations\AdministratorConfiguration.cs" />
     <Compile Include="Configurations\BlockConfiguration.cs" />
+    <Compile Include="Configurations\CustomUserRolesConfigurations.cs" />
+    <Compile Include="Configurations\CustomUserLoginsConfigurations.cs" />
+    <Compile Include="Configurations\CustomUserClaimsConfigurations.cs" />
+    <Compile Include="Configurations\CustomRoleConfigurations.cs" />
     <Compile Include="Configurations\FloorConfiguration.cs" />
     <Compile Include="Configurations\FacultyConfiguration.cs" />
     <Compile Include="Configurations\GroupConfiguration.cs" />
