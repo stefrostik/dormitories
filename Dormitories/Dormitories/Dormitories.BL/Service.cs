@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Dormitories.DAL;
+using Dormitories.DAL.Contexts;
 using Dormitories.DAL.Models;
 
 namespace Dormitories.BL
@@ -14,7 +15,7 @@ namespace Dormitories.BL
         {
             using (var ctx = new DormitoriesContext())
             {
-                var drm1 = new Dormitory() {Id = 6, Number = 8, Addres ="Ukraine", Description="descpription"};
+                var drm1 = new Dormitory() {Id = 6, Number = 8, Address ="Ukraine", Description="descpription"};
                 ctx.Dormitories.Add(drm1);
                 ctx.SaveChanges();
             }
@@ -35,7 +36,7 @@ namespace Dormitories.BL
             using (var ctx = new DormitoriesContext())
             {
                 //var floor1 = new Floor() { Id = 2, number = 10 };
-                //var drm1 = new Dormitory() { Id = 6, Number = 8, Addres = "Ukraine", Description = "descpription" };
+                //var drm1 = new Dormitory() { Id = 6, Number = 8, Address = "Ukraine", Description = "descpription" };
                 //drm1.Floors = new List<Floor>();
                 //drm1.Floors.Add(floor1);
                 //ctx.Dormitories.Add(drm1);
@@ -55,15 +56,11 @@ namespace Dormitories.BL
             {
                 Administrator admin = new Administrator()
                 {
-                    Login = "log1",
-                    Password = "pass1"
+                   
                 };
                 Student student = new Student()
                 {
-                    Login = "log1",
-                    Password = "pass1",
-                    IsAssigned = true,
-                    IsRegistered = true,
+                   
                     StudyYear = 2000
                 };
                 

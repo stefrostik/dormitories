@@ -38,14 +38,26 @@ namespace Dormitories.BL.Identity
 
         public async Task<IdentityResult> RegisterUser(UserRegisterDTO registerUserModel)
         {
-            User user = new Student()
+            User usr = null;
+
+            if (registerUserModel.RoleName == "Student")
             {
-                UserName = registerUserModel.Name,
-                Email = registerUserModel.Email,
-                Login = registerUserModel.Email,
-                Password = registerUserModel.Password
-            
-            };//mapper.Map<UserRegisterDTO, User>(registerUserModel);
+                usr = new Student()
+                {
+                    UserName = registerUserModel.Name,
+                    FacultyId = null,
+                    CategoryId = null
+                };
+            }
+            else
+            {
+                usr = new Administrator()
+                {
+                    UserName = registerUserModel.Name,
+                    DormitoryId = null
+                };
+            }
+
 
             using (var context = provider.Context)
             {
@@ -53,7 +65,7 @@ namespace Dormitories.BL.Identity
                 IdentityResult result = null;
                 try
                 {
-                    result = await manager.CreateAsync(user, registerUserModel.Password);
+                    result = await manager.CreateAsync(usr, registerUserModel.Password);
                 }
                 catch (Exception ex)
                 {
@@ -63,7 +75,7 @@ namespace Dormitories.BL.Identity
                
                 if (result.Succeeded)
                 {
-                    await manager.AddToRolesAsync(user.Id, "Admin"/*LvivCyclingConsts.DefaultRole*/);
+                    await manager.AddToRolesAsync(usr.Id, registerUserModel.RoleName/*LvivCyclingConsts.DefaultRole*/);
                 }
 
                 return result;

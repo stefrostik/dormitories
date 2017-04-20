@@ -1,19 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.Entity;
+using Dormitories.DAL.Configurations;
 using Dormitories.DAL.Mappings;
 using Dormitories.DAL.Models;
 
-namespace Dormitories.DAL
+namespace Dormitories.DAL.Contexts
 {
     public class DormitoriesContext: DbContext
     {
-        public DormitoriesContext() : base("name = Dormitories"){}
+        public DormitoriesContext() : base("name = Dormitories")
+        {
+            //Database.SetInitializer<DormitoriesContext>(new CreateDatabaseIfNotExists<DormitoriesContext>());
+            Database.SetInitializer<DormitoriesContext>(new DropCreateDatabaseIfModelChanges<DormitoriesContext>());
+            //Database.SetInitializer<DormitoriesContext>(new DropCreateDatabaseAlways<DormitoriesContext>());
+            //Database.SetInitializer<DormitoriesContext>(new SchoolDBInitializer());
+        }
 
-        //todo: add all dbsets, all models
         public  virtual DbSet<Dormitory> Dormitories { get; set; }
         public virtual DbSet<Administrator> Administrators { get; set; }
         public virtual DbSet<Block> Blocks { get; set; }

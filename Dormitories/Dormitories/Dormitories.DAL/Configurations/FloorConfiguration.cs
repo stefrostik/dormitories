@@ -1,20 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Data.Entity.ModelConfiguration;
-using System.Data.Entity.ModelConfiguration.Configuration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.Entity.ModelConfiguration;
 using Dormitories.DAL.Models;
 
-namespace Dormitories.DAL.Mappings
+namespace Dormitories.DAL.Configurations
 {
     public  class FloorConfiguration : EntityTypeConfiguration<Floor>
     {
         public FloorConfiguration()
         {
-            //todo: ivestigate EF fluent api, EntityTypeConfiguration methods
             ToTable("dbo.Floors");
 
             HasKey(x => x.Id);

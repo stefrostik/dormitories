@@ -1,22 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Dormitories.DAL.Configurations;
+using Dormitories.DAL.Identity;
 using Dormitories.DAL.Mappings;
 using Dormitories.DAL.Models;
 using Microsoft.AspNet.Identity.EntityFramework;
-using Dormitories.DAL.Identity;
 
-
-namespace Dormitories.DAL
+namespace Dormitories.DAL.Contexts
 {
     public class AuthorizationContext : IdentityDbContext<User, CustomRole, long, CustomUserLogin, CustomUserRole, CustomUserClaim>
     {
         public AuthorizationContext()
             : base("name=Dormitories")
         {
+            //Database.SetInitializer<AuthorizationContext>(new CreateDatabaseIfNotExists<AuthorizationContext>());
+            //Database.SetInitializer<AuthorizationContext>(new DropCreateDatabaseIfModelChanges<AuthorizationContext>());
+            //Database.SetInitializer<AuthorizationContext>(new DropCreateDatabaseAlways<AuthorizationContext>());
+            Database.SetInitializer<AuthorizationContext>(new AuthorizationContextInit());
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -37,11 +37,28 @@ namespace Dormitories.DAL
 
         private void ConfigureIdentityTables(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<CustomRole>().ToTable("Roles");
-            modelBuilder.Entity<CustomUserRole>().ToTable("UserRoles");
-            modelBuilder.Entity<CustomUserLogin>().ToTable("UserLogins");
-            modelBuilder.Entity<CustomUserClaim>().ToTable("UserClaims");
+            modelBuilder.Entity<CustomRole>().ToTable("dbo.Roles");
+            modelBuilder.Entity<CustomUserRole>().ToTable("dbo.UserRoles");
+            modelBuilder.Entity<CustomUserLogin>().ToTable("dbo.UserLogins");
+            modelBuilder.Entity<CustomUserClaim>().ToTable("dbo.UserClaims");
 
+        }
+    }
+
+    public class AuthorizationContextInit : DropCreateDatabaseIfModelChanges<AuthorizationContext>
+    {
+        protected override void Seed(AuthorizationContext context)
+        {
+            IList<CustomRole> defaultStandards = new List<CustomRole>();
+
+            defaultStandards.Add(new CustomRole() {Name = "Student", Id = 1});
+            defaultStandards.Add(new CustomRole() { Name = "Administrator", Id = 2 });
+            defaultStandards.Add(new CustomRole() { Name = "RootAdministrator", Id = 3 });
+
+            foreach (var std in defaultStandards)
+                context.Roles.Add(std);
+
+            base.Seed(context);
         }
     }
 }

@@ -14,14 +14,7 @@ namespace Dormitories.DAL.Mappings
     {
         public UserConfiguration()
         {
-            //todo: ivestigate EF fluent api, EntityTypeConfiguration methods
-            ToTable("dbo.Users");
-
-            HasKey(x => x.Id);
-
-            Property(x => x.Login).IsRequired();
-            Property(x => x.Password).IsRequired();
-            
+            ToTable("dbo.Users");          
         }
     }
 }

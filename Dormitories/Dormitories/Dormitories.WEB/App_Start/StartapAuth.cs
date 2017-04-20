@@ -22,23 +22,14 @@ namespace Dormitories.WEB
 
             OAuthOptions = new OAuthAuthorizationServerOptions
             {
-                TokenEndpointPath = new PathString("/token"/*LvivCyclingConsts.TokenPath*/),
-                Provider =  new DormitoriesOAuthProvider(),//new LvivCyclingOAuthProvider(NinjectWebCommon.Kernel.GetService<IAuthenticationService>()),
+                TokenEndpointPath = new PathString("/token"),
+                Provider =  new DormitoriesOAuthProvider(),
                 //AccessTokenExpireTimeSpan = new TimeSpan(3600),/*LvivCyclingConsts.DefaultTokenExpirationTime*/
                 AllowInsecureHttp = true
             };
 
-            //FacebookAuthOptions = new FacebookAuthenticationOptions()
-            //{
-            //    AppId = ConfigurationManager.AppSettings["FbId"],
-            //    AppSecret = ConfigurationManager.AppSettings["FbAs"],
-            //    Provider = new FacebookAuthProvider()
-            //};
-
-            //FacebookAuthOptions.Scope.Add("email");
 
             app.UseOAuthBearerTokens(OAuthOptions);
-            //app.UseFacebookAuthentication(FacebookAuthOptions);
         }
     }
 }

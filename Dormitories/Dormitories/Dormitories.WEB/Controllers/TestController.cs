@@ -11,7 +11,7 @@ namespace Dormitories.WEB.Controllers
     public class TestController : ApiController
     {
         // GET api/<controller>
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };
