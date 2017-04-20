@@ -6,18 +6,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 const core_1 = require("@angular/core");
-let AppComponent = class AppComponent {
-    constructor() {
-        this.name = '';
-    }
+let CityFromDatabase = class CityFromDatabase {
 };
-AppComponent = __decorate([
-    core_1.Component({
-        selector: 'my-app',
-        template: `<h1>Hi {{name}}!</h1>
-                <label>Enter name:</label>
-                <input [(ngModel)]="name" placeholder="name">`
-    })
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+CityFromDatabase = __decorate([
+    core_1.Component({})
+], CityFromDatabase);
+exports.CityFromDatabase = CityFromDatabase;
+//# sourceMappingURL=displayDormitories.component.js.map

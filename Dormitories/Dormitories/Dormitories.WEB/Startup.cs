@@ -1,6 +1,9 @@
-﻿using Microsoft.Owin;
+﻿using System.Web.Http;
+using Dormitories.WEB.App_Start;
+using Microsoft.Owin;
+using Microsoft.Practices.Unity.WebApi;
 using Owin;
-using System.Web.Http;
+
 
 [assembly: OwinStartup(typeof(Dormitories.WEB.Startup))]
 namespace Dormitories.WEB
@@ -12,16 +15,11 @@ namespace Dormitories.WEB
         {
             ConfigureOAuth(app);
             HttpConfiguration config = new HttpConfiguration();
+            WebApiConfig.Register(config);
 
-            config.Routes.MapHttpRoute(
-                name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
-            );
+            config.DependencyResolver = new UnityDependencyResolver(UnityConfig.GetConfiguredContainer());
 
             app.UseWebApi(config);
-
-            
         }
     }
 }

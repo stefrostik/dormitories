@@ -45,18 +45,18 @@ namespace Dormitories.DAL.Contexts
         }
     }
 
-    public class AuthorizationContextInit : DropCreateDatabaseIfModelChanges<AuthorizationContext>
+    public class AuthorizationContextInit : CreateDatabaseIfNotExists<AuthorizationContext>
     {
         protected override void Seed(AuthorizationContext context)
         {
-            IList<CustomRole> defaultStandards = new List<CustomRole>();
+            /*IList<CustomRole> defaultStandards = new List<CustomRole>();
 
             defaultStandards.Add(new CustomRole() {Name = "Student", Id = 1});
             defaultStandards.Add(new CustomRole() { Name = "Administrator", Id = 2 });
             defaultStandards.Add(new CustomRole() { Name = "RootAdministrator", Id = 3 });
 
             foreach (var std in defaultStandards)
-                context.Roles.Add(std);
+                context.Roles.Add(std);*/
 
             base.Seed(context);
         }

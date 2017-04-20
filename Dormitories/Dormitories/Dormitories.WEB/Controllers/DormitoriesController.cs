@@ -1,20 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
+﻿using System.Collections.Generic;
 using System.Web.Http;
-using Dormitories.DAL.Models;
+using Dormitories.BL.DTO_s;
+using Dormitories.BL.Interfaces;
 
 namespace Dormitories.WEB.Controllers
 {
     public class DormitoriesController : ApiController
     {
-        
-        public List<Dormitory> Get()
+        private readonly IDormitoryService _dormitoryService;
+
+        public DormitoriesController(IDormitoryService dormitoryService)
+        {
+            _dormitoryService = dormitoryService;
+        }
+
+        public ICollection<DormitoryDTO> Get()
         {
             //todo: implement fetching logic
-            return new List<Dormitory>();
+            return _dormitoryService.GetAllDormitories();
         }
     }
 }

@@ -10,10 +10,9 @@ namespace Dormitories.DAL.Contexts
     {
         public DormitoriesContext() : base("name = Dormitories")
         {
-            //Database.SetInitializer<DormitoriesContext>(new CreateDatabaseIfNotExists<DormitoriesContext>());
-            Database.SetInitializer<DormitoriesContext>(new DropCreateDatabaseIfModelChanges<DormitoriesContext>());
+            Database.SetInitializer<DormitoriesContext>(new CreateDatabaseIfNotExists<DormitoriesContext>());
+            //Database.SetInitializer<DormitoriesContext>(new DropCreateDatabaseIfModelChanges<DormitoriesContext>());
             //Database.SetInitializer<DormitoriesContext>(new DropCreateDatabaseAlways<DormitoriesContext>());
-            //Database.SetInitializer<DormitoriesContext>(new SchoolDBInitializer());
         }
 
         public  virtual DbSet<Dormitory> Dormitories { get; set; }

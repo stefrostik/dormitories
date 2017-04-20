@@ -1,4 +1,6 @@
-﻿using System.Web.Http;
+﻿using System.Net.Http.Formatting;
+using System.Net.Http.Headers;
+using System.Web.Http;
 
 namespace Dormitories.WEB
 {
@@ -7,6 +9,9 @@ namespace Dormitories.WEB
         public static void Register(HttpConfiguration config)
         {
             config.MapHttpAttributeRoutes();
+
+            config.Formatters.XmlFormatter.MediaTypeMappings.Clear();
+            config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
 
             config.Routes.MapHttpRoute(
                 name: "DormitoriesWebApi",

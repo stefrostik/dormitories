@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Claims;
-using System.Text;
 using System.Threading.Tasks;
 using Dormitories.BL.Interfaces;
 using Dormitories.DAL.Models;
@@ -69,10 +66,10 @@ namespace Dormitories.BL.Identity
                 }
                 catch (Exception ex)
                 {
-                    
+
                     throw;
                 }
-               
+
                 if (result.Succeeded)
                 {
                     await manager.AddToRolesAsync(usr.Id, registerUserModel.RoleName/*LvivCyclingConsts.DefaultRole*/);
@@ -105,37 +102,6 @@ namespace Dormitories.BL.Identity
         }
 
         #endregion
-
-        #region External
-
-        //public async Task<IdentityResult> RegisterExternalAsync(ExternalLoginData data)
-        //{
-        //    using (var context = provider.Context)
-        //    {
-        //        var manager = provider.GetUserManager(context);
-        //        data.Email = GetExternalEmail(data.ExternalAccessToken);
-        //        var user = await manager.FindByEmailAsync(data.Email);
-        //        if (user != null)
-        //        {
-        //            return await manager.AddLoginAsync(user.Id, new UserLoginInfo(data.LoginProvider, data.ProviderKey));
-        //        }
-
-        //        user = mapper.Map<ExternalLoginData, User>(data);
-        //        var result = await CreateAsync(user);
-
-        //        if (result.Succeeded)
-        //        {
-        //            result = await manager.AddLoginAsync(user.Id, new UserLoginInfo(data.LoginProvider, data.ProviderKey));
-        //        }
-
-        //        if (result.Succeeded)
-        //        {
-        //            result = await manager.AddToRolesAsync(user.Id, LvivCyclingConsts.DefaultRole);
-        //        }
-
-        //        return result;
-        //    }
-        //}
 
         public async Task<bool> HasRegistered(UserLoginInfo info)
         {
@@ -171,34 +137,6 @@ namespace Dormitories.BL.Identity
             return accessToken;
         }
 
-        //public ExternalLoginData GetExternalDataFromIdentity(ClaimsIdentity identity)
-        //{
-        //    if (identity == null)
-        //    {
-        //        return null;
-        //    }
-
-        //    Claim providerKeyClaim = identity.FindFirst(ClaimTypes.NameIdentifier);
-
-        //    if (providerKeyClaim == null
-        //        || string.IsNullOrEmpty(providerKeyClaim.Issuer)
-        //        || string.IsNullOrEmpty(providerKeyClaim.Value)
-        //        || providerKeyClaim.Issuer == ClaimsIdentity.DefaultIssuer)
-        //    {
-        //        return null;
-        //    }
-
-        //    return new ExternalLoginData
-        //    {
-        //        LoginProvider = providerKeyClaim.Issuer,
-        //        ProviderKey = providerKeyClaim.Value,
-        //        UserName = identity.FindFirstValue(ClaimTypes.Name),
-        //        ExternalAccessToken = identity.FindFirstValue(LvivCyclingConsts.ExternalAccessToken)
-        //    };
-        //}
-
-        #endregion
-
         public async Task<string> GetAllRolesJson(long userId)
         {
             using (var context = provider.Context)
@@ -210,15 +148,6 @@ namespace Dormitories.BL.Identity
                 return rolesString;
             }
         }
-
-        //private string GetExternalEmail(string accessToken)
-        //{
-        //    var fb = new FacebookClient(accessToken);
-        //    dynamic myInfo = fb.Get(LvivCyclingConsts.FacebookEmailPath);
-        //    var email = myInfo.email;
-
-        //    return email;
-        //}
 
         private ClaimsIdentity CreateExternalIdentity(User user, string authentiationType)
         {
