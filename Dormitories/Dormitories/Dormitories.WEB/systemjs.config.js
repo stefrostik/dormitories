@@ -21,9 +21,6 @@
             'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js'
         },
         packages: {
-
-
-
             app: {
                 main: './main.js',
                 defaultExtension: 'js'
@@ -31,7 +28,7 @@
             rxjs: {
                 defaultExtension: 'js'
             },
-            "ngx-dropdown":
+            'ngx-dropdown':
                 {
                     main: 'index.js',
                     defaultExtension: 'js'
