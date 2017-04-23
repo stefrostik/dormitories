@@ -7,5 +7,6 @@ namespace Dormitories.BL.Interfaces
     {
         ICollection<DormitoryDTO> GetAllDormitories();
         ICollection<FloorDTO> GetAllFloorsByDormitoryId(int id);
+        DormitoryFullDTO GetFullDormitory(int id);
     }
 }

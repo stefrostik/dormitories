@@ -49,5 +49,32 @@ namespace Dormitories.BL.Services
             }
             return floors;
         }
+
+        public DormitoryFullDTO GetFullDormitory(int id) {
+           
+            using (_uow)
+            {
+                var dormitory = _uow.DormitoryRepository.GetById(id);
+                if (dormitory != null)
+                {
+                    var fullDormitoryDto = new DormitoryFullDTO()
+                    {
+                        Id = dormitory.Id,
+                        Description = dormitory.Description,
+                        Address = dormitory.Address,
+                        ComendantId = dormitory.ComendantId,
+                        Number = dormitory.Number,
+                        Floors = dormitory.Floors.Select(x => new FloorDTO()
+                        {
+                            Id = x.Id,
+                            Number = x.Number,
+                            DormitoryId = x.DormitoryId
+                        }).ToList()
+                    };
+                    return fullDormitoryDto;
+                }
+                else return new DormitoryFullDTO();
+            }
+        }
     }
 }

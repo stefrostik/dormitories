@@ -22,10 +22,9 @@ namespace Dormitories.WEB.Controllers
         }
         
 
-        public ICollection<FloorDTO> Get(int id)
+        public DormitoryFullDTO Get(int id)
         {
-            return _dormitoryService.GetAllFloorsByDormitoryId(id);
-
+            return _dormitoryService.GetFullDormitory(id);
         }
 
     }

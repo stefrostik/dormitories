@@ -214,6 +214,7 @@
     <Content Include="packages.config" />
     <Content Include="package.json" />
     <Content Include="tsconfig.json" />
+    <Content Include="app\components\dormitory\dormitoryDetails.component.html" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -245,6 +246,7 @@
     <TypeScriptCompile Include="app\app.module.ts" />
     <TypeScriptCompile Include="app\components\administrator\Administrator.ts" />
     <TypeScriptCompile Include="app\components\administrator\administrators.component.ts" />
+    <TypeScriptCompile Include="app\components\dormitory\dormitoryDetails.component.ts" />
     <TypeScriptCompile Include="app\components\floor\floorAdd.component.ts" />
     <TypeScriptCompile Include="app\components\floor\floorEdit.component.ts" />
     <TypeScriptCompile Include="app\components\floor\floors.component.ts" />

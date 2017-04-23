@@ -3,9 +3,7 @@ import { ActivatedRoute, Router} from '@angular/router';
 import { Http } from '@angular/http';
 import { Floor } from './Floor';
 
-
-
-  
+ 
 @Component({
     moduleId: module.id,
     templateUrl: 'floorAdd.component.html'

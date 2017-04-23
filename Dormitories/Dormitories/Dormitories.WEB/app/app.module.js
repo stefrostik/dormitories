@@ -14,6 +14,7 @@ const forms_1 = require('@angular/forms');
 const app_component_1 = require('./app.component');
 const http_1 = require('@angular/http');
 const dormitories_component_1 = require('./components/dormitory/dormitories.component');
+const dormitoryDetails_component_1 = require('./components/dormitory/dormitoryDetails.component');
 const floors_component_1 = require('./components/floor/floors.component');
 const floorEdit_component_1 = require('./components/floor/floorEdit.component');
 const floorAdd_component_1 = require('./components/floor/floorAdd.component');
@@ -33,7 +34,8 @@ AppModule = __decorate([
             home_component_1.HomeComponent,
             administrators_component_1.AdministratorComponent,
             floorEdit_component_1.FloorEditComponent,
-            floorAdd_component_1.FloorAddComponent
+            floorAdd_component_1.FloorAddComponent,
+            dormitoryDetails_component_1.DormitoryDetailsComponent
         ],
         imports: [
             platform_browser_1.BrowserModule,
@@ -44,6 +46,7 @@ AppModule = __decorate([
             router_1.RouterModule.forRoot([
                 { path: '', redirectTo: 'home', pathMatch: 'full' },
                 { path: 'dormitory', component: dormitories_component_1.DormitoriesComponent },
+                { path: 'dormitory/details/:id', component: dormitoryDetails_component_1.DormitoryDetailsComponent },
                 { path: 'home', component: home_component_1.HomeComponent },
                 { path: 'administator', component: administrators_component_1.AdministratorComponent },
                 { path: 'floor', component: floors_component_1.FloorComponent },

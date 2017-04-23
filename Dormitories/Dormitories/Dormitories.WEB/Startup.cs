@@ -3,7 +3,7 @@ using Dormitories.WEB.App_Start;
 using Microsoft.Owin;
 using Microsoft.Practices.Unity.WebApi;
 using Owin;
-
+using Dormitories.BL;
 
 [assembly: OwinStartup(typeof(Dormitories.WEB.Startup))]
 namespace Dormitories.WEB
@@ -16,7 +16,7 @@ namespace Dormitories.WEB
             ConfigureOAuth(app);
             HttpConfiguration config = new HttpConfiguration();
             WebApiConfig.Register(config);
-
+            
             config.DependencyResolver = new UnityDependencyResolver(UnityConfig.GetConfiguredContainer());
 
             app.UseWebApi(config);

@@ -1,0 +1,26 @@
+﻿<h1>Dormitories!</h1>
+<p *ngIf="!dormitory"><em>Loading...</em></p>
+<div *ngIf="dormitory">
+    <p>{{dormitory.Id}}</p>
+    <p>{{ dormitory.Description }}</p>
+    <p>{{ dormitory.Addres}}</p>
+    <p>{{ dormitory.Number }}</p>
+    <p>{{ dormitory.ComendantId }}</p>
+    <table class='table' *ngIf="dormitory">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Number</th>
+                <th>DormitoryId</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let floor of dormitory.Floors">
+                <td>{{ floor.Id }}</td>
+                <td>{{ floor.Number }}</td>
+                <td>{{ floor.DormitoryId }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
