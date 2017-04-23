@@ -2,4 +2,4 @@
 class Dormitory {
 }
 exports.Dormitory = Dormitory;
-//# sourceMappingURL=dormitory.model.js.map
+//# sourceMappingURL=Dormitory.js.map

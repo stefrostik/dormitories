@@ -182,7 +182,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="app\components\dorimitories\displayDormitories.component.html" />
+    <Content Include="app\app.component.css" />
+    <Content Include="app\app.component.html" />
+    <Content Include="app\components\administrator\administrators.component.html" />
+    <Content Include="app\components\floor\floorAdd.component.html" />
+    <Content Include="app\components\floor\floorEdit.component.html" />
+    <Content Include="app\components\floor\floors.component.html" />
+    <Content Include="app\components\dormitory\dormitories.component.html" />
+    <Content Include="app\components\home\home.component.html" />
     <Content Include="Index.html" />
     <Content Include="systemjs.config.js" />
     <Content Include="Web.config">
@@ -195,6 +202,8 @@
     <Compile Include="App_Start\UnityWebApiActivator.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdministratorsController.cs" />
+    <Compile Include="Controllers\FloorsController.cs" />
     <Compile Include="Controllers\DormitoriesController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -213,6 +222,12 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="app\components\block\" />
+    <Folder Include="app\components\faculty\" />
+    <Folder Include="app\components\group\" />
+    <Folder Include="app\components\room\" />
+    <Folder Include="app\components\studentCategory\" />
+    <Folder Include="app\components\student\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
@@ -228,8 +243,15 @@
   <ItemGroup>
     <TypeScriptCompile Include="app\app.component.ts" />
     <TypeScriptCompile Include="app\app.module.ts" />
-    <TypeScriptCompile Include="app\components\dorimitories\displayDormitories.component.ts" />
-    <TypeScriptCompile Include="app\components\dorimitories\dormitory.model.ts" />
+    <TypeScriptCompile Include="app\components\administrator\Administrator.ts" />
+    <TypeScriptCompile Include="app\components\administrator\administrators.component.ts" />
+    <TypeScriptCompile Include="app\components\floor\floorAdd.component.ts" />
+    <TypeScriptCompile Include="app\components\floor\floorEdit.component.ts" />
+    <TypeScriptCompile Include="app\components\floor\floors.component.ts" />
+    <TypeScriptCompile Include="app\components\floor\Floor.ts" />
+    <TypeScriptCompile Include="app\components\dormitory\dormitories.component.ts" />
+    <TypeScriptCompile Include="app\components\dormitory\Dormitory.ts" />
+    <TypeScriptCompile Include="app\components\home\home.component.ts" />
     <TypeScriptCompile Include="app\main.ts" />
   </ItemGroup>
   <ItemGroup>

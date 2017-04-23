@@ -40,8 +40,11 @@ namespace Dormitories.WEB.App_Start
             // NOTE: To load from web.config uncomment the line below. Make sure to add a Microsoft.Practices.Unity.Configuration to the using statements.
             // container.LoadConfiguration();
             container.RegisterType<IUnitOfWorkFactory,UnitOfWorkFactory>();
-
+            container.RegisterType<IFloorService, FloorService>();
             container.RegisterType<IDormitoryService, DormitoryService>();
+            container.RegisterType<IGroupService, GroupService>();
+            container.RegisterType<IRoomService, RoomService>();
+            container.RegisterType<IAdministratorService, AdministratorService>();
             container.RegisterType<IAuthenticationService, AuthenticationService>();
         }
     }

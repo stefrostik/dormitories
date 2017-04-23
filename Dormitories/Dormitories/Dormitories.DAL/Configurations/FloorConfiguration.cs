@@ -11,7 +11,7 @@ namespace Dormitories.DAL.Configurations
 
             HasKey(x => x.Id);
 
-            Property(x => x.number).IsRequired();
+            Property(x => x.Number).IsRequired();
             
             HasMany(x => x.Blocks)
                 .WithRequired(y => y.Floor)

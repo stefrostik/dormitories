@@ -6,6 +6,8 @@
         map: {
             app: 'app',
 
+            "ngx-dropdown": "node_modules/ngx-dropdown",
+
             '@angular/core': 'npm:@angular/core/bundles/core.umd.js',
             '@angular/common': 'npm:@angular/common/bundles/common.umd.js',
             '@angular/compiler': 'npm:@angular/compiler/bundles/compiler.umd.js',
@@ -19,13 +21,21 @@
             'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js'
         },
         packages: {
+
+
+
             app: {
                 main: './main.js',
                 defaultExtension: 'js'
             },
             rxjs: {
                 defaultExtension: 'js'
-            }
+            },
+            "ngx-dropdown":
+                {
+                    main: 'index.js',
+                    defaultExtension: 'js'
+                }
         }
     });
 })(this);

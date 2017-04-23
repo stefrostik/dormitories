@@ -1,0 +1,24 @@
+﻿<h1>Floors!</h1>
+<p *ngIf="!floors"><em>Loading...</em></p>
+<a [routerLink]="['floorAdd']">Add</a>
+<table class='table' *ngIf="floors">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>Number</th>
+            <th>DormitoryId</th>
+            <th>Edit</th>
+            <th>Delete</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let floor of floors">
+            <td>{{ floor.Id }}</td>
+            <td>{{ floor.Number }}</td>
+            <td>{{ floor.DormitoryId }}</td>
+            <td> <a [routerLink]="['floorEdit', floor.Id]">Edit</a></td>
+            <td> <button (click)="Delete(floor.Id)" class="btn">Delete</button></td>
+        </tr>
+    </tbody>
+</table>

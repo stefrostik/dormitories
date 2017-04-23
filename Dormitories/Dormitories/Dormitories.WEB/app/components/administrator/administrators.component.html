@@ -1,0 +1,18 @@
+﻿<h1>Administrators!</h1>
+<p *ngIf="!administrators"><em>Loading...</em></p>
+<table class='table' *ngIf="administrators">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>FacultyId</th>
+            <th>DormitoryId</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let administrator of administrators">
+            <td>{{ administrator.Id }}</td>
+            <td>{{ administrator.FacultyId }}</td>
+            <td>{{ administrator.DormitoryId }}</td>
+        </tr>
+    </tbody>
+</table>

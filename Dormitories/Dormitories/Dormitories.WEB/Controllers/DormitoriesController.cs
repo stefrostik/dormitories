@@ -13,11 +13,20 @@ namespace Dormitories.WEB.Controllers
         {
             _dormitoryService = dormitoryService;
         }
-
+        
         public ICollection<DormitoryDTO> Get()
         {
             //todo: implement fetching logic
             return _dormitoryService.GetAllDormitories();
+           // return new List<DormitoryDTO>() { new DormitoryDTO() { Description= "sdfdsfsdfds" } };//_dormitoryService.GetAllDormitories();
         }
+        
+
+        public ICollection<FloorDTO> Get(int id)
+        {
+            return _dormitoryService.GetAllFloorsByDormitoryId(id);
+
+        }
+
     }
 }

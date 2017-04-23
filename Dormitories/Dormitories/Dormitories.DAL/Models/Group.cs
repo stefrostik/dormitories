@@ -9,7 +9,7 @@ namespace Dormitories.DAL.Models
             Students = new HashSet<Student>();
         }
         public int Id { get; set; }
-        public int Name { get; set; }
+        public string Name { get; set; }
         public virtual ICollection<Student> Students { get; set; }
     }
 }

@@ -82,17 +82,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTO%27s\AdministratorDTO.cs" />
+    <Compile Include="DTO%27s\RoomDTO.cs" />
+    <Compile Include="DTO%27s\GroupDTO.cs" />
+    <Compile Include="DTO%27s\BlockDTO.cs" />
+    <Compile Include="DTO%27s\FloorDTO.cs" />
     <Compile Include="DTO%27s\DormitoryDTO.cs" />
     <Compile Include="Identity\AuthenticationService.cs" />
     <Compile Include="Identity\CustomUserManager.cs" />
     <Compile Include="Identity\DormitoriesIdentityProvider.cs" />
     <Compile Include="Interfaces\IAuthenticationService.cs" />
+    <Compile Include="Interfaces\IRoomService.cs" />
+    <Compile Include="Interfaces\IGroupService.cs" />
     <Compile Include="Interfaces\IDormitoriesIdentityProvider.cs" />
+    <Compile Include="Interfaces\IAdministratorService.cs" />
+    <Compile Include="Interfaces\IBlockService.cs" />
+    <Compile Include="Interfaces\IFloorService.cs" />
     <Compile Include="Interfaces\IDormitoryService.cs" />
     <Compile Include="Interfaces\IUserManager.cs" />
     <Compile Include="Service.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DTO%27s\UserRegisterDTO.cs" />
+    <Compile Include="Services\AdministratorService.cs" />
+    <Compile Include="Services\RoomService.cs" />
+    <Compile Include="Services\GroupService.cs" />
+    <Compile Include="Services\BlockService.cs" />
+    <Compile Include="Services\FloorService.cs" />
     <Compile Include="Services\DormitoryService.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -105,7 +120,9 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="obj\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

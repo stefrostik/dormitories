@@ -25,12 +25,29 @@ namespace Dormitories.BL.Services
             {
                 dormitories = _uow.DormitoryRepository.Query().Select(d => new DormitoryDTO()
                 {
+                    Id = d.Id,
                     Description = d.Description,
-                    Address = d.Address
+                    Address = d.Address,
+                    ComendantId = d.ComendantId,
+                    Number = d.Number
                 }).ToList();
             }
 
             return dormitories;
+        }
+        public ICollection<FloorDTO> GetAllFloorsByDormitoryId(int id)
+        {
+            var floors = new List<FloorDTO>();
+            using (_uow)
+            {
+                floors = _uow.FloorRepository.Query().Where(d => d.DormitoryId == id).Select(d => new FloorDTO()
+                {
+                    Id = d.Id,
+                    Number = d.Number,
+                    DormitoryId = d.DormitoryId
+                }).ToList();
+            }
+            return floors;
         }
     }
 }
