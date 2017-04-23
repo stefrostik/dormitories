@@ -8,25 +8,24 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-const core_1 = require('@angular/core');
-const router_1 = require('@angular/router');
-const http_1 = require('@angular/http');
-const Floor_1 = require('./Floor');
+const core_1 = require("@angular/core");
+const router_1 = require("@angular/router");
+const request_service_1 = require("../../shared/request.service");
+const Floor_1 = require("./Floor");
 let FloorEditComponent = class FloorEditComponent {
-    constructor(router, activateRoute, http) {
+    constructor(router, activateRoute, rs) {
         this.router = router;
         this.activateRoute = activateRoute;
         this.myRouter = router;
-        this.myHttp = http;
+        this.requestService = rs;
         this.id = activateRoute.snapshot.params['id'];
         this.floor = new Floor_1.Floor();
-        http.get('api/Floors/' + this.id).subscribe((result) => {
-            this.floor = result.json(); //new Floor();//(Floor)result.json();
+        this.requestService.get('floors/' + this.id).subscribe((result) => {
+            this.floor = result.json();
         });
-        //todo request floor by id
     }
     Done(myItem) {
-        this.myHttp.put('api/Floors', myItem).subscribe((resp) => {
+        this.requestService.put('floors', myItem).subscribe((resp) => {
             this.myRouter.navigate(['floor']);
         });
     }
@@ -35,8 +34,8 @@ FloorEditComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
         templateUrl: 'floorEdit.component.html'
-    }), 
-    __metadata('design:paramtypes', [router_1.Router, router_1.ActivatedRoute, http_1.Http])
+    }),
+    __metadata("design:paramtypes", [router_1.Router, router_1.ActivatedRoute, request_service_1.RequestService])
 ], FloorEditComponent);
 exports.FloorEditComponent = FloorEditComponent;
 //# sourceMappingURL=floorEdit.component.js.map

@@ -1,39 +1,31 @@
 ﻿import { Component} from '@angular/core';
 import { ActivatedRoute, Router} from '@angular/router';
-import { Http } from '@angular/http';
+import { RequestService} from '../../shared/request.service';
 import { Floor } from './Floor';
 
-
-
-  
 @Component({
     moduleId: module.id,
     templateUrl: 'floorEdit.component.html'
 })
-export class FloorEditComponent { 
-     
+export class FloorEditComponent {
     id: number;
-    public floor:Floor;
-    myHttp : Http;
+    public floor: Floor;
+    requestService: RequestService;
     myRouter: Router;
 
-    constructor(private router: Router, private activateRoute: ActivatedRoute, http: Http) {
+    constructor(private router: Router, private activateRoute: ActivatedRoute, rs: RequestService) {
         this.myRouter = router;
-        this.myHttp = http;
+        this.requestService = rs;
         this.id = activateRoute.snapshot.params['id'];
         this.floor = new Floor();
-        http.get('api/Floors/'+this.id).subscribe((result: any) => {
-            this.floor = result.json();//new Floor();//(Floor)result.json();
-
+        this.requestService.get('floors/' + this.id).subscribe((result: any) => {
+            this.floor = result.json();
         });
-
-        //todo request floor by id
     }
-    Done(myItem: Floor){
-             
-        this.myHttp.put('api/Floors', myItem).subscribe((resp: any) => {
+
+    Done(myItem: Floor) {
+        this.requestService.put('floors', myItem).subscribe((resp: any) => {
             this.myRouter.navigate(['floor']);
         });
-        
     }
 }

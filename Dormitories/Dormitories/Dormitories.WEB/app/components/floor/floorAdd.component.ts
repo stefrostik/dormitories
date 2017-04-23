@@ -1,31 +1,27 @@
 ﻿import { Component} from '@angular/core';
 import { ActivatedRoute, Router} from '@angular/router';
-import { Http } from '@angular/http';
+import { RequestService} from '../../shared/request.service';
 import { Floor } from './Floor';
 
- 
 @Component({
     moduleId: module.id,
     templateUrl: 'floorAdd.component.html'
 })
-export class FloorAddComponent { 
-     
+export class FloorAddComponent {
     public floor:Floor;
-    myHttp : Http;
+    private requestService : RequestService;
     myRouter: Router;
 
-    constructor(private router: Router, private activateRoute: ActivatedRoute, http: Http) {
+    constructor(private router: Router, private activateRoute: ActivatedRoute, rs: RequestService) {
         this.myRouter = router;
-        this.myHttp = http;
+        this.requestService = rs;
         this.floor = new Floor();
-
     }
+
     Done(myItem: Floor){
-             
-        this.myHttp.post('api/Floors', myItem).subscribe((resp: any) => {
+        this.requestService.post('floors', myItem).subscribe((resp: any) => {
             this.floor = resp.json();
-            this.myRouter.navigate(['floor']);    
+            this.myRouter.navigate(['floor']);
         });
-        
     }
 }

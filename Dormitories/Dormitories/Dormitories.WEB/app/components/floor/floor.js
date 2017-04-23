@@ -2,4 +2,4 @@
 class Floor {
 }
 exports.Floor = Floor;
-//# sourceMappingURL=floor.js.map
+//# sourceMappingURL=Floor.js.map

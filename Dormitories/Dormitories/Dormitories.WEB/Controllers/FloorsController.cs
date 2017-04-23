@@ -13,17 +13,14 @@ namespace Dormitories.WEB.Controllers
         {
             _floorService = floorService;
         }
-        
         public ICollection<FloorDTO> Get()
         {
-            return _floorService.GetAllFloors(); 
-            
-
+            return _floorService.GetAllFloors();
         }
 
         public FloorDTO Get(int id)
         {
-            return _floorService.GetFloorById(id); 
+            return _floorService.GetFloorById(id);
             //return new FloorDTO() { Number = 4, Id = 2 } ;
 
         }
@@ -31,22 +28,20 @@ namespace Dormitories.WEB.Controllers
         public void Put([FromBody]FloorDTO floor)
         {
             _floorService.UpdateFloor(floor);
-            
-
         }
         [HttpDelete]
-        public void Delete(int id)
+        public bool Delete(int id)
         {
             _floorService.DeleteFloor(id);
+            return true;
 
         }
         [HttpPost]
         public bool Post([FromBody]FloorDTO floor)
         {
-
             _floorService.AddFloor(floor);
             return true;
-        } 
+        }
 
     }
 }

@@ -8,17 +8,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-const core_1 = require('@angular/core');
-const http_1 = require('@angular/http');
-const router_1 = require('@angular/router');
+const core_1 = require("@angular/core");
+const request_service_1 = require("../../shared/request.service");
+const router_1 = require("@angular/router");
 let DormitoryDetailsComponent = class DormitoryDetailsComponent {
-    constructor(router, activateRoute, http) {
+    constructor(router, activateRoute, requestService) {
         this.router = router;
         this.activateRoute = activateRoute;
-        this.myRouter = router;
-        this.myHttp = http;
         this.id = activateRoute.snapshot.params['id'];
-        http.get('api/Dormitories/' + this.id).subscribe(result => {
+        requestService.get('dormitories/' + this.id).subscribe((result) => {
             this.dormitory = result.json();
         });
     }
@@ -27,8 +25,8 @@ DormitoryDetailsComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
         templateUrl: 'dormitoryDetails.component.html'
-    }), 
-    __metadata('design:paramtypes', [router_1.Router, router_1.ActivatedRoute, http_1.Http])
+    }),
+    __metadata("design:paramtypes", [router_1.Router, router_1.ActivatedRoute, request_service_1.RequestService])
 ], DormitoryDetailsComponent);
 exports.DormitoryDetailsComponent = DormitoryDetailsComponent;
 //# sourceMappingURL=dormitoryDetails.component.js.map

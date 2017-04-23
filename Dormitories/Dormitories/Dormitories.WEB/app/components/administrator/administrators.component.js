@@ -8,11 +8,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-const core_1 = require('@angular/core');
-const http_1 = require('@angular/http');
+const core_1 = require("@angular/core");
+const request_service_1 = require("../../shared/request.service");
 let AdministratorComponent = class AdministratorComponent {
-    constructor(http) {
-        http.get('api/Administrators').subscribe(result => {
+    constructor(rs) {
+        rs.get('administrators').subscribe((result) => {
             this.administrators = result.json();
         });
     }
@@ -22,8 +22,8 @@ AdministratorComponent = __decorate([
         moduleId: module.id,
         selector: 'administrators-details',
         templateUrl: 'administrators.component.html'
-    }), 
-    __metadata('design:paramtypes', [http_1.Http])
+    }),
+    __metadata("design:paramtypes", [request_service_1.RequestService])
 ], AdministratorComponent);
 exports.AdministratorComponent = AdministratorComponent;
 //# sourceMappingURL=administrators.component.js.map

@@ -1,8 +1,7 @@
 ﻿import { Component } from '@angular/core';
-import { Http } from '@angular/http';
+import { RequestService} from '../../shared/request.service';
 import { Dormitory } from './Dormitory';
 import { ActivatedRoute, Router} from '@angular/router';
-
 
 @Component({
     moduleId: module.id,
@@ -10,15 +9,11 @@ import { ActivatedRoute, Router} from '@angular/router';
 })
 export class DormitoryDetailsComponent {
     public dormitory: Dormitory;
-    id : number;
-    myHttp :Http;
-    myRouter: Router;
+    private id : number;
 
-    constructor(private router: Router, private activateRoute: ActivatedRoute, http: Http) {
-        this.myRouter = router;
-        this.myHttp = http;
+    constructor(private router: Router, private activateRoute: ActivatedRoute, requestService: RequestService) {
         this.id = activateRoute.snapshot.params['id'];
-        http.get('api/Dormitories/'+this.id).subscribe(result => {
+        requestService.get('dormitories/'+this.id).subscribe((result:any) => {
             this.dormitory = result.json();
         });
     }

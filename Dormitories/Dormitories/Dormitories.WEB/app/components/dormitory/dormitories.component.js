@@ -8,11 +8,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-const core_1 = require('@angular/core');
-const http_1 = require('@angular/http');
+const core_1 = require("@angular/core");
+const request_service_1 = require("../../shared/request.service");
 let DormitoriesComponent = class DormitoriesComponent {
-    constructor(http) {
-        http.get('api/Dormitories').subscribe(result => {
+    constructor(requestService) {
+        requestService.get('dormitories').subscribe((result) => {
             this.dormitories = result.json();
         });
     }
@@ -22,8 +22,8 @@ DormitoriesComponent = __decorate([
         moduleId: module.id,
         selector: 'dormitories-details',
         templateUrl: 'dormitories.component.html'
-    }), 
-    __metadata('design:paramtypes', [http_1.Http])
+    }),
+    __metadata("design:paramtypes", [request_service_1.RequestService])
 ], DormitoriesComponent);
 exports.DormitoriesComponent = DormitoriesComponent;
 //# sourceMappingURL=dormitories.component.js.map

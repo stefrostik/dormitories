@@ -8,9 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-const core_1 = require('@angular/core');
-const http_1 = require('@angular/http');
-const router_1 = require('@angular/router');
+const core_1 = require("@angular/core");
+const http_1 = require("@angular/http");
+const router_1 = require("@angular/router");
 let FloorComponent = class FloorComponent {
     constructor(router, http) {
         this.router = router;
@@ -21,14 +21,11 @@ let FloorComponent = class FloorComponent {
         });
     }
     Delete(id) {
-        let body = JSON.stringify({ 'id': id });
         let headers = new http_1.Headers({ 'Content-Type': 'application/json' });
         let options = new http_1.RequestOptions({ headers: headers });
         this.myHttp.delete('api/Floors/' + id, options).subscribe((resp) => {
             id = resp.json();
         });
-        //delete from floors
-        // var element = this.floors.find(x => x.Id === id);
         this.floors = this.floors.filter(x => x.Id !== id);
     }
 };
@@ -37,8 +34,8 @@ FloorComponent = __decorate([
         moduleId: module.id,
         selector: 'floors-details',
         templateUrl: 'floors.component.html'
-    }), 
-    __metadata('design:paramtypes', [router_1.Router, http_1.Http])
+    }),
+    __metadata("design:paramtypes", [router_1.Router, http_1.Http])
 ], FloorComponent);
 exports.FloorComponent = FloorComponent;
 //# sourceMappingURL=floors.component.js.map
