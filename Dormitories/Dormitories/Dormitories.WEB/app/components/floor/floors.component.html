@@ -9,7 +9,7 @@
             <th>DormitoryId</th>
             <th>Edit</th>
             <th>Delete</th>
-
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -19,6 +19,7 @@
             <td>{{ floor.DormitoryId }}</td>
             <td> <a [routerLink]="['floorEdit', floor.Id]">Edit</a></td>
             <td> <button (click)="Delete(floor.Id)" class="btn">Delete</button></td>
+            <td> <a [routerLink]="['details',floor.Id]">Show details</a></td>
         </tr>
     </tbody>
 </table>

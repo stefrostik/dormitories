@@ -18,7 +18,6 @@ namespace Dormitories.WEB.Controllers
         {
             //todo: implement fetching logic
             return _dormitoryService.GetAllDormitories();
-           // return new List<DormitoryDTO>() { new DormitoryDTO() { Description= "sdfdsfsdfds" } };//_dormitoryService.GetAllDormitories();
         }
         
 

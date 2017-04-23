@@ -12,7 +12,7 @@
                 <th>id</th>
                 <th>Number</th>
                 <th>DormitoryId</th>
-
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -20,6 +20,7 @@
                 <td>{{ floor.Id }}</td>
                 <td>{{ floor.Number }}</td>
                 <td>{{ floor.DormitoryId }}</td>
+                <td> <a [routerLink]="['details',floor.Id]">Show details</a></td>
             </tr>
         </tbody>
     </table>

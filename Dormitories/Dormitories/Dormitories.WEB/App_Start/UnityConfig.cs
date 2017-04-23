@@ -44,6 +44,7 @@ namespace Dormitories.WEB.App_Start
             container.RegisterType<IDormitoryService, DormitoryService>();
             container.RegisterType<IGroupService, GroupService>();
             container.RegisterType<IRoomService, RoomService>();
+            container.RegisterType<IBlockService, BlockService>();
             container.RegisterType<IAdministratorService, AdministratorService>();
             container.RegisterType<IAuthenticationService, AuthenticationService>();
         }
