@@ -1,11 +1,11 @@
 ﻿<h1>Dormitories!</h1>
 <p *ngIf="!dormitory"><em>Loading...</em></p>
 <div *ngIf="dormitory">
-    <p>{{dormitory.Id}}</p>
-    <p>{{ dormitory.Description }}</p>
-    <p>{{ dormitory.Addres}}</p>
-    <p>{{ dormitory.Number }}</p>
-    <p>{{ dormitory.ComendantId }}</p>
+    <p> <strong>Id</strong> : {{dormitory.Id}}</p>
+    <p><strong>Description</strong> : {{ dormitory.Description }}</p>
+    <p><strong>Addres</strong> : {{ dormitory.Addres}}</p>
+    <p><strong>Number</strong> : {{ dormitory.Number }}</p>
+    <p><strong>ComendantId </strong>: {{ dormitory.ComendantId }}</p>
     <table class='table' *ngIf="dormitory">
         <thead>
             <tr>
