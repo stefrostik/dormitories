@@ -17,5 +17,5 @@
 Dormitories/Dormitories/Dormitories.WEB/node_modules/
 Dormitories/Dormitories/node_modules/
 Dormitories/Dormitories/Dormitories.sln.DotSettings.user
-*.js
-*js.map
+**/Dormitories.WEB/app/**/*.js
+**/Dormitories.WEB/app/**/*.js.map
