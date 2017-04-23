@@ -1,7 +1,7 @@
 ﻿import { Component} from '@angular/core';
 import { ActivatedRoute, Router} from '@angular/router';
 import { RequestService} from '../../shared/request.service';
-import { Floor } from './Floor';
+import { Floor } from './Floor
 
 @Component({
     moduleId: module.id,
