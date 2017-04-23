@@ -1,0 +1,27 @@
+﻿<h1>Block!</h1>
+<p *ngIf="!block"><em>Loading...</em></p>
+<div *ngIf="block">
+    <p> <strong>Id</strong> : {{block.Id}}</p>
+    <p><strong>FloorId</strong> : {{ block.FloorId }}</p>
+    <h2>Rooms</h2>
+    <table class='table' *ngIf="block">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>TotalPlaces</th>
+                <th>FacultyId</th>
+                <th>BlockId</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let room of block.Rooms">
+                <td>{{ room.Id }}</td>
+                <td>{{ room.TotalPlaces }}</td>
+                <td>{{ room.FacultyId }}</td>
+                <td>{{ room.BlockId }}</td>
+                <td> <a [routerLink]="['/details',room.Id]">Show details</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

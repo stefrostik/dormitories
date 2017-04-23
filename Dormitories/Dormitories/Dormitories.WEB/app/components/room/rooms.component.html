@@ -1,0 +1,27 @@
+﻿<h1>Rooms!</h1>
+<p *ngIf="!rooms"><em>Loading...</em></p>
+<a [routerLink]="['roomAdd']">Add</a>
+<table class='table' *ngIf="rooms">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>TotalPlaces</th>
+            <th>FacultyId</th>
+            <th>BlockId</th>
+            <th>Edit</th>
+            <th>Delete</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let room of rooms">
+            <td>{{ room.Id }}</td>
+            <td>{{ room.TotalPlaces }}</td>
+            <td>{{ room.FacultyId }}</td>
+            <td>{{ room.BlockId }}</td>
+            <td> <a [routerLink]="['roomEdit', room.Id]">Edit</a></td>
+            <td> <button (click)="Delete(room.Id)" class="btn">Delete</button></td>
+            <td> <a [routerLink]="['details',room.Id]">Show details</a></td>
+        </tr>
+    </tbody>
+</table>

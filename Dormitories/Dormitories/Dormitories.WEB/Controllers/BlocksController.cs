@@ -18,9 +18,9 @@ namespace Dormitories.WEB.Controllers
             return _blockService.GetAllBlocks();
         }
 
-        public BlockDTO Get(int id)
+        public BlockFullDTO Get(int id)
         {
-            return _blockService.GetBlockById(id);
+            return _blockService.GetFullBlock(id);
 
         }
         [HttpPut]

@@ -187,6 +187,7 @@
     <Content Include="app\components\administrator\administrators.component.html" />
     <Content Include="app\components\block\blocks.component.html" />
     <Content Include="app\components\block\blockAdd.component.html" />
+    <Content Include="app\components\block\blockDetails.component.html" />
     <Content Include="app\components\dormitory\dormitoryAdd.component.html" />
     <Content Include="app\components\floor\floorDetails.component.html" />
     <Content Include="app\components\floor\floorAdd.component.html" />
@@ -194,6 +195,8 @@
     <Content Include="app\components\floor\floors.component.html" />
     <Content Include="app\components\dormitory\dormitories.component.html" />
     <Content Include="app\components\home\home.component.html" />
+    <Content Include="app\components\room\roomAdd.component.html" />
+    <Content Include="app\components\room\rooms.component.html" />
     <Content Include="Index.html" />
     <Content Include="systemjs.config.js" />
     <Content Include="Web.config">
@@ -207,6 +210,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdministratorsController.cs" />
+    <Compile Include="Controllers\RoomsController.cs" />
     <Compile Include="Controllers\BlocksController.cs" />
     <Compile Include="Controllers\FloorsController.cs" />
     <Compile Include="Controllers\DormitoriesController.cs" />
@@ -230,7 +234,6 @@
   <ItemGroup>
     <Folder Include="app\components\faculty\" />
     <Folder Include="app\components\group\" />
-    <Folder Include="app\components\room\" />
     <Folder Include="app\components\studentCategory\" />
     <Folder Include="app\components\student\" />
     <Folder Include="App_Data\" />
@@ -253,6 +256,7 @@
     <TypeScriptCompile Include="app\components\block\Block.ts" />
     <TypeScriptCompile Include="app\components\block\blocks.component.ts" />
     <TypeScriptCompile Include="app\components\block\blockAdd.component.ts" />
+    <TypeScriptCompile Include="app\components\block\blockDetails.component.ts" />
     <TypeScriptCompile Include="app\components\dormitory\dormitoryAdd.component.ts" />
     <TypeScriptCompile Include="app\components\dormitory\dormitoryDetails.component.ts" />
     <TypeScriptCompile Include="app\components\floor\floorDetails.component.ts" />
@@ -263,6 +267,9 @@
     <TypeScriptCompile Include="app\components\dormitory\dormitories.component.ts" />
     <TypeScriptCompile Include="app\components\dormitory\Dormitory.ts" />
     <TypeScriptCompile Include="app\components\home\home.component.ts" />
+    <TypeScriptCompile Include="app\components\room\roomAdd.component.ts" />
+    <TypeScriptCompile Include="app\components\room\Room.ts" />
+    <TypeScriptCompile Include="app\components\room\rooms.component.ts" />
     <TypeScriptCompile Include="app\main.ts" />
     <TypeScriptCompile Include="app\shared\request.service.ts" />
   </ItemGroup>

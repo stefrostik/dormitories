@@ -65,7 +65,7 @@ namespace Dormitories.BL.Services
             using (_uow)
             {                
                 var tempRoom = _uow.RoomRepository.GetById(id);
-                _uow.FloorRepository.Delete(tempRoom);
+                _uow.RoomRepository.Delete(tempRoom);
                 _uow.Save();
             }
             return true;

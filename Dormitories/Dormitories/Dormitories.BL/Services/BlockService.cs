@@ -33,6 +33,31 @@ namespace Dormitories.BL.Services
 
             return blocks;
         }
+        public BlockFullDTO GetFullBlock(int id)
+        {
+
+            using (_uow)
+            {
+                var block = _uow.BlockRepository.GetById(id);
+                if (block != null)
+                {
+                    var fullBlockDto = new BlockFullDTO()
+                    {
+                        Id = block.Id,
+                        FloorId = block.FloorId,
+                        Rooms = block.Rooms.Select(x => new RoomDTO()
+                        {
+                            Id = x.Id,
+                            BlockId = x.BlockId,
+                            FacultyId = x.FacultyId,
+                            TotalPlaces = x.TotalPlaces
+                        }).ToList()
+                    };
+                    return fullBlockDto;
+                }
+                else return new BlockFullDTO();
+            }
+        }
         public BlockDTO GetBlockById(int id)
         {
             using (_uow)

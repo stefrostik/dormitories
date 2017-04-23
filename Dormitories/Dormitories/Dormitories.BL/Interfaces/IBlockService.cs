@@ -7,6 +7,7 @@ namespace Dormitories.BL.Interfaces
     {
         ICollection<BlockDTO> GetAllBlocks();
         BlockDTO GetBlockById(int id);
+        BlockFullDTO GetFullBlock(int id);
         bool UpdateBlock(BlockDTO block);
         bool DeleteBlock(int id);
         bool AddBlock(BlockDTO block);

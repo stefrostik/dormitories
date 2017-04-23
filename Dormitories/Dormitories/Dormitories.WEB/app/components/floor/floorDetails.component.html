@@ -17,7 +17,7 @@
             <tr *ngFor="let block of floor.Blocks">
                 <td>{{ block.Id }}</td>
                 <td>{{ block.FloorId }}</td>
-                <td> <a [routerLink]="['/details',block.Id]">Show details</a></td>
+                <td> <a [routerLink]="['/block/details',block.Id]">Show details</a></td>
             </tr>
         </tbody>
     </table>
