@@ -187,6 +187,8 @@
     <Content Include="app\components\administrator\administrators.component.html" />
     <Content Include="app\components\block\blocks.component.html" />
     <Content Include="app\components\block\blockAdd.component.html" />
+    <Content Include="app\components\dormitory\dormitoryAdd.component.html" />
+    <Content Include="app\components\floor\floorDetails.component.html" />
     <Content Include="app\components\floor\floorAdd.component.html" />
     <Content Include="app\components\floor\floorEdit.component.html" />
     <Content Include="app\components\floor\floors.component.html" />
@@ -251,7 +253,9 @@
     <TypeScriptCompile Include="app\components\block\Block.ts" />
     <TypeScriptCompile Include="app\components\block\blocks.component.ts" />
     <TypeScriptCompile Include="app\components\block\blockAdd.component.ts" />
+    <TypeScriptCompile Include="app\components\dormitory\dormitoryAdd.component.ts" />
     <TypeScriptCompile Include="app\components\dormitory\dormitoryDetails.component.ts" />
+    <TypeScriptCompile Include="app\components\floor\floorDetails.component.ts" />
     <TypeScriptCompile Include="app\components\floor\floorAdd.component.ts" />
     <TypeScriptCompile Include="app\components\floor\floorEdit.component.ts" />
     <TypeScriptCompile Include="app\components\floor\floors.component.ts" />

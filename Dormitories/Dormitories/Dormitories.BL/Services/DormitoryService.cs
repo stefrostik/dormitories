@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Dormitories.BL.DTO_s;
 using Dormitories.BL.Interfaces;
 using Dormitories.DAL.Interfaces;
+using Dormitories.DAL.Models;
 
 namespace Dormitories.BL.Services
 {
@@ -16,7 +17,6 @@ namespace Dormitories.BL.Services
         {
             _uow = uowFactory.Create();
         }
-
         public ICollection<DormitoryDTO> GetAllDormitories()
         {
             var dormitories = new List<DormitoryDTO>();
@@ -34,22 +34,7 @@ namespace Dormitories.BL.Services
             }
 
             return dormitories;
-        }
-        public ICollection<FloorDTO> GetAllFloorsByDormitoryId(int id)
-        {
-            var floors = new List<FloorDTO>();
-            using (_uow)
-            {
-                floors = _uow.FloorRepository.Query().Where(d => d.DormitoryId == id).Select(d => new FloorDTO()
-                {
-                    Id = d.Id,
-                    Number = d.Number,
-                    DormitoryId = d.DormitoryId
-                }).ToList();
-            }
-            return floors;
-        }
-
+        }  
         public DormitoryFullDTO GetFullDormitory(int id) {
            
             using (_uow)
@@ -75,6 +60,44 @@ namespace Dormitories.BL.Services
                 }
                 else return new DormitoryFullDTO();
             }
+        }
+        public bool UpdateDormitory(DormitoryDTO dormitory)
+        {
+            using (_uow)
+            {
+                var tempDormitory = _uow.DormitoryRepository.GetById(dormitory.Id);
+                tempDormitory.Address = dormitory.Address;
+                tempDormitory.Description = dormitory.Description;
+                tempDormitory.ComendantId = dormitory.ComendantId;
+                tempDormitory.Number = dormitory.Number;
+                _uow.DormitoryRepository.Update(tempDormitory);
+                _uow.Save();
+            }
+            return true;
+        }
+        public bool DeleteDormitory(int id)
+        {
+            using (_uow)
+            {
+                var tempDormitory = _uow.DormitoryRepository.GetById(id);
+                _uow.DormitoryRepository.Delete(tempDormitory);
+                _uow.Save();
+            }
+            return true;
+        }
+        public bool AddDormitory(DormitoryDTO dormitory)
+        {
+            using (_uow)
+            {
+                Dormitory tempDormitory = new Dormitory();
+                tempDormitory.Address = dormitory.Address;
+                tempDormitory.Description = dormitory.Description;
+                tempDormitory.ComendantId = dormitory.ComendantId;
+                tempDormitory.Number = dormitory.Number;
+                _uow.DormitoryRepository.Insert(tempDormitory);
+                _uow.Save();
+            }
+            return true;
         }
     }
 }

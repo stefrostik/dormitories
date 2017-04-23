@@ -31,6 +31,30 @@ namespace Dormitories.BL.Services
             }
             
         }
+        public FloorFullDTO GetFullFloor(int id)
+        {
+
+            using (_uow)
+            {
+                var floor = _uow.FloorRepository.GetById(id);
+                if (floor != null)
+                {
+                    var fullFloorDto = new FloorFullDTO()
+                    {
+                        Id = floor.Id,
+                        Number = floor.Number,
+                        DormitoryId = floor.DormitoryId,
+                        Blocks = floor.Blocks.Select(x => new BlockDTO()
+                        {
+                            Id = x.Id,
+                            FloorId = x.FloorId
+                        }).ToList()
+                    };
+                    return fullFloorDto;
+                }
+                else return new FloorFullDTO();
+            }
+        }
         public FloorDTO GetFloorById(int id)
         {
             using (_uow)

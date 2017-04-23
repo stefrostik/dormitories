@@ -83,6 +83,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DTO%27s\AdministratorDTO.cs" />
+    <Compile Include="DTO%27s\FloorFullDTO.cs" />
     <Compile Include="DTO%27s\DormitoryFullDTO.cs" />
     <Compile Include="DTO%27s\RoomDTO.cs" />
     <Compile Include="DTO%27s\GroupDTO.cs" />

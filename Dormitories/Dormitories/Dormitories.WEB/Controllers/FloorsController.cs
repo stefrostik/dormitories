@@ -18,9 +18,9 @@ namespace Dormitories.WEB.Controllers
             return _floorService.GetAllFloors();
         }
 
-        public FloorDTO Get(int id)
+        public FloorFullDTO Get(int id)
         {
-            return _floorService.GetFloorById(id);
+            return _floorService.GetFullFloor(id);
             //return new FloorDTO() { Number = 4, Id = 2 } ;
 
         }

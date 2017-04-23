@@ -1,11 +1,12 @@
 ﻿<h1>Dormitories!</h1>
 <p *ngIf="!dormitories"><em>Loading...</em></p>
+<a [routerLink]="['dormitoryAdd']">Add</a>
 <table class='table' *ngIf="dormitories">
     <thead>
         <tr>
             <th>id</th>
             <th>Description</th>
-            <th>Addres</th>
+            <th>Address</th>
             <th>Number</th>
             <th>ComendantId</th>
             <th></th>
@@ -15,7 +16,7 @@
         <tr *ngFor="let dormitory of dormitories">
             <td>{{ dormitory.Id }}</td>
             <td>{{ dormitory.Description }}</td>
-            <td>{{ dormitory.Addres}}</td>
+            <td>{{ dormitory.Address}}</td>
             <td>{{ dormitory.Number }}</td>
             <td>{{ dormitory.ComendantId }}</td>
             <td> <a [routerLink]="['details',dormitory.Id]">Show details</a></td>

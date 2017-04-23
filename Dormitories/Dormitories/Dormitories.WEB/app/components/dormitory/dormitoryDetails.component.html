@@ -1,4 +1,4 @@
-﻿<h1>Dormitories!</h1>
+﻿<h1>Dormitory!</h1>
 <p *ngIf="!dormitory"><em>Loading...</em></p>
 <div *ngIf="dormitory">
     <p> <strong>Id</strong> : {{dormitory.Id}}</p>
@@ -6,6 +6,7 @@
     <p><strong>Addres</strong> : {{ dormitory.Addres}}</p>
     <p><strong>Number</strong> : {{ dormitory.Number }}</p>
     <p><strong>ComendantId </strong>: {{ dormitory.ComendantId }}</p>
+<h2>Floors</h2>
     <table class='table' *ngIf="dormitory">
         <thead>
             <tr>
@@ -20,7 +21,7 @@
                 <td>{{ floor.Id }}</td>
                 <td>{{ floor.Number }}</td>
                 <td>{{ floor.DormitoryId }}</td>
-                <td> <a [routerLink]="['details',floor.Id]">Show details</a></td>
+                <td> <a [routerLink]="['/floor/details',floor.Id]">Show details</a></td>
             </tr>
         </tbody>
     </table>

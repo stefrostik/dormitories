@@ -7,7 +7,7 @@ namespace Dormitories.BL.Interfaces
     public interface IFloorService
     {
         ICollection<FloorDTO> GetAllFloors();
-
+        FloorFullDTO GetFullFloor(int id);
         FloorDTO GetFloorById(int id);
         bool UpdateFloor(FloorDTO floor);
         bool DeleteFloor(int id);

@@ -25,6 +25,23 @@ namespace Dormitories.WEB.Controllers
         {
             return _dormitoryService.GetFullDormitory(id);
         }
+        [HttpPut]
+        public void Put([FromBody]DormitoryDTO floor)
+        {
+            _dormitoryService.UpdateDormitory(floor);
+        }
+        [HttpDelete]
+        public bool Delete(int id)
+        {
+            _dormitoryService.DeleteDormitory(id);
+            return true;
 
+        }
+        [HttpPost]
+        public bool Post([FromBody]DormitoryDTO dormitory)
+        {
+            _dormitoryService.AddDormitory(dormitory);
+            return true;
+        }
     }
 }
