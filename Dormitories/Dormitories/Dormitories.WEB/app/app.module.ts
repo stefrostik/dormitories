@@ -17,6 +17,7 @@ import { RoomComponent } from './components/room/rooms.component';
 import { RoomAddComponent } from './components/room/roomAdd.component';  
 import { HomeComponent } from './components/home/home.component'; 
 import { AdministratorComponent } from './components/administrator/administrators.component'; 
+import { StudentComponent } from './components/student/students.component'; 
 import { RouterModule, Routes } from '@angular/router';
 import { APP_BASE_HREF } from '@angular/common';
 import { DropdownModule } from "ngx-dropdown";
@@ -40,7 +41,8 @@ import 'rxjs/Rx'
         BlockDetailsComponent,
         DormitoryAddComponent,
         RoomComponent,
-        RoomAddComponent
+        RoomAddComponent,
+        StudentComponent
     ],
     imports: [
         BrowserModule,
@@ -60,10 +62,11 @@ import 'rxjs/Rx'
             { path: 'block', component: BlockComponent }, 
             { path: 'block/blockAdd', component: BlockAddComponent }, 
             { path: 'block/details/:id', component: BlockDetailsComponent },
-            { path: 'floor', component: FloorComponent },
+            { path: 'floor', component: FloorComponent }, 
             { path: 'floor/floorEdit/:id', component: FloorEditComponent },
             { path: 'floor/floorAdd', component: FloorAddComponent },
             { path: 'floor/details/:id', component: FloorDetailsComponent },
+            { path: 'student', component: StudentComponent }, 
             { path: '**', redirectTo: 'app' }
         ], { useHash: true })]
 

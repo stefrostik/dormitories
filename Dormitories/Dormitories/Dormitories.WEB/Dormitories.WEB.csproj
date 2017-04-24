@@ -197,6 +197,7 @@
     <Content Include="app\components\home\home.component.html" />
     <Content Include="app\components\room\roomAdd.component.html" />
     <Content Include="app\components\room\rooms.component.html" />
+    <Content Include="app\components\student\students.component.html" />
     <Content Include="Index.html" />
     <Content Include="systemjs.config.js" />
     <Content Include="Web.config">
@@ -210,6 +211,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdministratorsController.cs" />
+    <Compile Include="Controllers\StudentsController.cs" />
     <Compile Include="Controllers\RoomsController.cs" />
     <Compile Include="Controllers\BlocksController.cs" />
     <Compile Include="Controllers\FloorsController.cs" />
@@ -235,7 +237,6 @@
     <Folder Include="app\components\faculty\" />
     <Folder Include="app\components\group\" />
     <Folder Include="app\components\studentCategory\" />
-    <Folder Include="app\components\student\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
@@ -270,6 +271,8 @@
     <TypeScriptCompile Include="app\components\room\roomAdd.component.ts" />
     <TypeScriptCompile Include="app\components\room\Room.ts" />
     <TypeScriptCompile Include="app\components\room\rooms.component.ts" />
+    <TypeScriptCompile Include="app\components\student\Student.ts" />
+    <TypeScriptCompile Include="app\components\student\students.component.ts" />
     <TypeScriptCompile Include="app\main.ts" />
     <TypeScriptCompile Include="app\shared\request.service.ts" />
   </ItemGroup>

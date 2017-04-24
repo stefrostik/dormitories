@@ -1,0 +1,31 @@
+﻿<h1>Students!</h1>
+<p *ngIf="!students"><em>Loading...</em></p>
+<a [routerLink]="['studentAdd']">Add</a>
+<table class='table' *ngIf="students">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>FacultyId</th>
+            <th>GroupId</th>
+            <th>RoomId</th>
+            <th>StudyYear</th>
+            <th>CategoryId</th>
+            <th>Edit</th>
+            <th>Delete</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let student of students">
+            <td>{{ student.Id }}</td>
+            <td>{{ student.FacultyId }}</td>
+            <td>{{ student.GroupId }}</td>
+            <td>{{ student.RoomId }}</td>
+            <td>{{ student.StudyYear }}</td>
+            <td>{{ student.CategoryId }}</td>
+            <td> <a [routerLink]="['studentEdit', student.Id]">Edit</a></td>
+            <td> <button (click)="Delete(student.Id)" class="btn">Delete</button></td>
+            <td> <a [routerLink]="['details',student.Id]">Show details</a></td>
+        </tr>
+    </tbody>
+</table>
