@@ -16,9 +16,25 @@ namespace Dormitories.WEB.Controllers
         
         public ICollection<AdministratorDTO> Get()
         {
-            //var drm = _floorService.GetAllFloors(); 
-            return new List<AdministratorDTO>() { new AdministratorDTO() { Id=1, DormitoryId=2, FacultyId=3} };
+            return _administratorService.GetAllAdministrators(); 
+        }
+        [HttpPut]
+        public void Put([FromBody]AdministratorDTO administrator)
+        {
+            _administratorService.UpdateAdministrator(administrator);
+        }
+        [HttpDelete]
+        public bool Delete(int id)
+        {
+            _administratorService.DeleteAdministrator(id);
+            return true;
 
+        }
+        [HttpPost]
+        public bool Post([FromBody]AdministratorDTO administrator)
+        {
+            _administratorService.AddAdministrator(administrator);
+            return true;
         }
 
     }

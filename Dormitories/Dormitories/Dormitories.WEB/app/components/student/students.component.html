@@ -5,6 +5,7 @@
     <thead>
         <tr>
             <th>Id</th>
+            <th>StudentCardId</th>
             <th>FacultyId</th>
             <th>GroupId</th>
             <th>RoomId</th>
@@ -18,6 +19,7 @@
     <tbody>
         <tr *ngFor="let student of students">
             <td>{{ student.Id }}</td>
+            <td>{{ student.StudentCardId }}</td>
             <td>{{ student.FacultyId }}</td>
             <td>{{ student.GroupId }}</td>
             <td>{{ student.RoomId }}</td>

@@ -7,15 +7,19 @@ using Dormitories.BL.DTO_s;
 using Dormitories.BL.Interfaces;
 using Dormitories.DAL.Interfaces;
 using Dormitories.DAL.Models;
+using Microsoft.AspNet.Identity;
 
 namespace Dormitories.BL.Services
 {
     public class StudentService : IStudentService
     {
         private readonly IUnitOfWork _uow;
-        public StudentService(IUnitOfWorkFactory uowFactory)
+        private readonly IAuthenticationService _authService;
+        public StudentService(IUnitOfWorkFactory uowFactory, IAuthenticationService authService )
         {
             _uow = uowFactory.Create();
+            _authService = authService;
+
         }
 
         public ICollection<StudentDTO> GetAllStudents()
@@ -81,19 +85,21 @@ namespace Dormitories.BL.Services
 
         public bool AddStudent(StudentDTO student)
         {
-            using (_uow)
-            {
-                Student tempStudent = new Student();
-                tempStudent.RoomId = student.RoomId;
-                tempStudent.CategoryId = student.CategoryId;
-                tempStudent.FacultyId = student.FacultyId;
-                tempStudent.GroupId = student.GroupId;
-                tempStudent.StudyYear = student.StudyYear;
-                tempStudent.StudentCardId = student.StudentCardId;
-                _uow.StudentRepository.Insert(tempStudent);
-                _uow.Save();
-            }
-            return true;
+            var newStudent = new UserRegisterDTO() {
+                Password = "Aa123456",
+                ConfirmPassword = "Aa123456",
+                RoleName = "Student",
+                CategoryId = student.CategoryId,
+                FacultyId = student.FacultyId,
+                GroupId = student.GroupId,
+                RoomId = student.RoomId,
+                StudentCardId = student.StudentCardId,
+                StudyYear = student.StudyYear
+            };
+
+            var result =  _authService.RegisterUser(newStudent).Result;
+
+            return result.Succeeded;
         }
 
     }

@@ -17,7 +17,9 @@ import { RoomComponent } from './components/room/rooms.component';
 import { RoomAddComponent } from './components/room/roomAdd.component';  
 import { HomeComponent } from './components/home/home.component'; 
 import { AdministratorComponent } from './components/administrator/administrators.component'; 
+import { AdministratorAddComponent } from './components/administrator/administratorAdd.component'; 
 import { StudentComponent } from './components/student/students.component'; 
+import { StudentAddComponent } from './components/student/studentAdd.component'; 
 import { RouterModule, Routes } from '@angular/router';
 import { APP_BASE_HREF } from '@angular/common';
 import { DropdownModule } from "ngx-dropdown";
@@ -32,6 +34,7 @@ import 'rxjs/Rx'
         FloorComponent,
         HomeComponent,
         AdministratorComponent,
+        AdministratorAddComponent,
         FloorEditComponent,
         FloorAddComponent,
         FloorDetailsComponent,
@@ -42,7 +45,8 @@ import 'rxjs/Rx'
         DormitoryAddComponent,
         RoomComponent,
         RoomAddComponent,
-        StudentComponent
+        StudentComponent,
+        StudentAddComponent
     ],
     imports: [
         BrowserModule,
@@ -56,7 +60,8 @@ import 'rxjs/Rx'
             { path: 'dormitory/dormitoryAdd', component: DormitoryAddComponent }, 
             { path: 'dormitory/details/:id', component: DormitoryDetailsComponent },
             { path: 'home', component: HomeComponent },
-            { path: 'administator', component: AdministratorComponent },
+            { path: 'administrator', component: AdministratorComponent },
+            { path: 'administrator/administatorAdd', component: AdministratorAddComponent }, 
             { path: 'room', component: RoomComponent }, 
             { path: 'room/roomAdd', component: RoomAddComponent }, 
             { path: 'block', component: BlockComponent }, 
@@ -64,9 +69,10 @@ import 'rxjs/Rx'
             { path: 'block/details/:id', component: BlockDetailsComponent },
             { path: 'floor', component: FloorComponent }, 
             { path: 'floor/floorEdit/:id', component: FloorEditComponent },
-            { path: 'floor/floorAdd', component: FloorAddComponent },
+            { path: 'floor/floorAdd', component: FloorAddComponent }, 
             { path: 'floor/details/:id', component: FloorDetailsComponent },
             { path: 'student', component: StudentComponent }, 
+            { path: 'student/studentAdd', component: StudentAddComponent }, 
             { path: '**', redirectTo: 'app' }
         ], { useHash: true })]
 

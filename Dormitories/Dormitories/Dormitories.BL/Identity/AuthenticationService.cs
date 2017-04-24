@@ -41,20 +41,28 @@ namespace Dormitories.BL.Identity
             {
                 usr = new Student()
                 {
-                    UserName = registerUserModel.Name,
-                    FacultyId = null,
-                    CategoryId = null
+                    UserName = registerUserModel.StudentCardId,
+                    CategoryId = registerUserModel.CategoryId,
+                    Email = registerUserModel.Email,
+                    FacultyId = registerUserModel.FacultyId,
+                    GroupId = registerUserModel.GroupId,
+                    PhoneNumber = registerUserModel.PhoneNumber,
+                    RoomId = registerUserModel.RoomId,
+                    StudyYear = registerUserModel.StudyYear,
+                    StudentCardId = registerUserModel.StudentCardId,
                 };
             }
             else
             {
                 usr = new Administrator()
                 {
-                    UserName = registerUserModel.Name,
-                    DormitoryId = null
+                    UserName = registerUserModel.Email,
+                    DormitoryId = registerUserModel.DormitoryId,
+                    PhoneNumber = registerUserModel.PhoneNumber,
+                    Email = registerUserModel.Email,
+                    FacultyId = registerUserModel.FacultyId
                 };
             }
-
 
             using (var context = provider.Context)
             {
@@ -66,7 +74,6 @@ namespace Dormitories.BL.Identity
                 }
                 catch (Exception ex)
                 {
-
                     throw;
                 }
 

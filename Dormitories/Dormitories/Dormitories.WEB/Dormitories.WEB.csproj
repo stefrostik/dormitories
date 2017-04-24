@@ -185,6 +185,7 @@
     <Content Include="app\app.component.css" />
     <Content Include="app\app.component.html" />
     <Content Include="app\components\administrator\administrators.component.html" />
+    <Content Include="app\components\administrator\administratorAdd.component.html" />
     <Content Include="app\components\block\blocks.component.html" />
     <Content Include="app\components\block\blockAdd.component.html" />
     <Content Include="app\components\block\blockDetails.component.html" />
@@ -197,6 +198,7 @@
     <Content Include="app\components\home\home.component.html" />
     <Content Include="app\components\room\roomAdd.component.html" />
     <Content Include="app\components\room\rooms.component.html" />
+    <Content Include="app\components\student\studentAdd.component.html" />
     <Content Include="app\components\student\students.component.html" />
     <Content Include="Index.html" />
     <Content Include="systemjs.config.js" />
@@ -254,6 +256,7 @@
     <TypeScriptCompile Include="app\app.module.ts" />
     <TypeScriptCompile Include="app\components\administrator\Administrator.ts" />
     <TypeScriptCompile Include="app\components\administrator\administrators.component.ts" />
+    <TypeScriptCompile Include="app\components\administrator\administratorAdd.component.ts" />
     <TypeScriptCompile Include="app\components\block\Block.ts" />
     <TypeScriptCompile Include="app\components\block\blocks.component.ts" />
     <TypeScriptCompile Include="app\components\block\blockAdd.component.ts" />
@@ -271,6 +274,7 @@
     <TypeScriptCompile Include="app\components\room\roomAdd.component.ts" />
     <TypeScriptCompile Include="app\components\room\Room.ts" />
     <TypeScriptCompile Include="app\components\room\rooms.component.ts" />
+    <TypeScriptCompile Include="app\components\student\studentAdd.component.ts" />
     <TypeScriptCompile Include="app\components\student\Student.ts" />
     <TypeScriptCompile Include="app\components\student\students.component.ts" />
     <TypeScriptCompile Include="app\main.ts" />
