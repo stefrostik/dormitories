@@ -22,7 +22,10 @@ namespace Dormitories.WEB.Controllers
         {
             return _studentService.GetAllStudents();
         }
-        
+        public StudentDTO Get(int id)
+        {
+            return _studentService.GetStudentById(id);
+        }
         [HttpPut]
         public void Put([FromBody]StudentDTO student)
         {

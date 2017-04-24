@@ -17,11 +17,9 @@ namespace Dormitories.WEB.Controllers
         {
             return _roomService.GetAllRooms();
         }
-
-        public RoomDTO Get(int id)
+        public RoomFullDTO Get(int id)
         {
-            return _roomService.GetRoomById(id);
-
+            return _roomService.GetFullRoom(id);
         }
         [HttpPut]
         public void Put([FromBody]RoomDTO room)
@@ -33,7 +31,6 @@ namespace Dormitories.WEB.Controllers
         {
             _roomService.DeleteRoom(id);
             return true;
-
         }
         [HttpPost]
         public bool Post([FromBody]RoomDTO room)
@@ -41,6 +38,5 @@ namespace Dormitories.WEB.Controllers
             _roomService.AddRoom(room);
             return true;
         }
-
     }
 }

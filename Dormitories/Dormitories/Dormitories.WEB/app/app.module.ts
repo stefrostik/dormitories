@@ -14,12 +14,14 @@ import { BlockComponent } from './components/block/blocks.component';
 import { BlockAddComponent } from './components/block/blockAdd.component'; 
 import { BlockDetailsComponent } from './components/block/blockDetails.component'; 
 import { RoomComponent } from './components/room/rooms.component'; 
-import { RoomAddComponent } from './components/room/roomAdd.component';  
+import { RoomAddComponent } from './components/room/roomAdd.component'; 
+import { RoomDetailsComponent } from './components/room/roomDetails.component';   
 import { HomeComponent } from './components/home/home.component'; 
 import { AdministratorComponent } from './components/administrator/administrators.component'; 
 import { AdministratorAddComponent } from './components/administrator/administratorAdd.component'; 
 import { StudentComponent } from './components/student/students.component'; 
 import { StudentAddComponent } from './components/student/studentAdd.component'; 
+import { StudentDetailsComponent } from './components/student/studentDetails.component'; 
 import { RouterModule, Routes } from '@angular/router';
 import { APP_BASE_HREF } from '@angular/common';
 import { DropdownModule } from "ngx-dropdown";
@@ -30,23 +32,13 @@ import 'rxjs/Rx'
     bootstrap: [AppComponent],
     declarations: [
         AppComponent,
-        DormitoriesComponent,
-        FloorComponent,
         HomeComponent,
-        AdministratorComponent,
-        AdministratorAddComponent,
-        FloorEditComponent,
-        FloorAddComponent,
-        FloorDetailsComponent,
-        DormitoryDetailsComponent,
-        BlockComponent,
-        BlockAddComponent,
-        BlockDetailsComponent,
-        DormitoryAddComponent,
-        RoomComponent,
-        RoomAddComponent,
-        StudentComponent,
-        StudentAddComponent
+        DormitoriesComponent, DormitoryAddComponent, DormitoryDetailsComponent,
+        AdministratorComponent, AdministratorAddComponent,
+        FloorComponent, FloorEditComponent, FloorAddComponent, FloorDetailsComponent,
+        BlockComponent, BlockAddComponent, BlockDetailsComponent,
+        RoomComponent, RoomAddComponent, RoomDetailsComponent,
+        StudentComponent, StudentAddComponent, StudentDetailsComponent
     ],
     imports: [
         BrowserModule,
@@ -64,6 +56,7 @@ import 'rxjs/Rx'
             { path: 'administrator/administatorAdd', component: AdministratorAddComponent }, 
             { path: 'room', component: RoomComponent }, 
             { path: 'room/roomAdd', component: RoomAddComponent }, 
+            { path: 'room/details/:id', component: RoomDetailsComponent }, 
             { path: 'block', component: BlockComponent }, 
             { path: 'block/blockAdd', component: BlockAddComponent }, 
             { path: 'block/details/:id', component: BlockDetailsComponent },
@@ -73,6 +66,7 @@ import 'rxjs/Rx'
             { path: 'floor/details/:id', component: FloorDetailsComponent },
             { path: 'student', component: StudentComponent }, 
             { path: 'student/studentAdd', component: StudentAddComponent }, 
+            { path: 'student/details/:id', component: StudentDetailsComponent }, 
             { path: '**', redirectTo: 'app' }
         ], { useHash: true })]
 

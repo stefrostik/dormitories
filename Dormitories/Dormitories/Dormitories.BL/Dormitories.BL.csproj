@@ -82,6 +82,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTO%27s\RoomFullDTO.cs" />
     <Compile Include="DTO%27s\StudentDTO.cs" />
     <Compile Include="DTO%27s\AdministratorDTO.cs" />
     <Compile Include="DTO%27s\BlockFullDTO.cs" />

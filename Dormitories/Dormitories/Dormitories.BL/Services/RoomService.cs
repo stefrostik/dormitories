@@ -30,7 +30,36 @@ namespace Dormitories.BL.Services
                     TotalPlaces = d.TotalPlaces
                 }).ToList();
             }
-            
+        }
+        public RoomFullDTO GetFullRoom(int id)
+        {
+            using (_uow)
+            {
+                var room = _uow.RoomRepository.GetById(id);
+                if (room != null)
+                {
+                    var fullRoomDto = new RoomFullDTO()
+                    {
+                        Id = room.Id,
+                        BlockId = room.BlockId,
+                        FacultyId = room.FacultyId,
+                        TotalPlaces = room.TotalPlaces,
+                        Students = room.Students.Select(x => new StudentDTO()
+                        {
+                            Id = x.Id,
+                            CategoryId = x.CategoryId,
+                            FacultyId = x.FacultyId,
+                            GroupId = x.GroupId,
+                            RoomId = x.RoomId,
+                            StudentCardId = x.StudentCardId,
+                            StudyYear = x.StudyYear
+                        
+                        }).ToList()
+                    };
+                    return fullRoomDto;
+                }
+                else return new RoomFullDTO();
+            }
         }
         public RoomDTO GetRoomById(int id)
         {

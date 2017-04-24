@@ -1,0 +1,35 @@
+﻿<h1>Room!</h1>
+<p *ngIf="!room"><em>Loading...</em></p>
+<div *ngIf="room">
+    <p> <strong>Id</strong> : {{room.Id}}</p>
+    <p><strong>TotalPlaces</strong> : {{ room.TotalPlaces }}</p>
+    <p> <strong>FacultyId</strong> : {{room.FacultyId}}</p>
+    <p><strong>BlockId</strong> : {{ room.BlockId }}</p>
+    <h2>Students</h2>
+    <table class='table' *ngIf="room">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>StudentCardId</th>
+                <th>FacultyId</th>
+                <th>GroupId</th>
+                <th>RoomId</th>
+                <th>StudyYear</th>
+                <th>CategoryId</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let student of room.Students">
+                <td>{{ student.Id }}</td>
+                <td>{{ student.StudentCardId }}</td>
+                <td>{{ student.FacultyId }}</td>
+                <td>{{ student.GroupId }}</td>
+                <td>{{ student.RoomId }}</td>
+                <td>{{ student.StudyYear }}</td>
+                <td>{{ student.CategoryId }}</td>
+                <td> <a [routerLink]="['/student/details',student.Id]">Show details</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

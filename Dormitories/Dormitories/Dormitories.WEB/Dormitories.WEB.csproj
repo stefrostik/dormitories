@@ -196,8 +196,10 @@
     <Content Include="app\components\floor\floors.component.html" />
     <Content Include="app\components\dormitory\dormitories.component.html" />
     <Content Include="app\components\home\home.component.html" />
+    <Content Include="app\components\room\roomDetails.component.html" />
     <Content Include="app\components\room\roomAdd.component.html" />
     <Content Include="app\components\room\rooms.component.html" />
+    <Content Include="app\components\student\studentDetails.component.html" />
     <Content Include="app\components\student\studentAdd.component.html" />
     <Content Include="app\components\student\students.component.html" />
     <Content Include="Index.html" />
@@ -271,9 +273,11 @@
     <TypeScriptCompile Include="app\components\dormitory\dormitories.component.ts" />
     <TypeScriptCompile Include="app\components\dormitory\Dormitory.ts" />
     <TypeScriptCompile Include="app\components\home\home.component.ts" />
+    <TypeScriptCompile Include="app\components\room\roomDetails.component.ts" />
     <TypeScriptCompile Include="app\components\room\roomAdd.component.ts" />
     <TypeScriptCompile Include="app\components\room\Room.ts" />
     <TypeScriptCompile Include="app\components\room\rooms.component.ts" />
+    <TypeScriptCompile Include="app\components\student\studentDetails.component.ts" />
     <TypeScriptCompile Include="app\components\student\studentAdd.component.ts" />
     <TypeScriptCompile Include="app\components\student\Student.ts" />
     <TypeScriptCompile Include="app\components\student\students.component.ts" />

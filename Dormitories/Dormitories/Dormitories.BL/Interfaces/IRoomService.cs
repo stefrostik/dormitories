@@ -6,6 +6,7 @@ namespace Dormitories.BL.Interfaces
     public interface IRoomService
     {
         ICollection<RoomDTO> GetAllRooms();
+        RoomFullDTO GetFullRoom(int id);
         RoomDTO GetRoomById(int id);
         bool UpdateRoom(RoomDTO room);
         bool DeleteRoom(int id);

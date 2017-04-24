@@ -1,0 +1,11 @@
+﻿<h1>Student!</h1>
+<p *ngIf="!student"><em>Loading...</em></p>
+<div *ngIf="student">
+    <p> <strong>Id</strong> : {{student.Id}}</p>
+    <p><strong>StudentCardId</strong> : {{ student.StudentCardId }}</p>
+    <p><strong>FacultyId </strong>: {{ student.FacultyId }}</p>
+    <p> <strong>GroupId</strong> : {{student.GroupId}}</p>
+    <p><strong>RoomId</strong> : {{ student.RoomId }}</p>
+    <p><strong>StudyYear </strong>: {{ student.StudyYear }}</p>
+    <p><strong>CategoryId </strong>: {{ student.CategoryId }}</p>
+</div>
