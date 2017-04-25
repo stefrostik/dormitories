@@ -16,12 +16,14 @@ export class BlockAddComponent {
         this.myRouter = router;
         this.requestService = rs;
         this.block = new Block();
+        this.block.FloorId = activateRoute.snapshot.params['floorId'];
+        this.Done(this.block);
     }
 
     Done(myItem: Block) {
         this.requestService.post('blocks', myItem).subscribe((resp: any) => {
             this.block = resp.json();
-            this.myRouter.navigate(['block']);
+            this.myRouter.navigate(['floor/details/' + myItem.FloorId]);
         });
     }
 }

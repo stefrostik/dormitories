@@ -1,15 +1,28 @@
-﻿
-<h3>Add student</h3>
-StudentCardId
-<input type="text" [(ngModel)]="student.StudentCardId" class="form-control" /><br />
-FacultyId
-<input type="number" [(ngModel)]="student.FacultyId" class="form-control" /><br />
-GroupId
-<input type="number" [(ngModel)]="student.GroupId" class="form-control" /><br />
-RoomId
-<input type="number" [(ngModel)]="student.RoomId" class="form-control" /><br />
-StudyYear
-<input type="number" [(ngModel)]="student.StudyYear" class="form-control" /><br />
-CategoryId
-<input type="number" [(ngModel)]="student.CategoryId" class="form-control" /><br />
-<button (click)="Done(student)" class="btn">Done</button>
+﻿<h1>Students!</h1>
+<p *ngIf="!students"><em>Loading...</em></p>
+<table class='table' *ngIf="students">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>StudentCardId</th>
+            <th>FacultyId</th>
+            <th>GroupId</th>
+            <th>RoomId</th>
+            <th>StudyYear</th>
+            <th>CategoryId</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let student of students">
+            <td>{{ student.Id }}</td>
+            <td>{{ student.StudentCardId }}</td>
+            <td>{{ student.FacultyId }}</td>
+            <td>{{ student.GroupId }}</td>
+            <td>{{ student.RoomId }}</td>
+            <td>{{ student.StudyYear }}</td>
+            <td>{{ student.CategoryId }}</td>
+            <td> <button (click)="Add(student)" class="btn">Add to room</button></td>
+        </tr>
+    </tbody>
+</table>

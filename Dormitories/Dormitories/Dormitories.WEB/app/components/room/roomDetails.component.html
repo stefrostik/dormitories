@@ -6,6 +6,7 @@
     <p> <strong>FacultyId</strong> : {{room.FacultyId}}</p>
     <p><strong>BlockId</strong> : {{ room.BlockId }}</p>
     <h2>Students</h2>
+    <a [routerLink]="['/student/studentAdd/',room.Id]">Add Student</a>
     <table class='table' *ngIf="room">
         <thead>
             <tr>

@@ -199,8 +199,9 @@
     <Content Include="app\components\room\roomDetails.component.html" />
     <Content Include="app\components\room\roomAdd.component.html" />
     <Content Include="app\components\room\rooms.component.html" />
-    <Content Include="app\components\student\studentDetails.component.html" />
     <Content Include="app\components\student\studentAdd.component.html" />
+    <Content Include="app\components\student\studentDetails.component.html" />
+    <Content Include="app\components\student\studentRegister.component.html" />
     <Content Include="app\components\student\students.component.html" />
     <Content Include="Index.html" />
     <Content Include="systemjs.config.js" />
@@ -277,8 +278,9 @@
     <TypeScriptCompile Include="app\components\room\roomAdd.component.ts" />
     <TypeScriptCompile Include="app\components\room\Room.ts" />
     <TypeScriptCompile Include="app\components\room\rooms.component.ts" />
-    <TypeScriptCompile Include="app\components\student\studentDetails.component.ts" />
     <TypeScriptCompile Include="app\components\student\studentAdd.component.ts" />
+    <TypeScriptCompile Include="app\components\student\studentDetails.component.ts" />
+    <TypeScriptCompile Include="app\components\student\studentRegister.component.ts" />
     <TypeScriptCompile Include="app\components\student\Student.ts" />
     <TypeScriptCompile Include="app\components\student\students.component.ts" />
     <TypeScriptCompile Include="app\main.ts" />

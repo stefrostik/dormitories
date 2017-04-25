@@ -5,6 +5,7 @@
     <p><strong>Number</strong> : {{ floor.Number }}</p>
     <p><strong>DormitoryId </strong>: {{ floor.DormitoryId }}</p>
     <h2>Blocks</h2>
+    <a [routerLink]="['/block/blockAdd/',floor.Id]">Add Block</a>
     <table class='table' *ngIf="floor">
         <thead>
             <tr>

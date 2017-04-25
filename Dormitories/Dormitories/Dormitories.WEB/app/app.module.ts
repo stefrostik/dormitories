@@ -20,6 +20,7 @@ import { HomeComponent } from './components/home/home.component';
 import { AdministratorComponent } from './components/administrator/administrators.component'; 
 import { AdministratorAddComponent } from './components/administrator/administratorAdd.component'; 
 import { StudentComponent } from './components/student/students.component'; 
+import { StudentRegisterComponent } from './components/student/studentRegister.component'; 
 import { StudentAddComponent } from './components/student/studentAdd.component'; 
 import { StudentDetailsComponent } from './components/student/studentDetails.component'; 
 import { RouterModule, Routes } from '@angular/router';
@@ -38,7 +39,7 @@ import 'rxjs/Rx'
         FloorComponent, FloorEditComponent, FloorAddComponent, FloorDetailsComponent,
         BlockComponent, BlockAddComponent, BlockDetailsComponent,
         RoomComponent, RoomAddComponent, RoomDetailsComponent,
-        StudentComponent, StudentAddComponent, StudentDetailsComponent
+        StudentComponent, StudentRegisterComponent, StudentDetailsComponent, StudentAddComponent
     ],
     imports: [
         BrowserModule,
@@ -56,16 +57,20 @@ import 'rxjs/Rx'
             { path: 'administrator/administatorAdd', component: AdministratorAddComponent }, 
             { path: 'room', component: RoomComponent }, 
             { path: 'room/roomAdd', component: RoomAddComponent }, 
+            { path: 'room/roomAdd/:blockId', component: RoomAddComponent }, 
             { path: 'room/details/:id', component: RoomDetailsComponent }, 
             { path: 'block', component: BlockComponent }, 
             { path: 'block/blockAdd', component: BlockAddComponent }, 
+            { path: 'block/blockAdd/:floorId', component: BlockAddComponent }, 
             { path: 'block/details/:id', component: BlockDetailsComponent },
             { path: 'floor', component: FloorComponent }, 
             { path: 'floor/floorEdit/:id', component: FloorEditComponent },
             { path: 'floor/floorAdd', component: FloorAddComponent }, 
+            { path: 'floor/floorAdd/:dormitoryId', component: FloorAddComponent }, 
             { path: 'floor/details/:id', component: FloorDetailsComponent },
             { path: 'student', component: StudentComponent }, 
-            { path: 'student/studentAdd', component: StudentAddComponent }, 
+            { path: 'student/studentRegister', component: StudentRegisterComponent }, 
+            { path: 'student/studentAdd/:roomId', component: StudentAddComponent }, 
             { path: 'student/details/:id', component: StudentDetailsComponent }, 
             { path: '**', redirectTo: 'app' }
         ], { useHash: true })]

@@ -1,27 +1,27 @@
 ﻿import { Component} from '@angular/core';
 import { ActivatedRoute, Router} from '@angular/router';
 import { RequestService} from '../../shared/request.service';
-import { Room } from './Room';
+import { Student } from './Student';
 
 @Component({
     moduleId: module.id,
-    templateUrl: 'roomAdd.component.html'
+    templateUrl: 'studentRegister.component.html'
 })
-export class RoomAddComponent {
-    public room: Room;
+export class StudentRegisterComponent {
+    public student: Student;
     private requestService : RequestService;
     myRouter: Router;
 
     constructor(private router: Router, private activateRoute: ActivatedRoute, rs: RequestService) {
         this.myRouter = router;
         this.requestService = rs;
-        this.room = new Room();
-        this.room.BlockId = this.activateRoute.snapshot.params['blockId'];
+        this.student = new Student();
     }
 
-    Done(myItem: Room) {
-        this.requestService.post('rooms', myItem).subscribe((resp: any) => {            
-            this.myRouter.navigate(['block/details/' + myItem.BlockId]);
+    Done(myItem: Student) {
+        this.requestService.post('students', myItem).subscribe((resp: any) => {
+            this.student = resp.json();
+            this.myRouter.navigate(['student']);
         });
     }
 }

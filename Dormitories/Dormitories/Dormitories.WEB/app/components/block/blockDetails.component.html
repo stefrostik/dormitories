@@ -4,6 +4,7 @@
     <p> <strong>Id</strong> : {{block.Id}}</p>
     <p><strong>FloorId</strong> : {{ block.FloorId }}</p>
     <h2>Rooms</h2>
+    <a [routerLink]="['/room/roomAdd/',block.Id]">Add Room</a>
     <table class='table' *ngIf="block">
         <thead>
             <tr>

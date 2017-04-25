@@ -21,8 +21,6 @@ namespace Dormitories.WEB.Controllers
         public FloorFullDTO Get(int id)
         {
             return _floorService.GetFullFloor(id);
-            //return new FloorDTO() { Number = 4, Id = 2 } ;
-
         }
         [HttpPut]
         public void Put([FromBody]FloorDTO floor)

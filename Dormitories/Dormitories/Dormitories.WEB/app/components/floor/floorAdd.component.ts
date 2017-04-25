@@ -8,20 +8,21 @@ import { Floor } from './Floor';
     templateUrl: 'floorAdd.component.html'
 })
 export class FloorAddComponent {
-    public floor:Floor;
+    public floor: Floor;
     private requestService : RequestService;
     myRouter: Router;
 
     constructor(private router: Router, private activateRoute: ActivatedRoute, rs: RequestService) {
         this.myRouter = router;
-        this.requestService = rs;
+        this.requestService = rs; 
         this.floor = new Floor();
+        this.floor.DormitoryId = activateRoute.snapshot.params['dormitoryId'];
     }
 
     Done(myItem: Floor){
         this.requestService.post('floors', myItem).subscribe((resp: any) => {
             this.floor = resp.json();
-            this.myRouter.navigate(['floor']);
+            this.myRouter.navigate(['dormitory/details/' + myItem.DormitoryId]);
         });
     }
 }
