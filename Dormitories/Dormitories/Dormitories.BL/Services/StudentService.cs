@@ -36,8 +36,23 @@ namespace Dormitories.BL.Services
                     StudyYear = d.StudyYear,
                     StudentCardId = d.StudentCardId
                 }).ToList();
+            }    
+        }
+        public StudentDTO GetStudentByStudentCardId(string studentCardId)
+        {
+            using (_uow)
+            {
+                return _uow.StudentRepository.Query().Select(d => new StudentDTO()
+                {
+                    Id = d.Id,
+                    RoomId = d.RoomId,
+                    CategoryId = d.CategoryId,
+                    FacultyId = d.FacultyId,
+                    GroupId = d.GroupId,
+                    StudyYear = d.StudyYear,
+                    StudentCardId = d.StudentCardId
+                }).Where(d => d.StudentCardId == studentCardId).FirstOrDefault();
             }
-            
         }
         public StudentDTO GetStudentById(int id)
         {

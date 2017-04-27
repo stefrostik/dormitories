@@ -6,6 +6,7 @@ namespace Dormitories.BL.Interfaces
     public interface IStudentService
     {
         ICollection<StudentDTO> GetAllStudents();
+        StudentDTO GetStudentByStudentCardId(string studentCardId); 
         StudentDTO GetStudentById(int id);
         bool UpdateStudent(StudentDTO student);
         bool DeleteStudent(int id);

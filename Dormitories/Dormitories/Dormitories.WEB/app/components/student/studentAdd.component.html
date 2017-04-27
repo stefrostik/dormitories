@@ -1,4 +1,7 @@
 ﻿<h1>Students!</h1>
+Search student
+<input type="text" [(ngModel)]="studentCardId" class="form-control" /><br />
+<button (click)="Search(studentCardId)" class="btn">Search</button>
 <p *ngIf="!students"><em>Loading...</em></p>
 <table class='table' *ngIf="students">
     <thead>

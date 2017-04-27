@@ -18,6 +18,10 @@ namespace Dormitories.WEB.Controllers
         {
             return _administratorService.GetAllAdministrators(); 
         }
+        public AdministratorDTO Get(int id)
+        {
+            return _administratorService.GetAdministratorById(id);
+        }
         [HttpPut]
         public void Put([FromBody]AdministratorDTO administrator)
         {

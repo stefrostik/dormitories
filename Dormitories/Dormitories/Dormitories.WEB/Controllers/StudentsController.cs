@@ -22,6 +22,11 @@ namespace Dormitories.WEB.Controllers
         {
             return _studentService.GetAllStudents();
         }
+        [Route("api/students/search/{studentCardId}")]
+        public StudentDTO Search(string studentCardId)
+        {
+            return _studentService.GetStudentByStudentCardId(studentCardId);
+        }
         public StudentDTO Get(int id)
         {
             return _studentService.GetStudentById(id);

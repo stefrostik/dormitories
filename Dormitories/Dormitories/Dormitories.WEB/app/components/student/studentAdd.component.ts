@@ -9,6 +9,7 @@ import { ActivatedRoute, Router} from '@angular/router';
 })
 export class StudentAddComponent {
     public students: Student[];
+    public student: Student; 
     public roomId: number;
     private requestService : RequestService;
     myRouter: Router;
@@ -26,6 +27,11 @@ export class StudentAddComponent {
         myItem.RoomId = this.roomId;
         this.requestService.put('students', myItem).subscribe((resp: any) => {
             this.myRouter.navigate(['/room/details/'+myItem.RoomId]);
+        });
+    }
+    Search(studentCardId: string) {
+        this.requestService.get('students/search/' + studentCardId).subscribe((result: any) => {
+            this.student = result.json();
         });
     }
 }
