@@ -1,11 +1,8 @@
-﻿using Dormitories.BL;
+﻿using System.Threading.Tasks;
+using System.Web.Http;
+using Dormitories.BL;
 using Dormitories.BL.Interfaces;
 using Microsoft.AspNet.Identity;
-using Microsoft.Owin.Security;
-using System.Threading.Tasks;
-using System.Web.Http;
-using System.Net.Http;
-
 
 namespace Dormitories.WEB.Controllers
 {
@@ -30,16 +27,7 @@ namespace Dormitories.WEB.Controllers
                     return BadRequest(ModelState);
                 }
 
-                var usr = new UserRegisterDTO()
-                {
-                    Name = "valeraJopta",
-                    Email = "valeraJopta@gmail.com",
-                    Password = "valeraJopta123456",
-                    ConfirmPassword = "valeraJopta123456",
-                    RoleName = "Student"
-                };
-
-                IdentityResult result = await _authService.RegisterUser(usr);
+                IdentityResult result = await _authService.RegisterUser(userModel);
 
                 if (!result.Succeeded)
                 {

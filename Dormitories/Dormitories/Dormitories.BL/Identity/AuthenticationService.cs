@@ -74,12 +74,12 @@ namespace Dormitories.BL.Identity
                 }
                 catch (Exception ex)
                 {
-                    throw;
+                    throw ex;
                 }
 
                 if (result.Succeeded)
                 {
-                    await manager.AddToRolesAsync(usr.Id, registerUserModel.RoleName/*LvivCyclingConsts.DefaultRole*/);
+                    result = await manager.AddToRolesAsync(usr.Id, registerUserModel.RoleName);
                 }
 
                 return result;

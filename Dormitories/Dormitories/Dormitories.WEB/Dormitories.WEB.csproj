@@ -196,6 +196,7 @@
     <Content Include="app\components\floor\floors.component.html" />
     <Content Include="app\components\dormitory\dormitories.component.html" />
     <Content Include="app\components\home\home.component.html" />
+    <Content Include="app\components\register\register.component.html" />
     <Content Include="app\components\room\roomDetails.component.html" />
     <Content Include="app\components\room\roomAdd.component.html" />
     <Content Include="app\components\room\rooms.component.html" />
@@ -231,6 +232,7 @@
     <Content Include="package.json" />
     <Content Include="tsconfig.json" />
     <Content Include="app\components\dormitory\dormitoryDetails.component.html" />
+    <Content Include="app\components\login\login.component.html" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -274,6 +276,10 @@
     <TypeScriptCompile Include="app\components\dormitory\dormitories.component.ts" />
     <TypeScriptCompile Include="app\components\dormitory\Dormitory.ts" />
     <TypeScriptCompile Include="app\components\home\home.component.ts" />
+    <TypeScriptCompile Include="app\components\login\login.component.ts" />
+    <TypeScriptCompile Include="app\components\login\Login.ts" />
+    <TypeScriptCompile Include="app\components\register\register.component.ts" />
+    <TypeScriptCompile Include="app\components\register\Registration.ts" />
     <TypeScriptCompile Include="app\components\room\roomDetails.component.ts" />
     <TypeScriptCompile Include="app\components\room\roomAdd.component.ts" />
     <TypeScriptCompile Include="app\components\room\Room.ts" />
@@ -284,6 +290,7 @@
     <TypeScriptCompile Include="app\components\student\Student.ts" />
     <TypeScriptCompile Include="app\components\student\students.component.ts" />
     <TypeScriptCompile Include="app\main.ts" />
+    <TypeScriptCompile Include="app\shared\authentication.service.ts" />
     <TypeScriptCompile Include="app\shared\request.service.ts" />
   </ItemGroup>
   <ItemGroup>

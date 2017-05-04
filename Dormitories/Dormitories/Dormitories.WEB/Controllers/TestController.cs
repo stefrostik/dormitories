@@ -8,6 +8,7 @@ using System.Web.Security;
 
 namespace Dormitories.WEB.Controllers
 {
+    [Authorize]
     public class TestController : ApiController
     {
         // GET api/<controller>
