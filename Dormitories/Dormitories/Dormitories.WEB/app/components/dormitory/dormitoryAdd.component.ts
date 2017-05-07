@@ -26,7 +26,7 @@ export class DormitoryAddComponent {
     Done(myItem: Dormitory) {
         this.requestService.post('dormitories', myItem).subscribe((resp: any) => {
             this.dormitory = resp.json();
-            this.myRouter.navigate(['dormitory']);
+            this.myRouter.navigate(['/admin-home/dormitories']);
         });
     }
 }

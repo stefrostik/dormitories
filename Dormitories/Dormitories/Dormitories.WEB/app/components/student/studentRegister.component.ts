@@ -1,27 +1,31 @@
-﻿import { Component} from '@angular/core';
-import { ActivatedRoute, Router} from '@angular/router';
-import { RequestService} from '../../shared/request.service';
-import { Student } from './Student';
-
+﻿import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthenticationService } from '../../shared/authentication.service';
+import { StudentRegistration } from './StudentRegistration';
 @Component({
     moduleId: module.id,
     templateUrl: 'studentRegister.component.html'
 })
-export class StudentRegisterComponent {
-    public student: Student;
-    private requestService : RequestService;
-    myRouter: Router;
 
-    constructor(private router: Router, private activateRoute: ActivatedRoute, rs: RequestService) {
-        this.myRouter = router;
-        this.requestService = rs;
-        this.student = new Student();
+export class StudentRegisterComponent {
+    model: StudentRegistration = new StudentRegistration();
+    loading = false;
+
+    constructor(private router: Router, private authService: AuthenticationService) {
     }
 
-    Done(myItem: Student) {
-        this.requestService.post('students', myItem).subscribe((resp: any) => {
-            this.student = resp.json();
-            this.myRouter.navigate(['student']);
+    register() {
+        this.loading = true;
+        this.authService.register(this.model).subscribe((response: any) => {
+            let temp = response;
+            this.loading = false;
+            this.router.navigate(['/admin-home/students']);
+
+        }, (error: any) => {
+            let temp = error;
+            console.log(error);
+            alert('Registration error!');
         });
     }
 }
+

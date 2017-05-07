@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
     moduleId: module.id,
     templateUrl: 'students.component.html'
 })
-export class StudentComponent {
+export class StudentsComponent {
     public students: Student[];
     requestService: RequestService;
     myRouter: Router;
@@ -16,7 +16,7 @@ export class StudentComponent {
     constructor(private router: Router, rs: RequestService) {
         this.myRouter = router;
         this.requestService = rs;
-        this.requestService.get('students').subscribe(result => {
+        this.requestService.get('students').subscribe((result: any) => {
             this.students = result.json();
         });
     }

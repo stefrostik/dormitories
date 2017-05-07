@@ -1,14 +1,14 @@
 ﻿import { Component } from '@angular/core';
-import { RequestService} from '../../../shared/request.service';
-import { AuthenticationService} from '../../../shared/authentication.service';
-import { Administrator } from '../Administrator';
+import { RequestService} from '../../shared/request.service';
+import { AuthenticationService} from '../../shared/authentication.service';
+import { Administrator } from './Administrator';
 
 @Component({
     moduleId: module.id,
-    templateUrl: 'adminPersonalInfo.component.html'
+    templateUrl: 'adminInfo.component.html'
 })
 
-export class AdminPersonalInfoComponent {
+export class AdminInfoComponent {
     public admin: Administrator = new Administrator();
 
     constructor(private rs: RequestService,

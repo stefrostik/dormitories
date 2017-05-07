@@ -1,20 +1,4 @@
-﻿<!--<div class="navigate">
-    <nav>
-        <a routerLink="/home">Home</a>
-        <a routerLink="/dormitory">Dormitories</a>
-        <a routerLink="/floor">Floors</a>
-        <a routerLink="/administrator">Administators</a>
-        <a routerLink="/block">Blocks</a>
-        <a routerLink="/room">Rooms</a>
-        <a routerLink="/student">Students</a>
-        <a routerLink="/login">Login</a>
-        <a routerLink="/register">Register</a>
-
-    </nav>
-</div>-->
-
-
-<div class="container-fluid my-container" >
+﻿<div class="container-fluid my-container" >
     <nav class="navbar navbar-default">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle">
@@ -22,37 +6,34 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a ui-sref="layout" class="pull-left img-responsive">
-                <div class="navbar-brand">
-                    Гуртожитки ЛНУ
+            <a class="pull-left img-responsive">
+                <div class="navbar-brand" [routerLink]="['home']">
+                   Dormitories LNU
                 </div>
             </a>
         </div>
 
         <div class="collapse navbar-collapse">
-            <!--<div ng-show="!layout.authData.isAuth">-->
+            <div *ngIf="!isAuth">
                 <ul class="nav navbar-nav navbar-right">
-                    <li ><a><span class="glyphicon glyphicon-log-in"></span>Увійти</a></li>
-                    <!--<li ui-sref-active="active"><a href="" ng-click="layout.registrate()"><span class="glyphicon glyphicon-registration-mark"></span> Реєстрація</a></li>-->
+                    <li ><a [routerLink]="['login']"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
                 </ul>
-            <!--</div>-->
-            <!--<div ng-show="layout.authData.isAuth">-->
+            </div>
+            <div *ngIf="isAuth">
                 <ul class="nav navbar-nav navbar-right">
-                    <li ><a>No admin name</a></li>
-                    <li ><a><span class="glyphicon glyphicon-log-out"></span>Log out</a></li>
+                    <li ><a (click)="openHomePage()">{{userName}}</a></li>
+                    <li ><a (click)="signOut()"><span class="glyphicon glyphicon-log-out"></span>Sign out</a></li>
                 </ul>
-            <!--</div>-->
+            </div>
         </div>
     </nav>
 </div>
 
-
 <div class="container-fluid" style="min-height: 520px">
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12">
-            <!--All pages will be loaded here-->
+            <!--All inner pages will be loaded here-->
             <router-outlet></router-outlet>
-
         </div>
     </div>
 </div>

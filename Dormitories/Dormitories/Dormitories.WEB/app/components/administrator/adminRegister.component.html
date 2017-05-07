@@ -1,12 +1,15 @@
-﻿
-<h3>Register student</h3>
+﻿<h3>Add administrator</h3>
 <div class="col-md-6 col-md-offset-3">
     <h2>Register</h2>
     <form name="form" (ngSubmit)="f.form.valid && register()" #f="ngForm" novalidate>
-        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !studentCardId.valid }">
-            <label for="studentCardId">Student card Id</label>
-            <input type="text" class="form-control" name="studentCardId" [(ngModel)]="model.StudentCardId" #studentCardId="ngModel" required />
-            <div *ngIf="f.submitted && !studentCardId.valid" class="help-block">StudentCardId is required</div>
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !userrole.valid }">
+            <label for="userrole">UserRole</label>
+            <input type="text" class="form-control" name="userrole" [(ngModel)]="model.RoleName" #userrole="ngModel" required />
+            <div *ngIf="f.submitted && !userrole.valid" class="help-block">Role name is required</div>
+        </div>
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !dormitoryId.valid }">
+            <label for="dormitoryId">Dormitory Id</label>
+            <input type="number" class="form-control" name="dormitoryId" [(ngModel)]="model.DormitoryId" #dormitoryId="ngModel" />
         </div>
         <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !email.valid }">
             <label for="email">Email</label>

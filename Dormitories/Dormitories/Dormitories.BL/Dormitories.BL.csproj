@@ -107,7 +107,6 @@
     <Compile Include="Interfaces\IFloorService.cs" />
     <Compile Include="Interfaces\IDormitoryService.cs" />
     <Compile Include="Interfaces\IUserManager.cs" />
-    <Compile Include="Service.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DTO%27s\UserRegisterDTO.cs" />
     <Compile Include="Services\AdministratorService.cs" />

@@ -22,12 +22,15 @@ export class LoginComponent {
     login() {
         this.loading = true;
         this.authService.login(this.model).subscribe((response: any) => {
-            //if roles = student rediret to student home else to admin home
-            this.loading = true;
-            this.router.navigate(['admin-home']);
+            this.loading = false;
+            if (this.authService.currentUserRole !== 'Student') {
+                this.router.navigate(['admin-home']);
+            } else {
+                this.router.navigate(['student-home']);
+            }
         }, (error: any) => {
-                let temp = error;
-                console.log(temp);
-            });
+            let temp = error;
+            console.log(temp);
+        });
     }
 }

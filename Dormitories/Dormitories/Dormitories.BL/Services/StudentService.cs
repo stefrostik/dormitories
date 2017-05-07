@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Dormitories.BL.DTO_s;
 using Dormitories.BL.Interfaces;
 using Dormitories.DAL.Interfaces;
-using Dormitories.DAL.Models;
-using Microsoft.AspNet.Identity;
 
 namespace Dormitories.BL.Services
 {
@@ -36,7 +31,7 @@ namespace Dormitories.BL.Services
                     StudyYear = d.StudyYear,
                     StudentCardId = d.StudentCardId
                 }).ToList();
-            }    
+            }
         }
         public StudentDTO GetStudentByStudentCardId(string studentCardId)
         {
@@ -51,23 +46,24 @@ namespace Dormitories.BL.Services
                     GroupId = d.GroupId,
                     StudyYear = d.StudyYear,
                     StudentCardId = d.StudentCardId
-                }).Where(d => d.StudentCardId == studentCardId).FirstOrDefault();
+                }).FirstOrDefault(d => d.StudentCardId == studentCardId);
             }
         }
         public StudentDTO GetStudentById(int id)
         {
             using (_uow)
             {
-                return _uow.StudentRepository.Query().Select(d => new StudentDTO() {
-                    Id = d.Id,
-                    RoomId = d.RoomId,
-                    CategoryId = d.CategoryId,
-                    FacultyId = d.FacultyId,
-                    GroupId = d.GroupId,
-                    StudyYear = d.StudyYear,
-                    StudentCardId = d.StudentCardId
-                }).FirstOrDefault();         
-            }    
+                return _uow.StudentRepository.Query().Select(s => new StudentDTO() {
+                    Id = s.Id,
+                    RoomId = s.RoomId,
+                    CategoryId = s.CategoryId,
+                    FacultyId = s.FacultyId,
+                    GroupId = s.GroupId,
+                    StudyYear = s.StudyYear,
+                    StudentCardId = s.StudentCardId,
+                    Name = s.FullName
+                }).FirstOrDefault(s=>s.Id == id);
+            }
         }
 
         public bool UpdateStudent(StudentDTO student)
@@ -82,7 +78,7 @@ namespace Dormitories.BL.Services
                 tempStudent.StudyYear = student.StudyYear;
                 tempStudent.StudentCardId = student.StudentCardId;
                 _uow.StudentRepository.Update(tempStudent);
-                _uow.Save();  
+                _uow.Save();
             }
             return true;
         }
@@ -90,7 +86,7 @@ namespace Dormitories.BL.Services
         public bool DeleteStudent(int id)
         {
             using (_uow)
-            {                
+            {
                 var tempStudent = _uow.StudentRepository.GetById(id);
                 _uow.StudentRepository.Delete(tempStudent);
                 _uow.Save();

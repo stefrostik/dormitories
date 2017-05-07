@@ -182,12 +182,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="app\app.component.css" />
+    <None Include="app\app.component.less" />
+    <Content Include="app\app.component.css">
+      <DependentUpon>app.component.less</DependentUpon>
+    </Content>
     <Content Include="app\app.component.html" />
-    <Content Include="app\components\administrator\adminHome\adminHome.component.html" />
-    <Content Include="app\components\administrator\adminHome\adminPersonalInfo.component.html" />
+    <Content Include="app\app.component.min.css">
+      <DependentUpon>app.component.css</DependentUpon>
+    </Content>
+    <Content Include="app\components\administrator\adminHome.component.html" />
+    <Content Include="app\components\administrator\adminInfo.component.html" />
     <Content Include="app\components\administrator\administrators.component.html" />
-    <Content Include="app\components\administrator\administratorAdd.component.html" />
+    <Content Include="app\components\administrator\adminRegister.component.html" />
     <Content Include="app\components\block\blocks.component.html" />
     <Content Include="app\components\block\blockAdd.component.html" />
     <Content Include="app\components\block\blockDetails.component.html" />
@@ -204,6 +210,7 @@
     <Content Include="app\components\room\rooms.component.html" />
     <Content Include="app\components\student\studentAdd.component.html" />
     <Content Include="app\components\student\studentDetails.component.html" />
+    <Content Include="app\components\student\studentHome.component.html" />
     <Content Include="app\components\student\studentRegister.component.html" />
     <Content Include="app\components\student\students.component.html" />
     <Content Include="Index.html" />
@@ -236,6 +243,11 @@
     <Content Include="tsconfig.json" />
     <Content Include="app\components\dormitory\dormitoryDetails.component.html" />
     <Content Include="app\components\login\login.component.html" />
+    <Content Include="app\components\student\studentInfo.component.html" />
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -263,10 +275,11 @@
     <TypeScriptCompile Include="app\app.component.ts" />
     <TypeScriptCompile Include="app\app.module.ts" />
     <TypeScriptCompile Include="app\components\administrator\Administrator.ts" />
-    <TypeScriptCompile Include="app\components\administrator\adminHome\adminHome.component.ts" />
+    <TypeScriptCompile Include="app\components\administrator\adminHome.component.ts" />
     <TypeScriptCompile Include="app\components\administrator\administrators.component.ts" />
-    <TypeScriptCompile Include="app\components\administrator\administratorAdd.component.ts" />
-    <TypeScriptCompile Include="app\components\administrator\adminHome\adminPersonalInfo.component.ts" />
+    <TypeScriptCompile Include="app\components\administrator\adminRegister.component.ts" />
+    <TypeScriptCompile Include="app\components\administrator\adminInfo.component.ts" />
+    <TypeScriptCompile Include="app\components\administrator\AdminRegistration.ts" />
     <TypeScriptCompile Include="app\components\block\Block.ts" />
     <TypeScriptCompile Include="app\components\block\blocks.component.ts" />
     <TypeScriptCompile Include="app\components\block\blockAdd.component.ts" />
@@ -291,8 +304,11 @@
     <TypeScriptCompile Include="app\components\room\rooms.component.ts" />
     <TypeScriptCompile Include="app\components\student\studentAdd.component.ts" />
     <TypeScriptCompile Include="app\components\student\studentDetails.component.ts" />
+    <TypeScriptCompile Include="app\components\student\studentHome.component.ts" />
+    <TypeScriptCompile Include="app\components\student\studentInfo.component.ts" />
     <TypeScriptCompile Include="app\components\student\studentRegister.component.ts" />
     <TypeScriptCompile Include="app\components\student\Student.ts" />
+    <TypeScriptCompile Include="app\components\student\StudentRegistration.ts" />
     <TypeScriptCompile Include="app\components\student\students.component.ts" />
     <TypeScriptCompile Include="app\main.ts" />
     <TypeScriptCompile Include="app\shared\authentication.service.ts" />

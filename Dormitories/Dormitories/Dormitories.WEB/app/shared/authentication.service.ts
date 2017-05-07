@@ -10,11 +10,14 @@ export class AuthenticationService {
     public currentUserRole: string = 'No Role';
     public currentUserName: string = 'No UserName';
     public currentUserId: number = 0;
+    public isAuth: boolean = false;
+    public appComponent: any = null;
 
     constructor(private http: Http) {
         this.currentUserId = Number(localStorage.getItem('userId'));
         this.currentUserName = localStorage.getItem('userName');
         this.currentUserRole = localStorage.getItem('userRole');
+        this.isAuth = this.currentUserId > 0;
     }
 
     login(loginModel: any) {
@@ -28,18 +31,24 @@ export class AuthenticationService {
                 this.currentUserRole = JSON.parse(body.roles)[0];
                 this.currentUserId = Number(body.id);
                 this.currentUserName = body.userName;
+                this.isAuth = true;
+
+                //set header values
+                this.appComponent.isAuth = true;
+                this.appComponent.userName = body.userName;
 
                 localStorage.setItem('token', body.access_token);
                 localStorage.setItem('userName', this.currentUserName);
                 localStorage.setItem('userRole', this.currentUserRole);
                 localStorage.setItem('userId', String(this.currentUserId));
+
                 return body;
             }).catch((error: any) => {
                 return Observable.throw(error || 'Login error');
             });
     }
 
-    register(registerModel: Registration) {
+    register(registerModel: any) {
         return this.http.post(this.registerUrl, registerModel)
             .map((result: Response) => result)
             .catch((error: any) => {
@@ -48,6 +57,7 @@ export class AuthenticationService {
     }
 
     signOut() {
+        this.isAuth = false;
         this.currentUserId = 0;
         this.currentUserName = 'No name';
         this.currentUserRole = 'No role';

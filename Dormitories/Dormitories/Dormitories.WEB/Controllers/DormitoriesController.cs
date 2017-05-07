@@ -13,23 +13,25 @@ namespace Dormitories.WEB.Controllers
         {
             _dormitoryService = dormitoryService;
         }
-        
+
         public ICollection<DormitoryDTO> Get()
         {
             //todo: implement fetching logic
             return _dormitoryService.GetAllDormitories();
         }
-        
+
 
         public DormitoryFullDTO Get(int id)
         {
             return _dormitoryService.GetFullDormitory(id);
         }
+
         [HttpPut]
         public void Put([FromBody]DormitoryDTO floor)
         {
             _dormitoryService.UpdateDormitory(floor);
         }
+
         [HttpDelete]
         public bool Delete(int id)
         {
@@ -37,6 +39,7 @@ namespace Dormitories.WEB.Controllers
             return true;
 
         }
+
         [HttpPost]
         public bool Post([FromBody]DormitoryDTO dormitory)
         {

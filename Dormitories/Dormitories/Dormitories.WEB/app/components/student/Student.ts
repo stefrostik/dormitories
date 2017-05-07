@@ -1,5 +1,4 @@
 ﻿export class Student {
-
     Id: number;
     StudentCardId: string;
     FacultyId: number;

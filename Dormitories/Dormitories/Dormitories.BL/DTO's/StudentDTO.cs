@@ -15,5 +15,7 @@ namespace Dormitories.BL.DTO_s
         public int? RoomId { get; set; }
         public int StudyYear { get; set; }
         public int? CategoryId { get; set; }
+
+        public string Name { get; set; }
     }
 }

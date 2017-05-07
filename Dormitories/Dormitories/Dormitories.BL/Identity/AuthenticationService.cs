@@ -53,7 +53,7 @@ namespace Dormitories.BL.Identity
                     GroupId = registerUserModel.GroupId,
                     PhoneNumber = registerUserModel.PhoneNumber,
                     RoomId = registerUserModel.RoomId,
-                    StudyYear = registerUserModel.StudyYear,
+                    StudyYear = registerUserModel.StudyYear ?? 0,
                     StudentCardId = registerUserModel.StudentCardId,
                 };
             }

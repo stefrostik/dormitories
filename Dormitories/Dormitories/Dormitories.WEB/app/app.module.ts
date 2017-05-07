@@ -18,15 +18,17 @@ import { RoomAddComponent } from './components/room/roomAdd.component';
 import { RoomDetailsComponent } from './components/room/roomDetails.component';
 import { HomeComponent } from './components/home/home.component';
 import { AdministratorsComponent } from './components/administrator/administrators.component';
-import { AdministratorAddComponent } from './components/administrator/administratorAdd.component';
-import { StudentComponent } from './components/student/students.component';
+import { AdminRegisterComponent } from './components/administrator/adminRegister.component';
+import { StudentsComponent } from './components/student/students.component';
 import { StudentRegisterComponent } from './components/student/studentRegister.component';
 import { StudentAddComponent } from './components/student/studentAdd.component';
 import { StudentDetailsComponent } from './components/student/studentDetails.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
-import { AdminHomeComponent } from './components/administrator/adminHome/adminHome.component';
-import { AdminPersonalInfoComponent } from './components/administrator/adminHome/adminPersonalInfo.component';
+import { AdminHomeComponent } from './components/administrator/adminHome.component';
+import { AdminInfoComponent } from './components/administrator/adminInfo.component';
+import { StudentHomeComponent} from './components/student/studentHome.component';
+import { StudentInfoComponent} from './components/student/studentInfo.component';
 import { RouterModule, Routes } from '@angular/router';
 import { APP_BASE_HREF } from '@angular/common';
 import { DropdownModule } from "ngx-dropdown";
@@ -39,11 +41,12 @@ import 'rxjs/Rx'
         AppComponent,
         HomeComponent,
         DormitoriesComponent, DormitoryAddComponent, DormitoryDetailsComponent,
-        AdministratorsComponent, AdministratorAddComponent, AdminHomeComponent, AdminPersonalInfoComponent,
+        AdministratorsComponent, AdminRegisterComponent, AdminHomeComponent, AdminInfoComponent,
         FloorComponent, FloorEditComponent, FloorAddComponent, FloorDetailsComponent,
         BlockComponent, BlockAddComponent, BlockDetailsComponent,
         RoomComponent, RoomAddComponent, RoomDetailsComponent,
-        StudentComponent, StudentRegisterComponent, StudentDetailsComponent, StudentAddComponent,
+        StudentsComponent, StudentRegisterComponent, StudentDetailsComponent, StudentAddComponent,
+        StudentHomeComponent, StudentInfoComponent,
         LoginComponent, RegisterComponent
     ],
     imports: [
@@ -61,10 +64,23 @@ import 'rxjs/Rx'
             {
                 path: 'admin-home', component: AdminHomeComponent,
                 children: [
-                    { path: '', redirectTo: 'personalInfo', pathMatch: 'full' },
-                    { path: 'personalInfo', component: AdminPersonalInfoComponent },
+                    { path: '', redirectTo: 'info', pathMatch: 'full' },
+                    { path: 'info', component: AdminInfoComponent },
                     { path: 'administrators', component: AdministratorsComponent},
-                    { path: 'administratorAdd', component: AdministratorAddComponent},
+                    { path: 'addAdmin', component: AdminRegisterComponent },
+                    { path: 'students', component: StudentsComponent },
+                    { path: 'studentRegister', component: StudentRegisterComponent },
+                    { path: 'dormitories', component: DormitoriesComponent },
+                    { path: 'dormitoryAdd', component: DormitoryAddComponent}
+                    //todo: add other components
+                ]
+            },
+            {
+                path: 'student-home', component: StudentHomeComponent,
+                children: [
+                    { path: '', redirectTo: 'info', pathMatch: 'full' },
+                    { path: 'info', component: StudentInfoComponent }
+                    //todo: add other components
                 ]
             },
             //{ path: 'administrators', component: AdministratorComponent },
@@ -82,7 +98,7 @@ import 'rxjs/Rx'
             { path: 'floor/floorAdd', component: FloorAddComponent },
             { path: 'floor/floorAdd/:dormitoryId', component: FloorAddComponent },
             { path: 'floor/details/:id', component: FloorDetailsComponent },
-            { path: 'student', component: StudentComponent },
+            { path: 'students', component: StudentsComponent },
             { path: 'student/studentRegister', component: StudentRegisterComponent },
             { path: 'student/studentAdd/:roomId', component: StudentAddComponent },
             { path: 'student/details/:id', component: StudentDetailsComponent },

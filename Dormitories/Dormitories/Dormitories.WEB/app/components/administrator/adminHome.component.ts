@@ -6,9 +6,6 @@
 })
 //this is layout page for adminHome with left menu
 export class AdminHomeComponent {
-    constructor() {
-
-    }
 }
 
 

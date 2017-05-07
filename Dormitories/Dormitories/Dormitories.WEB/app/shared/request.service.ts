@@ -21,7 +21,7 @@ export class RequestService {
         let headers = new Headers({ 'authorization': 'bearer ' + localStorage.getItem('token') });
         let options = new RequestOptions({ headers: headers });
 
-        return this.http.post(this._baseUrl + url, options).catch(this.handleError);
+        return this.http.post(this._baseUrl + url, obj, options).catch(this.handleError);
     }
 
     put(url: String, obj: any) {
