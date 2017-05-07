@@ -1,7 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using Dormitories.BL.DTO_s;
 using Dormitories.BL.Interfaces;
+using Dormitories.DAL.Identity;
 using Dormitories.DAL.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
@@ -44,6 +48,7 @@ namespace Dormitories.BL.Identity
                     UserName = registerUserModel.StudentCardId,
                     CategoryId = registerUserModel.CategoryId,
                     Email = registerUserModel.Email,
+                    FullName = registerUserModel.Name,
                     FacultyId = registerUserModel.FacultyId,
                     GroupId = registerUserModel.GroupId,
                     PhoneNumber = registerUserModel.PhoneNumber,
@@ -60,6 +65,7 @@ namespace Dormitories.BL.Identity
                     DormitoryId = registerUserModel.DormitoryId,
                     PhoneNumber = registerUserModel.PhoneNumber,
                     Email = registerUserModel.Email,
+                    FullName = registerUserModel.Name,
                     FacultyId = registerUserModel.FacultyId
                 };
             }
@@ -135,7 +141,7 @@ namespace Dormitories.BL.Identity
             var props = new AuthenticationProperties()
             {
                 IssuedUtc = DateTime.UtcNow,
-                //ExpiresUtc = DateTime.UtcNow.Add(LvivCyclingConsts.DefaultTokenExpirationTime)
+                ExpiresUtc = DateTime.UtcNow.AddDays(14)
             };
 
             var ticket = new AuthenticationTicket(identity, props);
@@ -156,6 +162,19 @@ namespace Dormitories.BL.Identity
             }
         }
 
+        public ICollection<RoleDTO> GetAllRoles()
+        {
+            using (var context = provider.Context)
+            {
+                return context.Roles
+                    .Select(r=> new RoleDTO()
+                    {
+                        Id = r.Id,
+                        Name = r.Name
+                    }).ToList();
+            }
+        }
+
         private ClaimsIdentity CreateExternalIdentity(User user, string authentiationType)
         {
             using (var context = provider.Context)
@@ -165,5 +184,6 @@ namespace Dormitories.BL.Identity
                 return manager.CreateExternalIdentity(user, authentiationType);
             }
         }
+
     }
 }

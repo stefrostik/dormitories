@@ -1,4 +1,4 @@
-﻿import { NgModule,Component } from '@angular/core';
+﻿import { NgModule, Component } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
@@ -17,7 +17,7 @@ import { RoomComponent } from './components/room/rooms.component';
 import { RoomAddComponent } from './components/room/roomAdd.component';
 import { RoomDetailsComponent } from './components/room/roomDetails.component';
 import { HomeComponent } from './components/home/home.component';
-import { AdministratorComponent } from './components/administrator/administrators.component';
+import { AdministratorsComponent } from './components/administrator/administrators.component';
 import { AdministratorAddComponent } from './components/administrator/administratorAdd.component';
 import { StudentComponent } from './components/student/students.component';
 import { StudentRegisterComponent } from './components/student/studentRegister.component';
@@ -25,6 +25,8 @@ import { StudentAddComponent } from './components/student/studentAdd.component';
 import { StudentDetailsComponent } from './components/student/studentDetails.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { AdminHomeComponent } from './components/administrator/adminHome/adminHome.component';
+import { AdminPersonalInfoComponent } from './components/administrator/adminHome/adminPersonalInfo.component';
 import { RouterModule, Routes } from '@angular/router';
 import { APP_BASE_HREF } from '@angular/common';
 import { DropdownModule } from "ngx-dropdown";
@@ -37,7 +39,7 @@ import 'rxjs/Rx'
         AppComponent,
         HomeComponent,
         DormitoriesComponent, DormitoryAddComponent, DormitoryDetailsComponent,
-        AdministratorComponent, AdministratorAddComponent,
+        AdministratorsComponent, AdministratorAddComponent, AdminHomeComponent, AdminPersonalInfoComponent,
         FloorComponent, FloorEditComponent, FloorAddComponent, FloorDetailsComponent,
         BlockComponent, BlockAddComponent, BlockDetailsComponent,
         RoomComponent, RoomAddComponent, RoomDetailsComponent,
@@ -56,8 +58,17 @@ import 'rxjs/Rx'
             { path: 'dormitory/dormitoryAdd', component: DormitoryAddComponent },
             { path: 'dormitory/details/:id', component: DormitoryDetailsComponent },
             { path: 'home', component: HomeComponent },
-            { path: 'administrator', component: AdministratorComponent },
-            { path: 'administrator/administatorAdd', component: AdministratorAddComponent },
+            {
+                path: 'admin-home', component: AdminHomeComponent,
+                children: [
+                    { path: '', redirectTo: 'personalInfo', pathMatch: 'full' },
+                    { path: 'personalInfo', component: AdminPersonalInfoComponent },
+                    { path: 'administrators', component: AdministratorsComponent},
+                    { path: 'administratorAdd', component: AdministratorAddComponent},
+                ]
+            },
+            //{ path: 'administrators', component: AdministratorComponent },
+            //{ path: 'administrator/administatorAdd', component: AdministratorAddComponent },
             { path: 'room', component: RoomComponent },
             { path: 'room/roomAdd', component: RoomAddComponent },
             { path: 'room/roomAdd/:blockId', component: RoomAddComponent },
@@ -77,11 +88,8 @@ import 'rxjs/Rx'
             { path: 'student/details/:id', component: StudentDetailsComponent },
             { path: 'login', component: LoginComponent },
             { path: 'register', component: RegisterComponent },
-            { path: '**', redirectTo: 'app' }
+            { path: '**', redirectTo: 'home' }
         ], { useHash: true })]
-
-
-
 })
 export class AppModule {
 

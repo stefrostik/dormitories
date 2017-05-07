@@ -184,6 +184,8 @@
   <ItemGroup>
     <Content Include="app\app.component.css" />
     <Content Include="app\app.component.html" />
+    <Content Include="app\components\administrator\adminHome\adminHome.component.html" />
+    <Content Include="app\components\administrator\adminHome\adminPersonalInfo.component.html" />
     <Content Include="app\components\administrator\administrators.component.html" />
     <Content Include="app\components\administrator\administratorAdd.component.html" />
     <Content Include="app\components\block\blocks.component.html" />
@@ -217,6 +219,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdministratorsController.cs" />
+    <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
     <Compile Include="Controllers\RoomsController.cs" />
     <Compile Include="Controllers\BlocksController.cs" />
@@ -260,8 +263,10 @@
     <TypeScriptCompile Include="app\app.component.ts" />
     <TypeScriptCompile Include="app\app.module.ts" />
     <TypeScriptCompile Include="app\components\administrator\Administrator.ts" />
+    <TypeScriptCompile Include="app\components\administrator\adminHome\adminHome.component.ts" />
     <TypeScriptCompile Include="app\components\administrator\administrators.component.ts" />
     <TypeScriptCompile Include="app\components\administrator\administratorAdd.component.ts" />
+    <TypeScriptCompile Include="app\components\administrator\adminHome\adminPersonalInfo.component.ts" />
     <TypeScriptCompile Include="app\components\block\Block.ts" />
     <TypeScriptCompile Include="app\components\block\blocks.component.ts" />
     <TypeScriptCompile Include="app\components\block\blockAdd.component.ts" />

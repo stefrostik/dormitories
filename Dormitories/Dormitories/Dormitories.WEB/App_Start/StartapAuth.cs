@@ -13,21 +13,17 @@ namespace Dormitories.WEB
     {
         public static OAuthAuthorizationServerOptions OAuthOptions { get; private set; }
 
-        //public static FacebookAuthenticationOptions FacebookAuthOptions { get; private set; }
-
         public void ConfigureOAuth(IAppBuilder app)
         {
-            app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
-            app.UseCors(CorsOptions.AllowAll);
+             app.UseCors(CorsOptions.AllowAll);
 
             OAuthOptions = new OAuthAuthorizationServerOptions
             {
                 TokenEndpointPath = new PathString("/token"),
                 Provider =  new DormitoriesOAuthProvider(),
-                //AccessTokenExpireTimeSpan = new TimeSpan(3600),/*LvivCyclingConsts.DefaultTokenExpirationTime*/
+                AccessTokenExpireTimeSpan = new TimeSpan(30,0,0,0),
                 AllowInsecureHttp = true
             };
-
 
             app.UseOAuthBearerTokens(OAuthOptions);
         }

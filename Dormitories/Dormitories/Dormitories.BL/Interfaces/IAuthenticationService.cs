@@ -1,5 +1,8 @@
-﻿using System.Security.Claims;
+﻿using System.Collections.Generic;
+using System.Security.Claims;
 using System.Threading.Tasks;
+using Dormitories.BL.DTO_s;
+using Dormitories.DAL.Identity;
 using Dormitories.DAL.Models;
 using Microsoft.AspNet.Identity;
 
@@ -17,14 +20,10 @@ namespace Dormitories.BL.Interfaces
 
         Task<User> FindAsync(UserLoginInfo login);
 
-        //ExternalLoginData GetExternalDataFromIdentity(ClaimsIdentity identity);
-
-        //Task<IdentityResult> RegisterExternalAsync(ExternalLoginData data);
-
-        //string GenerateLocalAccessTokenResponse(User user, OAuthAuthorizationServerOptions options);
-
         Task<bool> HasRegistered(UserLoginInfo info);
 
         Task<string> GetAllRolesJson(long userId);
+
+        ICollection<RoleDTO> GetAllRoles();
     }
 }

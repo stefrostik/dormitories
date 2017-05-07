@@ -1,4 +1,4 @@
-﻿import { Component, OnInit } from '@angular/core';
+﻿import { Component} from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuthenticationService } from '../../shared/authentication.service';
 import { Login} from './Login';
@@ -9,21 +9,25 @@ import { Login} from './Login';
 })
 
 export class LoginComponent {
-    model: Login =  new Login();
+    model: Login = new Login();
     loading = false;
     private returnUrl: string;
-    private authenticationService: AuthenticationService;
 
     constructor(
         private route: ActivatedRoute,
         private router: Router,
-        private as: AuthenticationService) {
-
-        this.authenticationService = as;
+        private authService: AuthenticationService) {
     }
 
     login() {
-        //this.loading = true;
-        var res = this.authenticationService.login(this.model);
+        this.loading = true;
+        this.authService.login(this.model).subscribe((response: any) => {
+            //if roles = student rediret to student home else to admin home
+            this.loading = true;
+            this.router.navigate(['admin-home']);
+        }, (error: any) => {
+                let temp = error;
+                console.log(temp);
+            });
     }
 }

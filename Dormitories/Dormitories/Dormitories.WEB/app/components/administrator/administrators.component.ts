@@ -8,7 +8,7 @@ import { Administrator } from './Administrator';
     templateUrl: 'administrators.component.html'
 })
 
-export class AdministratorComponent {
+export class AdministratorsComponent {
     public administrators: Administrator;
 
     constructor(rs: RequestService) {
@@ -17,9 +17,3 @@ export class AdministratorComponent {
         });
     }
 }
-
-
-
-
-
-

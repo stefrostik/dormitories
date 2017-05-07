@@ -42,8 +42,10 @@ namespace Dormitories.BL.Services
                 {
                     Id = d.Id,
                     DormitoryId = d.DormitoryId,
-                    FacultyId = d.FacultyId
-                }).FirstOrDefault();
+                    FacultyId = d.FacultyId,
+                    Email =  d.Email,
+                    Name = d.FullName
+                }).FirstOrDefault(d => d.Id == id);
             }
         }
 

@@ -8,16 +8,24 @@ import {Registration } from './Registration';
 })
 
 export class RegisterComponent {
-    model: Registration= new Registration();
+    model: Registration = new Registration();
     loading = false;
-    private authenticationService : AuthenticationService;
-    constructor(private router: Router, private as: AuthenticationService) {
-        this.authenticationService = as;
+
+    constructor(private router: Router, private authService: AuthenticationService) {
     }
 
     register() {
-        this.authenticationService.register(this.model);
-        console.log("register works");
+        this.loading = true;
+        this.authService.register(this.model).subscribe((response: any) => {
+            let temp = response;
+            this.loading = false;
+            this.router.navigate(['login']);
+
+        }, (error: any) => {
+            let temp = error;
+            console.log(error);
+            alert('Registration error!');
+        });
     }
 }
 

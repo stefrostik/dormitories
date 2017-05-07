@@ -1,0 +1,17 @@
+﻿<h1>Administrator home page</h1>
+
+<div class="row">
+    <div class="col-sm-3">
+        <div style="background-color: aqua">
+            <p> <a [routerLink]="['personalInfo']">Personal info:</a></p>
+            <p> <a [routerLink]="['administrators']">Administrators:</a></p>
+            <p>Dormitories:</p>
+            <p>Students:</p>
+        </div>
+    </div>
+    <div class="col-sm-9">
+        <div style="background-color:burlywood">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

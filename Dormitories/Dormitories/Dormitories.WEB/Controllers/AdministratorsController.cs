@@ -13,20 +13,22 @@ namespace Dormitories.WEB.Controllers
         {
             _administratorService = administatorService;
         }
-        
+
         public ICollection<AdministratorDTO> Get()
         {
-            return _administratorService.GetAllAdministrators(); 
+            return _administratorService.GetAllAdministrators();
         }
         public AdministratorDTO Get(int id)
         {
             return _administratorService.GetAdministratorById(id);
         }
+
         [HttpPut]
         public void Put([FromBody]AdministratorDTO administrator)
         {
             _administratorService.UpdateAdministrator(administrator);
         }
+
         [HttpDelete]
         public bool Delete(int id)
         {
@@ -34,6 +36,7 @@ namespace Dormitories.WEB.Controllers
             return true;
 
         }
+
         [HttpPost]
         public bool Post([FromBody]AdministratorDTO administrator)
         {
