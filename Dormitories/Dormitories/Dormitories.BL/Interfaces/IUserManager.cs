@@ -27,5 +27,7 @@ namespace Dormitories.BL.Interfaces
         Task<User> FindByEmailAsync(string email);
 
         Task<IList<string>> GetRolesAsync(long userId);
+
+        Task<IdentityResult> ChangePasswordAsync(long userId, string currentPassword, string newPassword);
     }
 }

@@ -31,6 +31,7 @@ export class LoginComponent {
         }, (error: any) => {
             let temp = error;
             console.log(temp);
+            this.loading = false;
         });
     }
 }

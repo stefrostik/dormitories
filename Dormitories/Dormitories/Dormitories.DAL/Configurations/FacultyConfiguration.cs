@@ -20,6 +20,11 @@ namespace Dormitories.DAL.Configurations
             HasMany(x => x.Users)
                 .WithOptional(y => y.Faculty)
                 .HasForeignKey(x => x.FacultyId);
+
+            HasMany(x => x.Groups)
+                .WithRequired(y => y.Faculty)
+                .HasForeignKey(y => y.FacultyId);
+
         }
     }
 }

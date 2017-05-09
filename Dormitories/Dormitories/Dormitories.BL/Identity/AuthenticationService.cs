@@ -114,6 +114,18 @@ namespace Dormitories.BL.Identity
             }
         }
 
+        public async Task<IdentityResult> ChangePasswordAsync(long userId, string currentPassword, string newPassword)
+        {
+            using (var context = provider.Context)
+            {
+                IUserManager userManager =
+                    provider.GetUserManager(context);
+                var result = await userManager.ChangePasswordAsync(userId, currentPassword, newPassword);
+
+                return result;
+            }
+        }
+
         #endregion
 
         public async Task<bool> HasRegistered(UserLoginInfo info)

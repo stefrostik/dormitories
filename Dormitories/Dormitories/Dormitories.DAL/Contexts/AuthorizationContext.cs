@@ -13,10 +13,7 @@ namespace Dormitories.DAL.Contexts
         public AuthorizationContext()
             : base("name=Dormitories")
         {
-            //Database.SetInitializer<AuthorizationContext>(new CreateDatabaseIfNotExists<AuthorizationContext>());
-            //Database.SetInitializer<AuthorizationContext>(new DropCreateDatabaseIfModelChanges<AuthorizationContext>());
-            //Database.SetInitializer<AuthorizationContext>(new DropCreateDatabaseAlways<AuthorizationContext>());
-            Database.SetInitializer<AuthorizationContext>(new AuthorizationContextInit());
+            Database.SetInitializer<AuthorizationContext>(new CreateDatabaseIfNotExists<AuthorizationContext>());
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -42,23 +39,6 @@ namespace Dormitories.DAL.Contexts
             modelBuilder.Entity<CustomUserLogin>().ToTable("dbo.UserLogins");
             modelBuilder.Entity<CustomUserClaim>().ToTable("dbo.UserClaims");
 
-        }
-    }
-
-    public class AuthorizationContextInit : CreateDatabaseIfNotExists<AuthorizationContext>
-    {
-        protected override void Seed(AuthorizationContext context)
-        {
-            /*IList<CustomRole> defaultStandards = new List<CustomRole>();
-
-            defaultStandards.Add(new CustomRole() {Name = "Student", Id = 1});
-            defaultStandards.Add(new CustomRole() { Name = "Administrator", Id = 2 });
-            defaultStandards.Add(new CustomRole() { Name = "RootAdministrator", Id = 3 });
-
-            foreach (var std in defaultStandards)
-                context.Roles.Add(std);*/
-
-            base.Seed(context);
         }
     }
 }

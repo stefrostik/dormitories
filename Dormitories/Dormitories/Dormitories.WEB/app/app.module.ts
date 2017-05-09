@@ -34,7 +34,6 @@ import { APP_BASE_HREF } from '@angular/common';
 import { DropdownModule } from "ngx-dropdown";
 import 'rxjs/Rx'
 
-
 @NgModule({
     bootstrap: [AppComponent],
     declarations: [
@@ -60,7 +59,7 @@ import 'rxjs/Rx'
             { path: 'dormitory', component: DormitoriesComponent },
             { path: 'dormitory/dormitoryAdd', component: DormitoryAddComponent },
             { path: 'dormitory/details/:id', component: DormitoryDetailsComponent },
-            { path: 'home', component: HomeComponent },
+            { path: 'home', component: HomeComponent},
             {
                 path: 'admin-home', component: AdminHomeComponent,
                 children: [
@@ -83,8 +82,6 @@ import 'rxjs/Rx'
                     //todo: add other components
                 ]
             },
-            //{ path: 'administrators', component: AdministratorComponent },
-            //{ path: 'administrator/administatorAdd', component: AdministratorAddComponent },
             { path: 'room', component: RoomComponent },
             { path: 'room/roomAdd', component: RoomAddComponent },
             { path: 'room/roomAdd/:blockId', component: RoomAddComponent },
@@ -104,7 +101,7 @@ import 'rxjs/Rx'
             { path: 'student/details/:id', component: StudentDetailsComponent },
             { path: 'login', component: LoginComponent },
             { path: 'register', component: RegisterComponent },
-            { path: '**', redirectTo: 'home' }
+            { path: '**', redirectTo: '', pathMatch: 'full'}
         ], { useHash: true })]
 })
 export class AppModule {
