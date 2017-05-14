@@ -1,17 +1,18 @@
 ﻿<h1>Administrator home page</h1>
 
 <div class="row">
-    <div class="col-sm-3">
-        <div style="background-color: aqua">
-            <p> <a [routerLink]="['info']">Personal info:</a></p>
-            <p> <a [routerLink]="['administrators']">Administrators:</a></p>
-            <p> <a [routerLink]="['students']"> Students:</a></p>
-            <p> <a [routerLink]="['dormitories']"> Dormitories:</a></p>
-
+    <div class="col-sm-3" style="padding-top:15px">
+        <div>
+            <div style="display:inline-block; float:left;">
+                <button type="button" class="btn btn-primary btn-margin-5" [routerLink]="['info']">Personal info:</button>
+                <button type="button" class="btn btn-primary btn-margin-5"  [routerLink]="['administrators']">Administrators:</button>
+                <button type="button" class="btn btn-primary btn-margin-5"  [routerLink]="['dormitories']">Dormitories:</button>
+                <button type="button" class="btn btn-primary btn-margin-5"  [routerLink]="['students']">Students:</button>
+            </div>
         </div>
     </div>
-    <div class="col-sm-9">
-        <div style="background-color:burlywood">
+    <div class="col-sm-9 bs-callout bs-callout-info">
+        <div>
             <router-outlet></router-outlet>
         </div>
     </div>

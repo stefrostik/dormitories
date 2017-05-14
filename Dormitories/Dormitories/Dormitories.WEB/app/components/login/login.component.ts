@@ -23,11 +23,19 @@ export class LoginComponent {
         this.loading = true;
         this.authService.login(this.model).subscribe((response: any) => {
             this.loading = false;
-            if (this.authService.currentUserRole !== 'Student') {
+            if (this.authService.currentUserRole == 'Admin') {
                 this.router.navigate(['admin-home']);
-            } else {
-                this.router.navigate(['student-home']);
-            }
+            } else
+                if (this.authService.currentUserRole == 'Student')
+                {
+                    this.router.navigate(['student-home']);
+                } else
+                    if (this.authService.currentUserRole == 'DormitoryAdmin') {
+                        this.router.navigate(['dormitory-admin-home']);
+                    } else
+                        if (this.authService.currentUserRole == 'FacultyAdmin') {
+                            this.router.navigate(['faculty-admin-home']);
+                        }
         }, (error: any) => {
             let temp = error;
             console.log(temp);

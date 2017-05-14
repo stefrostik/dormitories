@@ -19,7 +19,7 @@ export class StudentRegisterComponent {
         this.authService.register(this.model).subscribe((response: any) => {
             let temp = response;
             this.loading = false;
-            this.router.navigate(['/admin-home/students']);
+            this.router.navigate(['../students']);
 
         }, (error: any) => {
             let temp = error;

@@ -4,7 +4,7 @@
     <p> <strong>Id</strong> : {{block.Id}}</p>
     <p><strong>FloorId</strong> : {{ block.FloorId }}</p>
     <h2>Rooms</h2>
-    <a [routerLink]="['/room/roomAdd/',block.Id]">Add Room</a>
+    <a [routerLink]="['../../roomAdd/',block.Id]">Add Room</a>
     <table class='table' *ngIf="block">
         <thead>
             <tr>
@@ -21,7 +21,7 @@
                 <td>{{ room.TotalPlaces }}</td>
                 <td>{{ room.FacultyId }}</td>
                 <td>{{ room.BlockId }}</td>
-                <td> <a [routerLink]="['/room/details',room.Id]">Show details</a></td>
+                <td> <a [routerLink]="['../../room-details',room.Id]">Show details</a></td>
             </tr>
         </tbody>
     </table>

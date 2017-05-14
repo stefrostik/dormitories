@@ -1,4 +1,8 @@
-﻿.navigate {
+﻿.btn-margin-5 {
+  margin-top: 5px;
+  width: 100%;
+}
+.navigate {
   background-color: #00ffff;
 }
 .navigate a {
@@ -66,4 +70,7 @@
 }
 .bs-callout-info h4 {
   color: #5bc0de;
+}
+.left-menu {
+  background-color: black;
 }

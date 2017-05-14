@@ -23,7 +23,7 @@ export class BlockAddComponent {
     Done(myItem: Block) {
         this.requestService.post('blocks', myItem).subscribe((resp: any) => {
             this.block = resp.json();
-            this.myRouter.navigate(['floor/details/' + myItem.FloorId]);
+            this.myRouter.navigate(['../../floor-details/' + myItem.FloorId], { relativeTo: this.activateRoute });
         });
     }
 }

@@ -1,0 +1,18 @@
+﻿<h1>Faculty Admin home page</h1>
+
+<div class="row">
+    <div class="col-sm-3">
+        <div>
+            <div style="display:inline-block; float:left;">
+                <button type="button" class="btn btn-primary" style="width:100%; margin-top:5px;" [routerLink]="['info']">Personal info:</button>
+                <button type="button" class="btn btn-primary" style="width:100%; margin-top:5px;" [routerLink]="['dormitories']">Dormitories:</button>
+                <button type="button" class="btn btn-primary" style="width:100%; margin-top:5px;" [routerLink]="['students']">Students:</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-9">
+        <div>
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

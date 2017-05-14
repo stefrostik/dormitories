@@ -1,6 +1,13 @@
-﻿<h1>Admin personal info component</h1>
-<div *ngIf="admin">
-    <p>Name: {{admin.Name}}</p>
-    <p>Id: {{admin.Id}}</p>
-    <p>Email: {{admin.Email}}</p>
+﻿<div class="row">
+    <div class="col-sm-9">
+        <div *ngIf="admin">
+            <p>Name: {{admin.Name}}</p>
+            <p>Id: {{admin.Id}}</p>
+            <p>Email: {{admin.Email}}</p>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <button class="btn btn-warning btn-margin-5">Edit info</button>
+        <button class="btn btn-warning btn-margin-5">Change Password</button>
+    </div>
 </div>

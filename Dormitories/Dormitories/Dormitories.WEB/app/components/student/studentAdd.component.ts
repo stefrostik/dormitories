@@ -26,7 +26,7 @@ export class StudentAddComponent {
     Add(myItem: Student) {
         myItem.RoomId = this.roomId;
         this.requestService.put('students', myItem).subscribe((resp: any) => {
-            this.myRouter.navigate(['/room/details/'+myItem.RoomId]);
+            this.myRouter.navigate(['../../room-details/' + myItem.RoomId], { relativeTo: this.activateRoute });
         });
     }
     Search(studentCardId: string) {

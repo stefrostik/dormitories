@@ -20,8 +20,8 @@ export class RoomAddComponent {
     }
 
     Done(myItem: Room) {
-        this.requestService.post('rooms', myItem).subscribe((resp: any) => {            
-            this.myRouter.navigate(['block/details/' + myItem.BlockId]);
+        this.requestService.post('rooms', myItem).subscribe((resp: any) => {
+            this.myRouter.navigate(['../../block-details/' + myItem.BlockId], { relativeTo: this.activateRoute });
         });
     }
 }

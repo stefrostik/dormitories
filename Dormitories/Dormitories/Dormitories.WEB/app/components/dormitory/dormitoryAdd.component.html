@@ -5,12 +5,18 @@ Address
 <input type="text" [(ngModel)]="dormitory.Address" class="form-control" /><br />
 Number
 <input type="number" [(ngModel)]="dormitory.Number" class="form-control" /><br />
-<div class="dropdown" dropdown>
+<!--<div class="dropdown" dropdown>
     <button class="btn btn-primary" dropdown-open>Comendants</button>
     <ul class="dropdown-menu">
         <tr *ngFor="let administrator of administrators">
         <li><a (click)="dormitory.ComendantId=administrator.Id">{{ administrator.Id }}</a></li>
         </tr>
     </ul>
+</div>-->
+<div>
+    <label>Comendant ID</label>
+    <select [(ngModel)]="dormitory.ComendantId" dormitory.ComendantId="Select dormitory.ComendantId" class="ui fluid search selection dropdown">
+        <option *ngFor="let administrator of administrators" [attr.value]="administrator.Id" >{{administrator.Id}}</option>
+    </select>
 </div>
 <button (click)="Done(dormitory)" class="btn">Done</button>

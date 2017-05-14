@@ -28,7 +28,11 @@ import { RegisterComponent } from './components/register/register.component';
 import { AdminHomeComponent } from './components/administrator/adminHome.component';
 import { AdminInfoComponent } from './components/administrator/adminInfo.component';
 import { StudentHomeComponent} from './components/student/studentHome.component';
-import { StudentInfoComponent} from './components/student/studentInfo.component';
+import { StudentInfoComponent } from './components/student/studentInfo.component'; 
+import { FacultyAdminInfoComponent } from './components/facultyAdmin/facultyAdminInfo.component'; 
+import { FacultyAdminHomeComponent } from './components/facultyAdmin/facultyAdminHome.component'; 
+import { DormitoryAdminInfoComponent } from './components/dormitoryAdmin/dormitoryAdminInfo.component';
+import { DormitoryAdminHomeComponent } from './components/dormitoryAdmin/dormitoryAdminHome.component'; 
 import { RouterModule, Routes } from '@angular/router';
 import { APP_BASE_HREF } from '@angular/common';
 import { DropdownModule } from "ngx-dropdown";
@@ -41,6 +45,8 @@ import 'rxjs/Rx'
         HomeComponent,
         DormitoriesComponent, DormitoryAddComponent, DormitoryDetailsComponent,
         AdministratorsComponent, AdminRegisterComponent, AdminHomeComponent, AdminInfoComponent,
+        FacultyAdminInfoComponent, FacultyAdminHomeComponent,
+        DormitoryAdminHomeComponent, DormitoryAdminInfoComponent,
         FloorComponent, FloorEditComponent, FloorAddComponent, FloorDetailsComponent,
         BlockComponent, BlockAddComponent, BlockDetailsComponent,
         RoomComponent, RoomAddComponent, RoomDetailsComponent,
@@ -56,9 +62,6 @@ import 'rxjs/Rx'
         DropdownModule,
         RouterModule.forRoot([
             { path: '', redirectTo: 'home', pathMatch: 'full' },
-            { path: 'dormitory', component: DormitoriesComponent },
-            { path: 'dormitory/dormitoryAdd', component: DormitoryAddComponent },
-            { path: 'dormitory/details/:id', component: DormitoryDetailsComponent },
             { path: 'home', component: HomeComponent},
             {
                 path: 'admin-home', component: AdminHomeComponent,
@@ -70,8 +73,17 @@ import 'rxjs/Rx'
                     { path: 'students', component: StudentsComponent },
                     { path: 'studentRegister', component: StudentRegisterComponent },
                     { path: 'dormitories', component: DormitoriesComponent },
-                    { path: 'dormitoryAdd', component: DormitoryAddComponent}
-                    //todo: add other components
+                    { path: 'dormitoryAdd', component: DormitoryAddComponent },
+                    { path: 'dormitory-details/:id', component: DormitoryDetailsComponent },
+                    { path: 'floor-details/:id', component: FloorDetailsComponent },
+                    { path: 'floorAdd/:dormitoryId', component: FloorAddComponent },
+                    { path: 'block-details/:id', component: BlockDetailsComponent },
+                    { path: 'blockAdd/:floorId', component: BlockAddComponent },
+                    { path: 'roomAdd/:blockId', component: RoomAddComponent },
+                    { path: 'room-details/:id', component: RoomDetailsComponent },
+                    { path: 'studentAdd/:roomId', component: StudentAddComponent },
+                    { path: 'student-details/:id', component: StudentDetailsComponent },
+                     //todo: add other components
                 ]
             },
             {
@@ -82,6 +94,31 @@ import 'rxjs/Rx'
                     //todo: add other components
                 ]
             },
+            {
+                path: 'dormitory-admin-home', component: DormitoryAdminHomeComponent,
+                children: [
+                    { path: '', redirectTo: 'info', pathMatch: 'full' },
+                    { path: 'info', component: DormitoryAdminInfoComponent },
+                    { path: 'dormitories', component: DormitoriesComponent },
+                    { path: 'students', component: StudentsComponent },
+                    { path: 'studentRegister', component: StudentRegisterComponent },
+                    //todo: add other components
+                ]
+            },
+            {
+                path: 'faculty-admin-home', component: FacultyAdminHomeComponent,
+                children: [
+                    { path: '', redirectTo: 'info', pathMatch: 'full' },
+                    { path: 'info', component: FacultyAdminInfoComponent },
+                    { path: 'students', component: StudentsComponent },
+                    { path: 'studentRegister', component: StudentRegisterComponent },
+                    { path: 'dormitories', component: DormitoriesComponent }
+                    //todo: add other components
+                ]
+            },
+            { path: 'dormitory', component: DormitoriesComponent },
+            { path: 'dormitory/dormitoryAdd', component: DormitoryAddComponent },
+            { path: 'dormitories/details/:id', component: DormitoryDetailsComponent },
             { path: 'room', component: RoomComponent },
             { path: 'room/roomAdd', component: RoomAddComponent },
             { path: 'room/roomAdd/:blockId', component: RoomAddComponent },

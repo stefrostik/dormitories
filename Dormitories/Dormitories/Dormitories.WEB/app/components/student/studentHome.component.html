@@ -1,15 +1,16 @@
 ﻿<h1>Student home </h1>
 
 <div class="row">
-    <div class="col-sm-3">
-        <div style="background-color: aqua">
-            <p> <a [routerLink]="['info']">Personal info:</a></p>
-            <p> <a [routerLink]="['room']">My Room:</a></p>
-            <p> Dormitories:</p>
+    <div class="col-sm-3" style="padding-top:15px">
+        <div>
+            <div>
+                <button type="button" class="btn btn-primary btn-margin-5" [routerLink]="['info']">Personal info:</button>
+                <button type="button" class="btn btn-primary btn-margin-5" [routerLink]="['room']">My room:</button>
+            </div>
         </div>
     </div>
-    <div class="col-sm-9">
-        <div style="background-color:burlywood">
+    <div class="col-sm-9 bs-callout bs-callout-info">
+        <div>
             <router-outlet></router-outlet>
         </div>
     </div>

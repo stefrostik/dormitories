@@ -1,5 +1,14 @@
 ﻿<h1>Student info</h1>
-<div *ngIf="student">
-    <p>Student card id:  {{student.StudentCardId}}</p>
-    <p>Name: {{student.Name}}</p>
+
+<div class="row">
+    <div class="col-sm-9">
+        <div *ngIf="student">
+            <p>Student card id:  {{student.StudentCardId}}</p>
+            <p>Name: {{student.Name}}</p>
+        </div>
+    </div>
+    <div class="col-sm-3">
+
+        <button class="btn btn-warning btn-margin-5">Change Password</button>
+    </div>
 </div>

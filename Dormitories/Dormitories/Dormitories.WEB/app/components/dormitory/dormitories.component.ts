@@ -1,6 +1,8 @@
 ﻿import { Component } from '@angular/core';
 import { Dormitory } from './Dormitory';
-import { RequestService} from '../../shared/request.service';
+import { RequestService } from '../../shared/request.service';
+
+
 
 @Component({
     moduleId: module.id,

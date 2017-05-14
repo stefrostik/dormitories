@@ -10,19 +10,18 @@ import { Floor } from './Floor';
 export class FloorAddComponent {
     public floor: Floor;
     private requestService : RequestService;
-    myRouter: Router;
 
     constructor(private router: Router, private activateRoute: ActivatedRoute, rs: RequestService) {
-        this.myRouter = router;
         this.requestService = rs; 
         this.floor = new Floor();
         this.floor.DormitoryId = activateRoute.snapshot.params['dormitoryId'];
     }
 
-    Done(myItem: Floor){
+    Done(myItem: Floor) {
+
         this.requestService.post('floors', myItem).subscribe((resp: any) => {
             this.floor = resp.json();
-            this.myRouter.navigate(['dormitory/details/' + myItem.DormitoryId]);
+            this.router.navigate(['../../dormitory-details', myItem.DormitoryId], { relativeTo: this.activateRoute });
         });
     }
 }

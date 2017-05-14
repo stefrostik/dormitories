@@ -7,7 +7,7 @@
     <p><strong>Number</strong> : {{ dormitory.Number }}</p>
     <p><strong>ComendantId </strong>: {{ dormitory.ComendantId }}</p>
 <h2>Floors</h2>
-    <a [routerLink]="['/floor/floorAdd/',dormitory.Id]">Add Floor</a>
+    <a [routerLink]="['../../floorAdd/',dormitory.Id]">Add Floor</a>
     <table class='table' *ngIf="dormitory">
         <thead>
             <tr>
@@ -22,7 +22,7 @@
                 <td>{{ floor.Id }}</td>
                 <td>{{ floor.Number }}</td>
                 <td>{{ floor.DormitoryId }}</td>
-                <td> <a [routerLink]="['/floor/details',floor.Id]">Show details</a></td>
+                <td> <a [routerLink]="['../../floor-details',floor.Id]">Show details</a></td>
             </tr>
         </tbody>
     </table>

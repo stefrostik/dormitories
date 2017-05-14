@@ -5,7 +5,7 @@
     <p><strong>Number</strong> : {{ floor.Number }}</p>
     <p><strong>DormitoryId </strong>: {{ floor.DormitoryId }}</p>
     <h2>Blocks</h2>
-    <a [routerLink]="['/block/blockAdd/',floor.Id]">Add Block</a>
+    <a [routerLink]="['../../blockAdd/',floor.Id]">Add Block</a>
     <table class='table' *ngIf="floor">
         <thead>
             <tr>
@@ -18,7 +18,7 @@
             <tr *ngFor="let block of floor.Blocks">
                 <td>{{ block.Id }}</td>
                 <td>{{ block.FloorId }}</td>
-                <td> <a [routerLink]="['/block/details',block.Id]">Show details</a></td>
+                <td> <a [routerLink]="['../../block-details',block.Id]">Show details</a></td>
             </tr>
         </tbody>
     </table>

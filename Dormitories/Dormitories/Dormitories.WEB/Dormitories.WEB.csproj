@@ -198,6 +198,10 @@
     <Content Include="app\components\block\blockAdd.component.html" />
     <Content Include="app\components\block\blockDetails.component.html" />
     <Content Include="app\components\dormitory\dormitoryAdd.component.html" />
+    <Content Include="app\components\dormitoryAdmin\dormitoryAdminHome.component.html" />
+    <Content Include="app\components\dormitoryAdmin\dormitoryAdminInfo.component.html" />
+    <Content Include="app\components\facultyAdmin\FacultyAdminHome.component.html" />
+    <Content Include="app\components\facultyAdmin\facultyAdminInfo.component.html" />
     <Content Include="app\components\floor\floorDetails.component.html" />
     <Content Include="app\components\floor\floorAdd.component.html" />
     <Content Include="app\components\floor\floorEdit.component.html" />
@@ -286,6 +290,12 @@
     <TypeScriptCompile Include="app\components\block\blockDetails.component.ts" />
     <TypeScriptCompile Include="app\components\dormitory\dormitoryAdd.component.ts" />
     <TypeScriptCompile Include="app\components\dormitory\dormitoryDetails.component.ts" />
+    <TypeScriptCompile Include="app\components\dormitoryAdmin\Administrator.ts" />
+    <TypeScriptCompile Include="app\components\dormitoryAdmin\dormitoryAdminHome.component.ts" />
+    <TypeScriptCompile Include="app\components\dormitoryAdmin\dormitoryAdminInfo.component.ts" />
+    <TypeScriptCompile Include="app\components\facultyAdmin\FacultyAdminHome.component.ts" />
+    <TypeScriptCompile Include="app\components\facultyAdmin\Administrator.ts" />
+    <TypeScriptCompile Include="app\components\facultyAdmin\facultyAdminInfo.component.ts" />
     <TypeScriptCompile Include="app\components\floor\floorDetails.component.ts" />
     <TypeScriptCompile Include="app\components\floor\floorAdd.component.ts" />
     <TypeScriptCompile Include="app\components\floor\floorEdit.component.ts" />

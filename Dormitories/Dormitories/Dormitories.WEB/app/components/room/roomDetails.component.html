@@ -6,7 +6,7 @@
     <p> <strong>FacultyId</strong> : {{room.FacultyId}}</p>
     <p><strong>BlockId</strong> : {{ room.BlockId }}</p>
     <h2>Students</h2>
-    <a [routerLink]="['/student/studentAdd/',room.Id]">Add Student</a>
+    <a [routerLink]="['../../studentAdd/',room.Id]">Add Student</a>
     <table class='table' *ngIf="room">
         <thead>
             <tr>
@@ -29,7 +29,7 @@
                 <td>{{ student.RoomId }}</td>
                 <td>{{ student.StudyYear }}</td>
                 <td>{{ student.CategoryId }}</td>
-                <td> <a [routerLink]="['/student/details',student.Id]">Show details</a></td>
+                <td> <a [routerLink]="['../../student-details',student.Id]">Show details</a></td>
             </tr>
         </tbody>
     </table>

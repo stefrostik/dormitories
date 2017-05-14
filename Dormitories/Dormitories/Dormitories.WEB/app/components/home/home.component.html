@@ -1,2 +1,12 @@
-﻿<h1>Home Page</h1>
+﻿<h2 style="text-align:center;">Гуртожитки ЛНУ ім Івана Франка</h2>
 
+<div class="list-group" *ngFor="let dormitory of dormitories" >
+    <a class="list-group-item bs-callout bs-callout-primary">
+        <div class="d-flex w-100 justify-content-between">
+            <h4 class="mb-1">Гуртожиток №{{dormitory.Number}}</h4>
+            <small>Description : {{dormitory.Description}}</small>
+        </div>
+        <p class="mb-1">Address : {{dormitory.Address}}</p>
+        <small>Comendant id : {{dormitory.ComendantId}}.</small>
+    </a>
+</div>
